@@ -13,7 +13,7 @@
 				</div>
 				<div class="form-group">
 					<label for="host_name" class="col-form-label">Host Name</label>
-					<input type="text" name="venue_name" id="host_name" class="form-control">
+					<input type="text" name="host_name" id="host_name" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="venue" class="col-form-label">Venue</label>
@@ -21,7 +21,7 @@
 				</div>
 				<div class="form-group">
 					<label for="event_time" class="col-form-label">Event Date</label>
-					<input type="date" name="event_date" id="event_date" class="form-control">
+					<input type="date" name="event_time" id="event_time" class="form-control">
 				</div>
 				<div class="form-group">
 					<label for="about" class="col-form-label">Brief Event Description</label>

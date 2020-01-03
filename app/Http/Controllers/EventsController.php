@@ -23,7 +23,15 @@ class EventsController extends Controller
     }
 
     public function store(Request $request){
-    	dd($request);
+    	Event::create([
+            'event_name'=> $request->event_name,
+            'host_name'=> $request->host_name,
+            'venue' => $request->venue,
+            'event_time' => $request->event_time,
+            'about' => $request->about
+        ]);
+
+        return redirect()->route('events');
     }
     
     public function view(){

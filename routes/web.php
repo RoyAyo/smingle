@@ -57,5 +57,6 @@ Route::post('anon','AnonsController@create')->name('anon.create');
 Route::get('event','EventsController@index')->name('events');
 Route::get('event/{id}','EventsController@view')->name('event');
 Route::post('event/store','EventsController@store')->name('event.store');
-
 Route::get('createvent','EventsController@create')->name('event.create');
+
+Route::get('adminevent','AdminsController@index')->name('adminevent');

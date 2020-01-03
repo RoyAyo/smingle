@@ -21,7 +21,7 @@ class CreateEventsTable extends Migration
             $table->string('event_avatar')->nullable();
             $table->date('event_date');
             $table->integer('users_going')->default(0);
-            $table->text('about');
+            $table->text('about')->nullable();
             $table->integer('verified')->unsigned()->default(0);
             $table->timestamps();
         });

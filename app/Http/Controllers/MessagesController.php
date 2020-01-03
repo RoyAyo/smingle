@@ -16,14 +16,28 @@ class MessagesController extends Controller
 
     public function index()
     {
-    	$user_id = auth()->user()->id;
+        $user_id = auth()->user()->id;
 
-       $messages = Messages::where('sender_id','=',$user_id)->orWhere('receiver_id','=',$user_id)->get();
+        $messages = Messages::where('sender_id','=',$user_id)->orWhere('receiver_id','=',$user_id)->orderBy('created_at','desc')->get();
 
-       //get all messages
+        $check = [];
+
+        $f_messages = [];
+        
+        //get all messages
+
         foreach ($messages as $message) {
-        	echo $message->message;	
+        	$a = $message->sender_id + $message->receiver_id;
+            if(!in_array($a, $check)) {
+                $id = $message->sender_id == $user_id ? $message->receiver_id : $message->sender_id;
+                $message->name = User::find($id)->name;
+                $message->other_id = User::find($id)->id;
+                array_push($f_messages, $message);
+                array_push($check, $a);
+            }
         }
+
+        return view('message.index')->with('messages',$f_messages);
     }
 
     public function message($other_id)

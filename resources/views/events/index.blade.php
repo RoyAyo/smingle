@@ -15,9 +15,10 @@
 				@endif
 				@foreach($events as $event)
 					<div class="events">
-						<img src="{{ assets('images/uploads/events/.$event->avatar.') }}" class="event-img img">
+						<img src="{{ asset('images/uploads/events/'.$event->avatar) }}" class="event-img img">
 						<p class="event-name">{{ $event->name }}</p>
 						<p class="event-hostname">Hosted by : {{ $event->host_name }}</p>
+						<p class="event-hostname">About : {{ $event->host_about }}</p>
 					</div>
 				@endforeach
 			</div>

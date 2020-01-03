@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 80px;
             }
 
             .links > a {
@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Find A Match
+                    SMINGLE
                 </div>
             </div>
         </div>
