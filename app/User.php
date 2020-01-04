@@ -42,9 +42,13 @@ class User extends Authenticatable
         return $this->hasOne('App\General');
     }
 
-    public function messages()
+    public function rmessages()
     {
         return $this->hasMany('App\Messages', 'receiver_id');
+    }
+    public function smessages()
+    {
+        return $this->hasMany('App\Messages', 'sender_id');
     }
 
     public function anonmessage(){

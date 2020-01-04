@@ -62,3 +62,7 @@ Route::get('createvent','EventsController@create')->name('event.create');
 
 Route::get('adminevent','AdminsController@index')->name('adminevent');
 Route::get('adminevent/{id}','AdminsController@index');
+
+Route::get('tester',function (){
+	return view('events.test');
+});
