@@ -20,11 +20,19 @@ class CompsController extends Controller
 
     	$user_id = json_encode(Auth::user()->id);
 
-    	$check_user = User::all()->where('username',$request->username)->first();
+    	$check_user = User::where('username',$request->username)->first();
 
     	if (is_null($check_user)) {
     		return "Please Input A Valid User";
     	}
+
+        //check if the user has filled the required field
+
+        $check_filled = $check_user->general()->get()->count();
+
+        if ($check_filled == 0) {
+            return "Tell ".$check_user->name." to fill the required field";
+         } 
 
     	$check_id = json_encode($check_user->id);
 

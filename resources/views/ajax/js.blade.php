@@ -24,18 +24,14 @@
 
 
         $('#valevent').on('click',(e) => {
-            c = $(this).val();
-            if(c === 'verified'){
-                $(this).val('notVerified');
-                v = 0;
-            }else{
-                $(this).val('verified');
-                v = 1;
-            }
+            
+            e.preventDefault();
+
+            $(this).attr('disabled',"disabled")
 
             $.post('eventid',{
                 '_token' : token,
-                'v' : v
+                'v' : 1
             });
         });
         

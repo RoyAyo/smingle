@@ -4,7 +4,7 @@
 
 	<div class="container">
 		<div class="card" style="height: calc(100vh - 58px);">
-			<form role="form" action="{{ route('event.store') }}" method="POST">
+			<form role="form" action="{{ route('event.store') }}" method="POST" enctype="">
 				@csrf
 
 				<div class="form-group">
@@ -26,6 +26,9 @@
 				<div class="form-group">
 					<label for="about" class="col-form-label">Brief Event Description</label>
 					<textarea class="form-control" rows="5" name="about"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="image">  </label>
 				</div>
 				<button class="btn btn-info" type="submit">Submit</button>
 			</form>
