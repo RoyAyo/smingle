@@ -79,16 +79,16 @@
 	                    <a href="{{route('user',['id'=> auth()->user()->id])}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Profile</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>
+	                    <a href="{{ route('about') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>
 	                </li>
 	                <li>
 	                    <a href="{{ route('anon') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}">Anonymous Messages</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-new-message-16.png') }}">Messages</a>
+	                    <a href="{{ route('messages') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-new-message-16.png') }}">Messages</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-schedule-64.png') }}">Events</a>
+	                    <a href="{{ route('events') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-schedule-64.png') }}">Events</a>
 	                </li>
 	                <li>
 	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-female-skin-type-3-16.png') }}">My Type Of {{ auth()->user()->gender== 1 ? "Woman" : "Man" }}</a>
