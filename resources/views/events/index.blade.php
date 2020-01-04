@@ -3,7 +3,7 @@
 @section('content')
 
 	<div class="container">
-		<div class="panel bg-white" style="min-height: calc(100vh - 58px);">
+		<div class="panel bg-white">
 			<div class="small-btn" style="text-align: right;">
 				<a href="{{ route('event.create') }}" id="create-event" class="btn btn-default btn-lg">Add new event</a>
 			</div>
