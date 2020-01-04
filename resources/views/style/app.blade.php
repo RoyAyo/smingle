@@ -385,4 +385,33 @@
 	
 }
 
+/* for the events page*/
+	.event-date{
+		color: rgba(200,200,200,0.8);
+	}
+
+	.event h4{
+		font-weight: bolder;
+		font-size: 14pt;
+	}
+	.event-avatar img{
+		width: 300px;
+		height: 300px;
+		border-radius: 3px;
+		cursor: pointer;
+	}
+	.event-name a{
+		text-decoration: none;
+		color: grey;
+		transition: color .2s ease-in; 
+	}
+	.event-name a:hover{
+		color: rgba(220,0,0,0.5);
+	}
+	@media(max-width: 700px){
+		.event-avatar img{
+			width: 250px;
+			height: 250px;
+		}
+	}
 </style>
