@@ -14,7 +14,7 @@ class CreateAttendingsTable extends Migration
     public function up()
     {
         Schema::create('attendings', function (Blueprint $table) {
-            $table->increments('id');
+            $table->primary(['user_id','event_id']);
             $table->integer('user_id')->unsigned();
             $table->integer('event_id')->unsigned();
             $table->integer('attending');

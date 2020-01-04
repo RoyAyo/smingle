@@ -19,7 +19,6 @@
 						<p class="event-name">{{ $event->name }}</p>
 						<p class="event-hostname">Hosted by : {{ $event->host_name }}</p>
 						<p class="event-hostname">About : {{ $event->host_about }}</p>
-						<input type="checkbox" id="valevent" value="verified">
 					</div>
 				@endforeach
 			</div>
