@@ -125,6 +125,9 @@
 		@if(Session::has('anon'))
 			toastr.success("{{Session::get('anon')}}")
 		@endif
+		@if(Session::has('eventVerified'))
+			toastr.success("{{Session::get('eventVerified')}}")
+		@endif
 	</script>
 </body>
 </html>

@@ -22,6 +22,22 @@
             $("#wrapper").toggleClass("toggled");
         });
 
+
+        $('#valevent').on('click',(e) => {
+            c = $(this).val();
+            if(c === 'verified'){
+                $(this).val('notVerified');
+                v = 0;
+            }else{
+                $(this).val('verified');
+                v = 1;
+            }
+
+            $.post('eventid',{
+                '_token' : token,
+                'v' : v
+            });
+        });
         
 
         

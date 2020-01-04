@@ -12,7 +12,7 @@ class EventsController extends Controller
     }
 
     public function index(){
-    	$events = Event::paginate(10);
+    	$events = Event::where('verified',1)->paginate(10);
 
     	return view('events.index')->with('events',$events);
     }
