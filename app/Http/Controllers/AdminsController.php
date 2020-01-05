@@ -9,11 +9,12 @@ use Session;
 class AdminsController extends Controller
 {
     public function __construct(){
+        $this->middleware('auth');
     	$this->middleware('admin');
     }
 
     public function index(){
-    	$events = Event::paginate(10);
+    	$events = Event::paginate(1);
 
     	return view('admin.index')->with('events',$events);
     }

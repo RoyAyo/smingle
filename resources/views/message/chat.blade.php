@@ -1,7 +1,7 @@
 @extends('layouts.myapp')
 
 @section('content')
-<div class="card">
+<div class="message-card">
 		<div class="messages">
 			<div class="message-header">
 				<img src="{{ asset('images/icons/arrow-left-128.png') }}" style="width: 25px;height: 25px;">

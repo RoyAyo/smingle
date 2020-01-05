@@ -40,7 +40,7 @@
                     <label for="check-user-match"> Username </label>
                     <input type="text" name="username" id="check-user-match" class="form-control" required/>
                     <!-- <input type="submit" value="check" id="user-sub" class="btn btn-info"> -->
-                    <button id="user-sub" type="submit" class="btn btn-default"><img src="{{ asset('images/icons/') }}"></button>
+                    <button id="user-sub" type="submit" class="btn btn-default"><img src="{{ asset('images/icons/arrow-right-128.png') }}" style="width: 20px;height: 20px;"></button>
                 </form>
                 <div>
                     <p class="text-primary text-center" style="font-size: 30pt;" id="match-perc"></p>

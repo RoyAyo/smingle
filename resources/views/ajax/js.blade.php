@@ -23,18 +23,30 @@
         });
 
 
-        $('#valevent').on('click',(e) => {
+        // $('#valevent').on('click',(e) => {
             
-            e.preventDefault();
+        //     e.preventDefault();
 
-            $(this).attr('disabled',"disabled")
+        //     $(this).attr('disabled',"disabled")
 
-            $.post('eventid',{
-                '_token' : token,
-                'v' : 1
-            });
-        });
+        //     $.post('eventid',{
+        //         '_token' : token,
+        //         'v' : 1
+        //     });
+        // });
         
+
+        $('.verify').on('click',() => {
+            const v = $(this).css('color');
+            // if (v == "0") {
+            //     $(this).attr('verified','1');
+            // }else{
+            //     $(this).attr('verified','0');
+            // }
+
+            // $.post('')
+            alert(v);
+        });
 
         
 

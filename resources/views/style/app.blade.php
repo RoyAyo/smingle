@@ -277,7 +277,7 @@
 		margin-bottom: 0.5rem;
 	}
 	/* Messaging styles */
-		.card{
+		.message-card{
 		height: calc(100vh - 58px);
 	}
 	.messages{
@@ -413,5 +413,12 @@
 			width: 250px;
 			height: 250px;
 		}
+	}
+
+	.verify:hover{
+		background-color: blue;
+	}
+	.event-going:after{
+		clear: both;
 	}
 </style>

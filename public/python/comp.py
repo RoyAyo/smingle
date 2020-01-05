@@ -49,11 +49,11 @@ cluster_diff += 1
 	
 if cluster_diff > 1:
 	if cluster_diff == 2:
-		cluster_diff = cluster_diff/1.3
+		cluster_diff = 0.07
 	elif cluster_diff == 3:
-		cluster_diff = cluster_diff/1.7
+		cluster_diff = 0.1
 	else: 
-		cluster_diff = cluster_diff/2.0
+		cluster_diff = 0.15
 
 #formular == corr/cluster_diff + zodiac
 
@@ -83,7 +83,7 @@ else:
 		else:
 			zod = 0
 
-m = (corr / cluster_diff) + zod
+m = (corr - cluster_diff) + zod
 
 ml_error_rate = 0.02
 

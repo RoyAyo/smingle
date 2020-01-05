@@ -3,8 +3,8 @@
 @section('content')
 	<table class="table table-hover">
 		<tr>
-			<th class="col-lg-7 col-xs-9">Message</th>
-			<th style="text-align: right;" class="col-lg-5 col-xs-3">Time sent</th>
+			<th class="col-xs-9">Message</th>
+			<th style="text-align: right;" class="col-xs-3">Time sent</th>
 		</tr>
 		@foreach ($anons as $anon)
 			<tr>
