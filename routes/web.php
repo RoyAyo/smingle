@@ -24,7 +24,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/profile','ProfileController@index')->name('profile');
 Route::post('/profile/{id}','ProfileController@update')->name('profile.update');
 
-
 Route::get('/student','StudentsController@index')->name('student');
 Route::post('/student/{id}','StudentsController@update')->name('student.update');
 

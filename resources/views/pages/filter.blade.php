@@ -1,9 +1,30 @@
-@extends('layouts.app')
+@extends('layouts.myapp')
 
 @section('content')
 
-	<form action="{{ route('filter.store',['id'=> $user_id]) }}" method="POST">
+	<form action="{{ route('match.check') }}" method="POST" style="padding-top: 1rem;">
 		@csrf
+
+        <div class="form-group row">
+            <label for="based_on" class="col-md-4 col-form-label text-md-right">{{ __('Based On') }}</label>
+
+            <div class="col-md-6">
+                <select id="based_on" class="form-control{{ $errors->has('based_on') ? ' is-invalid' : '' }}" name="based_on" value="1" autofocus>
+                    <option value="general"> Default </option>
+                    <option value="general"> General </option>
+                    <option value="general"> Movies </option>
+                    <option value="general"> Music </option>
+                    <option value="general"> Relationship </option>
+                    <option value="general"> Career </option>
+                </select>
+
+                @if ($errors->has('based_on'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('based_on') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
 
         <div class="form-group row">
             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age Range') }}</label>
