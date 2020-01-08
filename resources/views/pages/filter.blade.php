@@ -9,7 +9,7 @@
             <label for="based_on" class="col-md-4 col-form-label text-md-right">{{ __('Based On') }}</label>
 
             <div class="col-md-6">
-                <select id="based_on" class="form-control{{ $errors->has('based_on') ? ' is-invalid' : '' }}" name="based_on" value="1" autofocus>
+                <select id="filter_based_on" class="form-control{{ $errors->has('based_on') ? ' is-invalid' : '' }}" name="based_on" value="1" autofocus>
                     <option value="general"> Default </option>
                     <option value="general"> General </option>
                     <option value="general"> Movies </option>
@@ -30,7 +30,7 @@
             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age Range') }}</label>
 
             <div class="col-md-6">
-                <select id="age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="1" autofocus>
+                <select id="filter_age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="1" autofocus>
                 	<option value="0"> Indifferent </option>
                 	<option value="1"> 15-18 </option>
                 	<option value="2"> 19-23 </option>
@@ -50,7 +50,7 @@
             <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
 
             <div class="col-md-6">
-                <input type="text" name="location" id="location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->location : '' }}" >
+                <input type="text" name="location" id="filter_location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->location : '' }}" >
                 @if ($errors->has('location'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('location') }}</strong>
@@ -62,7 +62,7 @@
             <label for="Religion" class="col-md-4 col-form-label text-md-right">{{ __('Religion') }}</label>
 
             <div class="col-md-6">
-                <select id="religion" class="form-control{{ $errors->has('religion') ? ' is-invalid' : '' }}" name="religion" value="{{ old('religion') }}" >
+                <select id="filter_religion" class="form-control{{ $errors->has('religion') ? ' is-invalid' : '' }}" name="religion" value="{{ old('religion') }}" >
                 	<option value="0"> Indifferent </option>
                 	<option value="1"> Christain </option>
                 	<option value="2"> Muslim </option>
@@ -81,7 +81,7 @@
             <label for="r_status" class="col-md-4 col-form-label text-md-right">{{ __('Relationship Status') }}</label>
 
             <div class="col-md-6">
-                <select id="r_status" class="form-control{{ $errors->has('r_status') ? ' is-invalid' : '' }}" name="r_status" value="{{ old('r_status') }}">
+                <select id="filter_r_status" class="form-control{{ $errors->has('r_status') ? ' is-invalid' : '' }}" name="r_status" value="{{ old('r_status') }}">
                 	<option value="0"> Indifferent </option>
                 	<option value="1"> Single </option>
                 	<option value="2"> Married </option>
@@ -100,7 +100,7 @@
             <label for="m_status" class="col-md-4 col-form-label text-md-right">{{ __('Money Status') }}</label>
 
             <div class="col-md-6">
-                <select id="m_status" class="form-control{{ $errors->has('m_status') ? ' is-invalid' : '' }}" name="m_status" value="{{ old('m_status') }}" >
+                <select id="filter_m_status" class="form-control{{ $errors->has('m_status') ? ' is-invalid' : '' }}" name="m_status" value="{{ old('m_status') }}" >
                 	<option value="0"> Indifferent </option>
                 	<option value="1"> Broke asf </option>
                 	<option value="2"> Broke </option>
@@ -120,7 +120,7 @@
             <label for="height" class="col-md-4 col-form-label text-md-right">{{ __('Height Range') }}</label>
 
             <div class="col-md-6">
-                <select id="height" class="form-control{{ $errors->has('height') ? ' is-invalid' : '' }}" name="height" value="{{ old('height') }}">
+                <select id="filter_height" class="form-control{{ $errors->has('height') ? ' is-invalid' : '' }}" name="height" value="{{ old('height') }}">
                 	<option value="0"> Indifferent </option>
                 	<option value="1"> 5"0 - 5"5 </option>
                 	<option value="2"> 5"6 - 5"8 </option>
@@ -140,7 +140,7 @@
             <label for="need" class="col-md-4 col-form-label text-md-right">{{ __('Looking For') }}</label>
 
             <div class="col-md-6">
-                <select id="need" class="form-control{{ $errors->has('need') ? ' is-invalid' : '' }}" name="need" value="{{ old('need') }}">
+                <select id="filter_need" class="form-control{{ $errors->has('need') ? ' is-invalid' : '' }}" name="need" value="{{ old('need') }}">
                 	<option value="0"> Indifferent </option>
                     <option value="1"> Friends </option>
                     <option value="2"> Relationship </option>
@@ -156,11 +156,12 @@
                 @endif
             </div>
         </div>
+        
         <div class="form-group row">
             <label for="need" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
 
             <div class="col-md-6">
-                <select id="student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" value="{{ old('student') }}">
+                <select id="filter_student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" >
                 	<option value="0"> Indifferent </option>
                     <option value="1"> Yes </option>
                     <option value="2"> No </option>
@@ -173,49 +174,51 @@
                 @endif
             </div>
         </div>
-                <div class="form-group row">
-            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('School') }}</label>
+        <div id="studentship">
+            <div class="form-group row">
+                <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('School') }}</label>
 
-            <div class="col-md-6">
-                <input type="text" name="school" id="school" class="form-control{{ $errors->has('school') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->school : '' }}" >
-                @if ($errors->has('school'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('school') }}</strong>
-                    </span>
-                @endif
+                <div class="col-md-6">
+                    <input type="text" name="school" id="filter_school" class="form-control{{ $errors->has('school') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->school : '' }}" >
+                    @if ($errors->has('school'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('school') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
+            <div class="form-group row">
+                <label for="course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
 
-            <div class="col-md-6">
-                <input type="text" name="course" id="course" class="form-control{{ $errors->has('course') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->course : '' }}" >
-                @if ($errors->has('course'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('course') }}</strong>
-                    </span>
-                @endif
+                <div class="col-md-6">
+                    <input type="text" name="course" id="filter_course" class="form-control{{ $errors->has('course') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->course : '' }}" >
+                    @if ($errors->has('course'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('course') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('level') }}</label>
+            <div class="form-group row">
+                <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('level') }}</label>
 
-            <div class="col-md-6">
-                <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
-                    <option value="0"> Indifferent </option>
-                    <option value="1"> 100 </option>
-                    <option value="2"> 200 </option>
-                    <option value="3"> 300 </option>
-                    <option value="4"> 400 </option>
-                    <option value="5"> 500 </option>
-                    <option value="6"> others </option>
-                </select>
+                <div class="col-md-6">
+                    <select id="filter_level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
+                        <option value="0"> Indifferent </option>
+                        <option value="1"> 100 </option>
+                        <option value="2"> 200 </option>
+                        <option value="3"> 300 </option>
+                        <option value="4"> 400 </option>
+                        <option value="5"> 500 </option>
+                        <option value="6"> others </option>
+                    </select>
 
-                @if ($errors->has('level'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('level') }}</strong>
-                    </span>
-                @endif
+                    @if ($errors->has('level'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('level') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="form-group row mb-0">

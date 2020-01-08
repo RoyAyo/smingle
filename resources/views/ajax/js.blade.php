@@ -15,6 +15,30 @@
                 $('#match-perc').html(res);
             });
         });
+
+        $('#find-match-btn').on('click',(e) => {
+            e.preventDefault();
+            $('#loader-div').show();
+            const based_on = $('#filter_based_on').val();  
+            const age = $('#filter_age').val();
+            const location = $('#filter_location').val();
+            const religion = $('#filter_religion').val();
+            const height = $('#filter_height').val();
+            const r_status = $('#filter_r_status').val();
+            const m_status = $('#filter_m_status').val();
+            const need = $('#filter_need').val();
+            const student = $('#filter_student').val();
+            const school = $('#filter_school').val();
+            const course = $('#filter_course').val();
+            const level = $('#filter_level').val();
+
+            $.post("{{ route('match.check') }}",{
+               '_token' : token,
+               'based_on' : based_on
+            },(res) => {
+                alert(res);
+            });
+        });
     
 
         $("#menu-toggle").on('click',(e) => {
@@ -36,15 +60,15 @@
         // });
         
 
-        $('.verify').on('click',() => {
-            const v = $(this).css('color');
+        $('.verify').on('click', function() {
+            const v = $(this).val();
             // if (v == "0") {
             //     $(this).attr('verified','1');
             // }else{
             //     $(this).attr('verified','0');
             // }
 
-            // $.post('')
+            // $.post('verify')
             alert(v);
         });
 
@@ -79,5 +103,25 @@
                 'message':message
             });
         });
+
+        // const check_student = () => {
+        //     const s = $('#filter_student').val();
+        //     alert(s);
+        //     if (s == 'yes') {
+        //         $('#studentship').fadeIn(1000);
+        //     }else{
+        //         $('#studentship').fadeOut(1000);
+        //     }
+        // }
+
+        $('#filter_student').on('change',function() {
+            const s = $(this).val();
+            if (s == 1) {
+                $('#studentship').fadeIn(200);
+            }else{
+                $('#studentship').fadeOut(2 00);
+            }
+        })
     });
+
 </script>

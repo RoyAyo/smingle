@@ -59,7 +59,6 @@
                                     @csrf
                                 </form>
                             </div>
-                            <img src="" class="img img-thumbnail">
                     @endguest
             	</div>
 			</header>

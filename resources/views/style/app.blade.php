@@ -421,4 +421,8 @@
 	.event-going:after{
 		clear: both;
 	}
+
+	#studentship{
+		display: none;
+	}
 </style>

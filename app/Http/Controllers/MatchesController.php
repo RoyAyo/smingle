@@ -14,13 +14,26 @@ class MatchesController extends Controller
     	$this->middleware('auth');
     }
 
-    public function check(){
+    public function check(Request $request){
     	$user_id = json_encode(Auth::user()->id);
+    	$filter = [];
 
-    	//$based_on = json_encode($request->based);
-    	$based_on = "generals";
+    	array_push($filter,$request->age);
+    	array_push($filter,$request->location);
+    	array_push($filter,$request->religion);
+    	array_push($filter,$request->height);
+    	array_push($filter,$request->r_status);
+    	array_push($filter,$request->m_status);
+    	array_push($filter,$request->need);
+    	array_push($filter,$request->student);
+    	array_push($filter,$request->school);
+    	array_push($filter,$request->course);
+    	array_push($filter,$request->level);
+    	$based_on = $request->based_on;
 
-    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on );
+    	$filter = json_encode($filter); 
+
+    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$filter);
 		$process->run();
 
 		if (!$process->isSuccessful()) {
@@ -34,6 +47,7 @@ class MatchesController extends Controller
 		$best_id = $d->id;
 		$score = $d->match;
 
-		return $best_id;
+		$match = User::find($best_id);
+		return $match;
     }
 }

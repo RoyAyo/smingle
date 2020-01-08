@@ -28,7 +28,7 @@ Route::get('/student','StudentsController@index')->name('student');
 Route::post('/student/{id}','StudentsController@update')->name('student.update');
 
 Route::get('/filter','FiltersController@index')->name('filter');
-Route::post('/filter/{id}','FiltersController@store')->name('filter.store');
+// Route::post('/filter/{id}','FiltersController@store')->name('filter.store');
 
 Route::get('/about','AboutController@index')->name('about');
 
@@ -42,7 +42,7 @@ Route::post('/cluster','ClustersController@store')->name('cluster.store');
 
 Route::post('/comp','CompsController@check')->name('comp.check');
 
-Route::get('/match','MatchesController@check')->name('match.check');
+Route::post('/match','MatchesController@check')->name('match.check');
 
 Route::get('/messages','MessagesController@index')->name('messages');
 Route::get('/message/{id}','MessagesController@message')->name('message');
