@@ -10,12 +10,12 @@
 
             <div class="col-md-6">
                 <select id="filter_based_on" class="form-control{{ $errors->has('based_on') ? ' is-invalid' : '' }}" name="based_on" value="1" autofocus>
-                    <option value="general"> Default </option>
-                    <option value="general"> General </option>
-                    <option value="general"> Movies </option>
-                    <option value="general"> Music </option>
-                    <option value="general"> Relationship </option>
-                    <option value="general"> Career </option>
+                    <option value="relationships"> Default </option>
+                    <option value="generals"> General </option>
+                    <option value="movies"> Movies </option>
+                    <option value="musics"> Music </option>
+                    <option value="relationships"> Relationship </option>
+                    <option value="careers"> Career </option>
                 </select>
 
                 @if ($errors->has('based_on'))
@@ -162,9 +162,9 @@
 
             <div class="col-md-6">
                 <select id="filter_student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" >
-                	<option value="0"> Indifferent </option>
+                	<option value="2"> Indifferent </option>
                     <option value="1"> Yes </option>
-                    <option value="2"> No </option>
+                    <option value="0"> No </option>
                 </select>
 
                 @if ($errors->has('student'))
@@ -210,7 +210,8 @@
                         <option value="3"> 300 </option>
                         <option value="4"> 400 </option>
                         <option value="5"> 500 </option>
-                        <option value="6"> others </option>
+                        <option value="6"> Masters </option>
+                        <option value="6"> Ph.D </option>
                     </select>
 
                     @if ($errors->has('level'))
@@ -223,7 +224,7 @@
         </div>
         <div class="form-group row mb-0">
             <div class="col-md-6 offset-md-4">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary" id="find-match-btn">
                     {{ __('Submit') }}
                 </button>
             </div>

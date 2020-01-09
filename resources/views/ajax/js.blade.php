@@ -34,8 +34,20 @@
 
             $.post("{{ route('match.check') }}",{
                '_token' : token,
-               'based_on' : based_on
+               'based_on' : based_on,
+               'age' : age,
+               'location' : location,
+               'religion' : religion,
+               'height' : height,
+               'r_status' : r_status,
+               'm_status' : m_status,
+               'need' : need,
+               'student' : student,
+               'school' : school,
+               'course' : course,
+               'level' : level
             },(res) => {
+                $('#loader-div').hide();
                 alert(res);
             });
         });
@@ -60,15 +72,15 @@
         // });
         
 
-        $('.verify').on('click', function() {
-            const v = $(this).val();
+        $('.verify').on('click',() => {
+            const v = $(this).css('color');
             // if (v == "0") {
             //     $(this).attr('verified','1');
             // }else{
             //     $(this).attr('verified','0');
             // }
 
-            // $.post('verify')
+            // $.post('')
             alert(v);
         });
 
@@ -104,24 +116,14 @@
             });
         });
 
-        // const check_student = () => {
-        //     const s = $('#filter_student').val();
-        //     alert(s);
-        //     if (s == 'yes') {
-        //         $('#studentship').fadeIn(1000);
-        //     }else{
-        //         $('#studentship').fadeOut(1000);
-        //     }
-        // }
-
         $('#filter_student').on('change',function() {
             const s = $(this).val();
             if (s == 1) {
                 $('#studentship').fadeIn(200);
             }else{
-                $('#studentship').fadeOut(2 00);
+                $('#studentship').fadeOut(200);
             }
-        })
+        });
     });
 
 </script>

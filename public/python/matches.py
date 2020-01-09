@@ -17,29 +17,16 @@ height = str(filters[4])
 r_status = str(filters[5])
 m_status = str(filters[6])
 need = str(filters[7])
-school = str(filters[8])
-course = str(filters[9])
-level = str(filters[10])
+student = str(filters[8])
+school = str(filters[9])
+course = str(filters[10])
+level = str(filters[11])
 
 
 conn = sqlite3.connect('../database/match.sqlite')
 
-query = "Select users.cluster,users.DOB," + based_on + ".* from users join " + based_on + " On users.id = " + based_on + ".user_id"
-
-df = pd.read_sql_query(query,conn)
-
-df.set_index('user_id',inplace=True)
-df.drop(['id','created_at','updated_at'],axis=1,inplace=True)
-
-a = df.loc[user_id].values
-user_cluster = a[0]
-user_bday = a[1]
-a1 = a[2:]
-
-df_search = df.drop(user_id)
-
-def create_query(gender,age,location,religion,height,r_status,m_status,school,course,level):
-		query = "Select * from users join profiles ON users.id = profiles.user_id Where users.gender = " + gender
+def create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level):
+	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
 	if(age != "0"):
 			query+= " and profiles.age = " + age
 	if(location != "0"):
@@ -54,14 +41,14 @@ def create_query(gender,age,location,religion,height,r_status,m_status,school,co
 			query+= " and profiles.m_status >= " + m_status
 	if(need != "0"):
 			query+= " and profiles.need = " + need
-	if(school != "0"):
-			query+= " and profiles.school = " + school
+	if(student != "2"):
+			query+=" and profiles.student = " + student
+			if (school != "0"):
+				query+= " and profiles.school = " + school
 			if(course != "0"):
 					query+= " and students.course = " + course
 			if(level != "0"):
 				query+= " and students.level = " + level
-			if(level != "0"):
-				query+= " and students.degree = " + degree
 	return query
 
 def mse(a2):
@@ -71,7 +58,7 @@ def mse(a2):
 		e = math.pow(err,2)
 		error += e
 	error = math.sqrt(error)
-	tot_err = math.sqrt(115)
+	tot_err = math.sqrt(135)
 
 	if (error > tot_err):
 		corr = 0.2
@@ -81,10 +68,8 @@ def mse(a2):
 
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
-	cluster_diff += 1
-	
-	if cluster_diff > 1:
-		cluster_diff = cluster_diff - (1/cluster_diff)
+	if cluster_diff > 0:
+		cluster_diff = 0.1
 	return cluster_diff
 
 def bday_match(bd):
@@ -99,30 +84,48 @@ def bday_match(bd):
 			return 0.10
 		else:
 			return 0.0
+#connections and all
+query1 = create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level)
 
+query = "Select u.cluster,u.DOB," + based_on + ".* from " + based_on + " join (" + query1 + ") as u On u.id = " + based_on + ".user_id"
 
-#you must pass the first critereria statge
+df = pd.read_sql_query(query,conn)
 
+if len(df) == 0:
+	print(json.dumps(0))
+else:
+	df.set_index('user_id',inplace=True)
+	df.drop(['id','created_at','updated_at'],axis=1,inplace=True)
 
+	a = df.loc[user_id].values
+	user_cluster = a[0]
+	user_bday = a[1]
+	a1 = a[2:]
 
-df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
+	df_search = df.drop(user_id)
+	if len(df_search) == 0:
+		print(json.dumps(0))
+	else:
+		#you must pass the first critereria stage
 
-df_search['cluster'] = df['cluster'].apply(clus)
+		df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
 
-df_search['bday_match'] = df_search['DOB'].apply(bday_match)
+		df_search['cluster'] = df['cluster'].apply(clus)
 
-ml_error_rate = 0.02
+		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
 
-df_search['match'] = ((df_search['mse'] / df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
+		ml_error_rate = 0.02
 
-df_top = df_search['match'].nlargest(10)
+		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
 
-r = random.randint(0,len(df_top)-1)
+		df_top = df_search['match'].nlargest(1)
 
-i = df_top.index[r]
+		r = random.randint(0,len(df_top)-1)
 
-best = {}
-best["id"] = int(i)
-best["match"] = df_top.loc[i]
+		i = df_top.index[r]
 
-print(json.dumps(best))
+		best = {}
+		best["id"] = int(i)
+		best["match"] = df_top.loc[i]
+
+		print(json.dumps(best))

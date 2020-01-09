@@ -45,15 +45,9 @@ else:
 	corr = (abs(tot_err - error) / tot_err)	
 
 cluster_diff = abs(cluster.loc[int(user_id1)] - cluster.loc[int(user_id2)])
-cluster_diff += 1
 	
-if cluster_diff > 1:
-	if cluster_diff == 2:
-		cluster_diff = 0.07
-	elif cluster_diff == 3:
-		cluster_diff = 0.1
-	else: 
-		cluster_diff = 0.15
+if cluster_diff > 0:
+	cluster_diff == 0.1
 
 #formular == corr/cluster_diff + zodiac
 
