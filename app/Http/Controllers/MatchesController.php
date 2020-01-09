@@ -26,18 +26,15 @@ class MatchesController extends Controller
     	$course = isset($request->course) ? $request->course : "0";
 
 
-    	array_push($filter,$user_gender);
-    	array_push($filter,$request->age);
-    	array_push($filter,$loc);
-    	array_push($filter,$request->religion);
-    	array_push($filter,$request->height);
-    	array_push($filter,$request->r_status);
-    	array_push($filter,$request->m_status);
-    	array_push($filter,$request->need);
-    	array_push($filter,$request->student);
-    	array_push($filter,$school);
-    	array_push($filter,$course);
-    	array_push($filter,$request->level);
+    	$gen = $user_gender;
+    	$age = $request->age;
+    	$rel = $request->religion;
+    	$height = $request->height;
+    	$r_status = $request->r_status;
+    	$m_status = $request->m_status;
+    	$need = $request->need;
+    	$student = $request->student;
+    	$level = $request->level;
     	$based_on = $request->based_on;
 
 
@@ -49,7 +46,7 @@ class MatchesController extends Controller
     	$user_id = json_encode($user_id);
     	$filter = json_encode($filter);
 
-    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$filter);
+    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level);
 		$process->run();
 
 		if (!$process->isSuccessful()) {
