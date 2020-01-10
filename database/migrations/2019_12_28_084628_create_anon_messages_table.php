@@ -17,6 +17,7 @@ class CreateAnonMessagesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->text('message');
+            $table->text('sender_id')->unsigned();
             $table->timestamps();
         });
     }

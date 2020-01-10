@@ -17,9 +17,8 @@ class CreateMatchesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('matched_to_id');
-            $table->integer('correlation');
-            $table->integer('sent');
-            $table->integer('accepted');
+            $table->integer('match_perc');
+            $table->integer('feedback')->default('None');
             $table->timestamps();
         });
     }

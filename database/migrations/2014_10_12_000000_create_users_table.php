@@ -26,6 +26,7 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->text('about')->nullable();
             $table->integer('cluster')->nullable();
+            $table->integer('sub')->default('norms');
             $table->rememberToken();
             $table->timestamps();
         });

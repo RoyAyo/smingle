@@ -20,6 +20,7 @@ class CreateMessagesTable extends Migration
             $table->foreign('sender_id')->references('id')->on('users');
             $table->foreign('receiver_id')->references('id')->on('users');
             $table->text('message');
+            $table->integer('read')->default(0);
             $table->timestamps();
         });
     }
