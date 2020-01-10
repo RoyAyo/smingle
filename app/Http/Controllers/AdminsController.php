@@ -14,7 +14,7 @@ class AdminsController extends Controller
     }
 
     public function index(){
-    	$events = Event::paginate(1);
+    	$events = Event::paginate(5);
 
     	return view('admin.index')->with('events',$events);
     }

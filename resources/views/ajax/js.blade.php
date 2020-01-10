@@ -57,31 +57,29 @@
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
-
-
-        // $('#valevent').on('click',(e) => {
-            
-        //     e.preventDefault();
-
-        //     $(this).attr('disabled',"disabled")
-
-        //     $.post('eventid',{
-        //         '_token' : token,
-        //         'v' : 1
-        //     });
-        // });
         
 
-        $('.verify').on('click',() => {
-            const v = $(this).css('color');
-            // if (v == "0") {
-            //     $(this).attr('verified','1');
-            // }else{
-            //     $(this).attr('verified','0');
-            // }
+        $('.verify').on('click',function() {
+            const id = $(this).attr('ide');
+            var v = $(this).attr('verified');
+            if (v == "0") {
+                $(this).attr('verified','1');
+                v = 1;
+            }else{
+                v = 0;
+                $(this).attr('verified','0');
+            }
 
-            // $.post('')
-            alert(v);
+            $.post('adminevent/verify/'+id,{
+                '_token' : token,
+                'v' : v
+            },(res) => {
+                if (v == '0') {
+                    $(this).html('Unverify');
+                }else{
+                    $(this).html('Verify');
+                }
+            });
         });
 
         

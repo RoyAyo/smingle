@@ -22,6 +22,7 @@ class CreateEventsTable extends Migration
             $table->date('event_date');
             $table->integer('users_going')->default(0);
             $table->text('about')->nullable();
+            $table->string('category')->default('Show');
             $table->integer('verified')->unsigned()->default(0);
             $table->timestamps();
         });

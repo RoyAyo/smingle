@@ -7,24 +7,26 @@ import random
 
 
 user_id = int(sys.argv[1])
-based_on = sys.argv[2]
-gender = sys.argv[3]
-age = sys.argv[4]
-location = sys.argv[5]
-religion = sys.argv[6]
-height = sys.argv[7]
-r_status = sys.argv[8]
-m_status = sys.argv[9]
-need = sys.argv[10]
-student = sys.argv[11]
-school = sys.argv[12]
-course = sys.argv[13]
-level = sys.argv[14]
+event_id = int(sys.argv[2])
+based_on = sys.argv[3]
+gender = sys.argv[4]
+age = sys.argv[5]
+location = sys.argv[6]
+religion = sys.argv[7]
+height = sys.argv[8]
+r_status = sys.argv[9]
+m_status = sys.argv[10]
+need = sys.argv[11]
+student = sys.argv[12]
+school = sys.argv[13]
+course = sys.argv[14]
+level = sys.argv[15]
 
 
 conn = sqlite3.connect('../database/match.sqlite')
 
 def create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level):
+	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
 	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
 	if(age != "0"):
 			query+= " and profiles.age = " + age

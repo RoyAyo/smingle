@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Attending;
 
 class EventsController extends Controller
 {
@@ -12,9 +13,26 @@ class EventsController extends Controller
     }
 
     public function index(){
-    	$events = Event::where('verified',1)->paginate(10);
+        return view('events.index');
+    }
 
-    	return view('events.index')->with('events',$events);
+    public function show(){
+        $events = Event::where('verified',1)->paginate(10);
+        $events = Attending::where('verified',1)->paginate(10);
+
+        return view('events.shows')->with('events',$events);        
+    }
+
+    public function movies(){
+        $events = Event::where('verified',1)->paginate(10);
+
+        return view('events.movies')->with('events',$events);        
+    }
+
+    public function clubs(){
+        $events = Event::where('verified',1)->paginate(10);
+
+        return view('events.clubs')->with('events',$events);        
     }
 
     public function create(){

@@ -3,9 +3,9 @@
 @section('content')
 
 	<div class="container">
-		<div class="">
+		<div class="bg-white">
 			<div class="small-btn" style="text-align: right;">
-				<a href="{{ route('event.create') }}" id="create-event" class="btn btn-default btn-lg" style="font-weight: bold;">Suggest Event</a>
+				<a href="{{ route('event.create') }}" id="create-event" class="btn btn-default btn-lg">Add new event</a>
 			</div>
 			<div id="all-events">
 				@if($events->count() == 0)
@@ -15,7 +15,7 @@
 				@endif
 				@foreach($events as $event)
 					<div class="event card" style="padding-left: 0.4rem;margin-bottom: 0.5rem;">
-						<h2 class="event-date"> -){{ $event->event_name }}<span class="event_going" style="float: right;"> <button class="btn btn-info"> Attend </button> </span></h2>
+						<h2 class="event-date"> -) {{ $event->event_name }} <span class="event_going" style="float: right;"> <button class="btn btn-info btn-sm"> Attend </button> </span></h2>
 						<center>
 							<p class="event-avatar"> <img src="{{ asset('images/uploads/1.jpg') }}"> </p>
 						</center>
@@ -23,13 +23,15 @@
 						<h4 class="event-name"> Date: {{$event->event_time}} </h4>
 						<h4 class="event-name"> Venue: {{$event->venue}} </h4>
 						<h4 class="event-name"> About: {{$event->about}} </h4>
-						<h4 class="event-name"> Users Going: {{ $event->users_going}} </h4>
-						<h4 class="event-name"> Verified: {{$event->verified}} </h4>
-						<h4 class="event-name"> Attending: No </h4>
-						<button class="btn btn-default btn-lg verify" verified='{{ $event->verified == 0 ? 0:1 }}' ide="{{ $event->id }}">{{ $event->verified == 0 ? 'Verify' : 'Unverify' }}  </button>
+						<h4 class="event-name"> Users Going: {{ $event->users_going }} </h4>
+						<h4 class="event-name"> Attending: {{ $event->attending }} </h4>
+						@if($event->users_going > 1)
+							<button class="btn btn-default btn-lg match"><a href="#"> Find Match For Event </a></button>
+						@endif
 					</div>
 				@endforeach
 			</div>
 		</div>
 	</div>
+
 @endsection
