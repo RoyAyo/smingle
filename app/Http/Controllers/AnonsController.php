@@ -21,7 +21,7 @@ class AnonsController extends Controller
     public function create(Request $request){
     	
     	$this->validate($request,[
-    		'message'=> ['filled','max:300']
+    		'message'=> ['filled','max:400']
     	]);
 
     	AnonMessage::create([

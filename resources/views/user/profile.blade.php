@@ -2,9 +2,6 @@
 
 @section('content')
     <div class="jumbo"></div>
-    <div class="icons">
-        <div class="big-icon"></div>
-    </div>
     <div class="details">
         <h3>{{ $user->name }}</h3>
         @if($user->profile->student == 1)

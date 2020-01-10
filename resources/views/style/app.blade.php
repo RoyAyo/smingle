@@ -376,7 +376,7 @@
 @media screen and (max-width: 600px) {
 	
 	.jumbo {
-		height: 200px !important;
+		height: 400px !important;
 	}
 	
 	.icons {
