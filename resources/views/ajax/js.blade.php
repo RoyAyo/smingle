@@ -63,25 +63,44 @@
             const id = $(this).attr('ide');
             var v = $(this).attr('verified');
             if (v == "0") {
-                $(this).attr('verified','1');
                 v = 1;
+                $(this).attr('verified','1');
+                $(this).html('Unverify');
             }else{
                 v = 0;
                 $(this).attr('verified','0');
+                $(this).html('Verify');
             }
 
             $.post('adminevent/verify/'+id,{
                 '_token' : token,
                 'v' : v
-            },(res) => {
-                if (v == '0') {
-                    $(this).html('Unverify');
-                }else{
-                    $(this).html('Verify');
-                }
             });
         });
 
+
+        $('.attend_event').on('click',function(){
+            const id = $(this).attr('ide');
+            var a = $(this).attr('attend');
+            if (a == "0") {
+                a = 1;
+                $(this).attr('attend','1');
+                $(this).html('Unattend');
+            }else{
+                a = 0;
+                $(this).attr('attend','0');
+                $(this).html('Attend');
+            }
+            alert(a)
+            $.post('attend/'+id,{
+                '_token' : token,
+                'a' : a
+            },(res) => {
+                $('.event_going_'+id).attr('attending',res);
+                $('.event_going_'+id).html('Users Going: '+res);
+            });
+
+        });
         
 
         //pusher for my messages

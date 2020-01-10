@@ -15,7 +15,7 @@
 				@endif
 				@foreach($events as $event)
 					<div class="event card" style="padding-left: 0.4rem;margin-bottom: 0.5rem;">
-						<h2 class="event-date"> -){{ $event->event_name }}<span class="event_going" style="float: right;"> <button class="btn btn-info"> Attend </button> </span></h2>
+						<h2 class="event-date"> -){{ $event->event_name }}</h2>
 						<center>
 							<p class="event-avatar"> <img src="{{ asset('images/uploads/1.jpg') }}"> </p>
 						</center>

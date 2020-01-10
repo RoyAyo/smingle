@@ -8,6 +8,9 @@
                 <div class="card-header">Events DashBoard</div>
                 <div class="card-body">
                     <button>
+                        <a href="{{ route('event.create') }}" class="btn btn-default btn-center"> Suggest Event To Us </a>
+                    </button><br><br>
+                    <button>
                         <a href="{{ route('events.show') }}" class="btn btn-default btn-center"> Shows </a>
                     </button><br><br>
                     <button>
