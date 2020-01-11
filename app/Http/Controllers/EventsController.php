@@ -33,9 +33,12 @@ class EventsController extends Controller
         return view('events.event')->with('events',$events);   
     }
 
-    public function create(){
-
-    	return view('events.create');
+    public function createshow(){    
+    	return view('events.createshow');
+    }
+    
+    public function createshow(){
+        return view('events.createparty');
     }
 
     public function store(Request $request){
