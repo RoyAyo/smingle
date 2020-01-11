@@ -9,15 +9,11 @@
                 <div class="card-body">
                     <button>
                         <a data-target='#addyourevent' data-toggle='modal' class="btn btn-default btn-center"> Add Event </a>
+                        <a href="{{ route('event.create') }}" class="btn btn-default btn-center"> Suggest Event To Us </a>
                     </button><br><br>
                     <button>
-                        <a href="#" class="btn btn-default btn-center"> Notifications </a>
-                    </button>
-                    @if(auth()->user()->id == 1)
-                        <button>
-                            <a href="{{ route() }}"></a>
-                        </button>
-                    @endif
+                        <a href="{{ route('events.show') }}" class="btn btn-default btn-center"> Shows </a>
+                    </button><br><br>
                 </div>
             </div>
         </div>

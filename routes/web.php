@@ -54,7 +54,6 @@ Route::post('pp','UsersController@pics')->name('pics');
 Route::get('anon','AnonsController@index')->name('anon');
 Route::post('anon','AnonsController@create')->name('anon.create');
 
-
 //groupby events
 Route::get('events','EventsController@index')->name('events');
 Route::get('events/event/{id}','EventsController@event')->name('event.id');
@@ -73,3 +72,4 @@ Route::get('events/privateshow/{id}','EventsController@privateshow')->name('even
 Route::get('events/privateparty/{id}','EventsController@privatepart')->name('event.privateparty');
 Route::get('events/admin','AdminsController@index')->name('adminevent');
 Route::post('events/admin/verify/{id}','AdminsController@verify');
+
