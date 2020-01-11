@@ -54,11 +54,22 @@ Route::post('pp','UsersController@pics')->name('pics');
 Route::get('anon','AnonsController@index')->name('anon');
 Route::post('anon','AnonsController@create')->name('anon.create');
 
-Route::get('event','EventsController@index')->name('events');
-Route::get('event/show','EventsController@show')->name('events.show');
-Route::post('event/store','EventsController@store')->name('event.store');
-Route::get('createvent','EventsController@create')->name('event.create');
 
-Route::get('adminevent','AdminsController@index')->name('adminevent');
-// Route::get('adminevent/{id}','AdminsController@index');
-Route::post('adminevent/verify/{id}','AdminsController@verify');
+//groupby events
+Route::get('events','EventsController@index')->name('events');
+Route::get('events/event/{id}','EventsController@event')->name('event.id');
+Route::get('events/shows','EventsController@show')->name('event.show');
+Route::get('events/parties','EventsController@party')->name('event.party');
+Route::get('events/movies','EventsController@movie')->name('event.movie');
+Route::post('events/storeshow','EventsController@storeshow')->name('event.storeshow');
+Route::post('events/storeparty','EventsController@storeparty')->name('event.storeparty');
+Route::post('events/storemovie','EventsController@storemovie')->name('event.storemovie');
+Route::get('events/addshow','EventsController@createshow')->name('event.createshow');
+Route::get('events/addparty','EventsController@createparty')->name('event.createparty');
+Route::get('events/addmovie','EventsController@createmovie')->name('event.createmovie');
+Route::get('events/suggest','EventsController@suggest')->name('event.suggest');
+Route::post('events/suggest','EventsController@suggest')->name('event.storesuggest');
+Route::get('events/privateshow/{id}','EventsController@privateshow')->name('event.privateshow');
+Route::get('events/privateparty/{id}','EventsController@privatepart')->name('event.privateparty');
+Route::get('events/admin','AdminsController@index')->name('adminevent');
+Route::post('events/admin/verify/{id}','AdminsController@verify');

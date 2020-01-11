@@ -17,22 +17,20 @@ class EventsController extends Controller
     }
 
     public function show(){
-        $events = Event::where('verified',1)->paginate(10);
-        $events = Attending::where('verified',1)->paginate(10);
+        $events = Event::where('verified',1)->where('category',1)->where('public',1)->paginate(10);
 
-        return view('events.shows')->with('events',$events);        
+        return view('events.event')->with('events',$events);
+    }
+    public function party(){
+        $events = Event::where('verified',1)->where('category',2)->where('public',1)->paginate(10);
+
+        return view('events.event')->with('events',$events);
     }
 
-    public function movies(){
-        $events = Event::where('verified',1)->paginate(10);
+    public function movie(){
+        $events = Event::where('verified',1)->where('category',3)->where('public',1)->paginate(10);
 
-        return view('events.movies')->with('events',$events);        
-    }
-
-    public function clubs(){
-        $events = Event::where('verified',1)->paginate(10);
-
-        return view('events.clubs')->with('events',$events);        
+        return view('events.event')->with('events',$events);   
     }
 
     public function create(){

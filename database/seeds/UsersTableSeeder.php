@@ -20,7 +20,8 @@ class UsersTableSeeder extends Seeder
             'DOB' => "1998-06-24",
             'about' => "I own this freaking site niggas,I am a goat",
             'cluster' => 1,
-            'zodiac' => "Cancer"
+            'zodiac' => "Cancer",
+            'sub' => 3
         ]);
 
         App\Profile::create([

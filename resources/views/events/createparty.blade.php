@@ -4,7 +4,7 @@
 
 	<div class="container">
 		<div class="card" style="height: calc(100vh - 58px);">
-			<form role="form" action="{{ route('event.store') }}" method="POST" enctype="">
+			<form role="form" action="{{ route('event.storeparty') }}" method="POST" enctype="">
 				@csrf
 
 				<div class="form-group">
@@ -14,6 +14,13 @@
 				<div class="form-group">
 					<label for="host_name" class="col-form-label">Host Name</label>
 					<input type="text" name="host_name" id="host_name" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="host_name" class="col-form-label">Private Party</label>
+					<select class="form-group" name="private">
+						<option value="0">Yes</option>
+						<option value="1">No</option>
+					</select>
 				</div>
 				<div class="form-group">
 					<label for="venue" class="col-form-label">Venue</label>
