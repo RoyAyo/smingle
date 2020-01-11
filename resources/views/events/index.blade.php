@@ -3,33 +3,33 @@
 @section('content')
 <div class="container-fluid" style="padding-top: 10px;">
     <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">Events</div>
-                <div class="card-body">
-                    <button>
-                        <a data-target='#addyourevent' data-toggle='modal' class="btn btn-default btn-center"> Add Event </a>
-                        <a href="{{ route('event.create') }}" class="btn btn-default btn-center"> Suggest Event To Us </a>
-                    </button><br><br>
-                    <button>
-                        <a href="{{ route('events.show') }}" class="btn btn-default btn-center"> Shows </a>
-                    </button><br><br>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-7">
+        <div class="col-md-7" style="margin-bottom: 0.5rem;">
             <div class="card">
                 <div class="card-header">Events Types</div>
                 <div class="card-body">
                     <button>
-                        <a href="{{ route('events.show') }}" class="btn btn-default btn-center"> Shows </a>
+                        <a href="{{ route('event.show') }}" class="btn btn-default btn-center"> Shows </a>
                     </button><br><br>
                     <button>
-                        <a href="#" class="btn btn-default btn-center"> Parties </a>
-                    </button>
+                        <a href="{{ route('event.party') }}" class="btn btn-default btn-center"> Parties </a>
+                    </button><br><br>
                     <button>
-                        <a href="#" class="btn btn-default btn-center"> Suggest Event To Us </a>
+                        <a href="{{ route('event.movie') }}" class="btn btn-default btn-center"> Movies </a>
                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-header">Others</div>
+                <div class="card-body">
+                    <button>
+                        <a href="{{ route('event.notifications') }}" class="btn btn-default btn-center"> Notifications </a>
+                    </button><br><br>
+                    <button>
+                        <a data-target='#addyourevent' data-toggle='modal' class="btn btn-default btn-center"> Add Event </a>
+                    </button><br><br>
+                </div>
             </div>
         </div>
     </div>
@@ -45,19 +45,13 @@
             </div>
             <div class="modal-body">
                 <button>
-                        <a href="#" class="btn btn-default btn-center"> Suggest Event To Us </a>
+                        <a href="{{ route('event.suggest') }}" class="btn btn-default btn-center"> Suggest Event To Us </a>
                 </button><br><br>
                 <button>
-                        <a href="#" class="btn btn-default btn-center"> Host A Party </a>
+                        <a href="{{ route('event.createparty') }}" class="btn btn-default btn-center"> Host A Party </a>
                 </button><br><br>
                 <button>
-                    <a href="#" class="btn btn-default btn-center"> Register Your Club </a>
-                </button><br><br>
-                <button>
-                    <a href="#" class="btn btn-default btn-center"> Register Your Show </a>
-                </button><br><br>
-                <button>
-                    <a href="{{ route('events.show') }}" class="btn btn-default btn-center"> Register Your Cinema </a>
+                    <a href="{{ route('event.createshow') }}" class="btn btn-default btn-center"> Host A Show </a>
                 </button><br><br>
             </div>
             <div class="modal-footer">

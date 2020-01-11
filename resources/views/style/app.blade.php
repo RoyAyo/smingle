@@ -415,7 +415,7 @@
 		}
 	}
 
-	.verify:hover{
+	.verify:hover,.event_match:hover,.attend_event:hover{
 		background-color: blue;
 	}
 	.event-going:after{

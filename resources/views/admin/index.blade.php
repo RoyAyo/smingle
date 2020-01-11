@@ -4,9 +4,6 @@
 
 	<div class="container">
 		<div class="">
-			<div class="small-btn" style="text-align: right;">
-				<a href="{{ route('event.create') }}" id="create-event" class="btn btn-default btn-lg" style="font-weight: bold;">Suggest Event</a>
-			</div>
 			<div id="all-events">
 				@if($events->count() == 0)
 					<div>

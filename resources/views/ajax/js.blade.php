@@ -65,16 +65,24 @@
             if (v == "0") {
                 v = 1;
                 $(this).attr('verified','1');
-                $(this).html('Unverify');
+                // $(this).html('Unverify');
             }else{
                 v = 0;
                 $(this).attr('verified','0');
-                $(this).html('Verify');
+                // $(this).html('Verify');
             }
 
-            $.post('adminevent/verify/'+id,{
+            $.post('admin/verify/'+id,{
                 '_token' : token,
                 'v' : v
+            },(res)=>{
+             // if (res == '1') {
+             //    $('.event_going_'+id).attr('attending',res);
+             //    $('.event_going_'+id).html('Users Going: '+res);
+             // }else{
+             //    $('.event_going_'+id).attr('attending',res);
+             //    $('.event_going_'+id).html('Users Going: '+res);
+             // }
             });
         });
 

@@ -57,6 +57,7 @@ Route::post('anon','AnonsController@create')->name('anon.create');
 //groupby events
 Route::get('events','EventsController@index')->name('events');
 Route::get('events/event/{id}','EventsController@event')->name('event.id');
+Route::post('events/event/attend/{id}','EventsController@attend')->name('event.attend');
 Route::get('events/shows','EventsController@show')->name('event.show');
 Route::get('events/parties','EventsController@party')->name('event.party');
 Route::get('events/movies','EventsController@movie')->name('event.movie');
@@ -67,7 +68,8 @@ Route::get('events/addshow','EventsController@createshow')->name('event.createsh
 Route::get('events/addparty','EventsController@createparty')->name('event.createparty');
 Route::get('events/addmovie','EventsController@createmovie')->name('event.createmovie');
 Route::get('events/suggest','EventsController@suggest')->name('event.suggest');
-Route::post('events/suggest','EventsController@suggest')->name('event.storesuggest');
+Route::get('events/notifications','EventsController@notifications')->name('event.notifications');
+Route::post('events/suggest','EventsController@storesuggest')->name('event.storesuggest');
 Route::get('events/privateshow/{id}','EventsController@privateshow')->name('event.privateshow');
 Route::get('events/privateparty/{id}','EventsController@privatepart')->name('event.privateparty');
 Route::get('events/admin','AdminsController@index')->name('adminevent');
