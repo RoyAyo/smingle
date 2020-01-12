@@ -18,9 +18,9 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-<!-- 
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -118,7 +118,7 @@
 	<div id="loader-div">
 		<div id="loader">
 	</div>
-<!-- 	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script> -->
+	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 	@extends('ajax.js')
 	<script>
 		@if(Session::has('anon'))

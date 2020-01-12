@@ -111,23 +111,23 @@
         });
         
 
-        //pusher for my messages
-            // Pusher.logToConsole = true;
+        pusher for my messages
+            Pusher.logToConsole = true;
 
-            // var pusher = new Pusher('0af97750b30e5e72df02', {
-            //     cluster: 'eu',
-            //     forceTLS: true
-            // });
+            var pusher = new Pusher('0af97750b30e5e72df02', {
+                cluster: 'eu',
+                forceTLS: true
+            });
 
-            // var channel = pusher.subscribe('my-channel');
-            // channel.bind('my-event', function(data) {
-            //     $('#chat-message').val("");
-            //     if (data.message.sender_id == {{auth()->user()->id}}) {
-            //         $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
-            //     }else{
-            //         $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
-            //     }
-            // });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+                $('#chat-message').val("");
+                if (data.message.sender_id == {{auth()->user()->id}}) {
+                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
+                }else{
+                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
+                }
+            });
     
 
         $('#send-message-btn').on('click', (e) => {
