@@ -24,7 +24,7 @@ class UsersController extends Controller
 									->with('owner',$owner);
    }
 
-   public function pics(Request $request){
+    public function pics(Request $request){
         $this->validate($request,[
             'pics' => 'required|image'
         ]);
@@ -43,4 +43,18 @@ class UsersController extends Controller
 
         return redirect()->back();
    }
+
+    public function search(Request $request){
+        $username = $request->username;
+
+        $user = User::Where('username','LIKE','%'.$username.'%')->orWhere('name','LIKE','%'.$username.'%');
+        $error = ["Please Search For A Valid User"];
+        if($user->count() == 0){
+            return json_encode($error);
+        }else{
+            $search = $user->get();
+
+            return json_encode($search);
+        }
+    }
 }

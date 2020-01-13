@@ -90,10 +90,10 @@
 	                    <a href="{{ route('events') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-schedule-64.png') }}">Events</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-female-skin-type-3-16.png') }}">My Type Of {{ auth()->user()->gender== 1 ? "Woman" : "Man" }}</a>
+	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">How To Use</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">How To Use</a>
+	                    <a data-target="#searchModal" data-toggle="modal"  style="color: grey;cursor: pointer;"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">Search For User</a>
 	                </li>
 	                <li>
 	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-settings-100.png') }}">Settings</a>
@@ -142,6 +142,10 @@
 					</div>
 					<div class="arrow"><--></div>
 					<div class="imdiv">
+						<div>
+							<img src="{{ asset('images/uploads/4.jpg') }}">
+						</div>
+						<div class="name">
 							Kate Kendall
 						</div>
 					</div>
@@ -149,7 +153,32 @@
 			</div>
 		</div>
 	</div>
-	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
+<div class="modal fade" id="searchModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Search For A User</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" class="form-group" action="{{ route('user.search') }}" method="POST">
+                    <label for="check-user-match"> Username </label>
+                    <input type="text" name="username" id="search-user" class="form-control" required placeholder="Search By Name Or Username" />
+                    <button id="user-search" type="submit" class="btn btn-info">Search..</button>
+                </form>
+                <div style="font-size: 20pt;" id="search-info">
+                    
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script> -->
 	@extends('ajax.js')
 	<script>
 		@if(Session::has('anon'))

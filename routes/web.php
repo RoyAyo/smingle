@@ -44,12 +44,14 @@ Route::post('/comp','CompsController@check')->name('comp.check');
 
 Route::post('/match','MatchesController@check')->name('match.check');
 
+
 Route::get('/messages','MessagesController@index')->name('messages');
 Route::get('/message/{id}','MessagesController@message')->name('message');
 Route::post('/message/{id}','MessagesController@store')->name('message.store');
 
 Route::get('/user/{id}','UsersController@index')->name('user');
 Route::post('pp','UsersController@pics')->name('pics');
+Route::post('/searchuser','UsersController@search')->name('user.search');
 
 Route::get('anon','AnonsController@index')->name('anon');
 Route::post('anon','AnonsController@create')->name('anon.create');

@@ -15,7 +15,7 @@
                         <a href="{{ route('filter') }}" class="btn btn-default btn-center" style="color: black;"> Find Match </a>
                     </button><br><br>
                     <button>
-                        <a data-target="#checkModal" data-toggle="modal" class="btn btn-default btn-center"> Find Now!!! </a>
+                        <a href="#" class="btn btn-default btn-center"> Group Match </a>
                     </button><br><br>
                     <button>
                         <a data-target="#checkModal" data-toggle="modal" class="btn btn-default btn-center"> Crush Checker </a>

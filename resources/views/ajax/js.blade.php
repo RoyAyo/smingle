@@ -112,22 +112,22 @@
         
 
         // //pusher for my messages
-            Pusher.logToConsole = true;
+            // Pusher.logToConsole = true;
 
-            var pusher = new Pusher('0af97750b30e5e72df02', {
-                cluster: 'eu',
-                forceTLS: true
-            });
+            // var pusher = new Pusher('0af97750b30e5e72df02', {
+            //     cluster: 'eu',
+            //     forceTLS: true
+            // });
 
-            var channel = pusher.subscribe('my-channel');
-            channel.bind('my-event', function(data) {
-                $('#chat-message').val("");
-                if (data.message.sender_id == {{auth()->user()->id}}) {
-                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
-                }else{
-                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
-                }
-            });
+            // var channel = pusher.subscribe('my-channel');
+            // channel.bind('my-event', function(data) {
+            //     $('#chat-message').val("");
+            //     if (data.message.sender_id == {{auth()->user()->id}}) {
+            //         $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
+            //     }else{
+            //         $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
+            //     }
+            // });
         
 
         $('.chatwithme').on('click',function(){
@@ -170,6 +170,27 @@
             }else{
                 $('#studentship').fadeOut(200);
             }
+        });
+
+        $('#user-search').on('click',(e) => {
+            e.preventDefault();
+
+            const username = $('#search-user').val();
+
+
+            $.post('searchuser',{
+                '_token': token,
+                'username':username
+            },(res) => {
+                const result = JSON.parse(res);
+                $('#search-info').empty();
+                
+                result.forEach(r => {
+                    var c = $('<div class="card" style="margin-bottom:0.1rem;"></div>');
+                    c.appendTo('#search-info');
+                    $('<p><a href="{{  }}">'+ r.name +'</a></p>').appendTo(c);
+                });
+            });
         });
     });
 
