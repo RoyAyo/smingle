@@ -186,9 +186,11 @@
                 $('#search-info').empty();
                 
                 result.forEach(r => {
-                    var c = $('<div class="card" style="margin-bottom:0.1rem;"></div>');
+                    var c = $('<div class="card" style="margin-bottom:0.3rem;"></div>');
                     c.appendTo('#search-info');
-                    $('<p><a href="{{  }}">'+ r.name +'</a></p>').appendTo(c);
+                    $('<p class="serached-user-avatar"></p>').appendTo(c);
+                    $('<h4><a href="#">'+ r.name +'</a></h4>').appendTo(c);
+                    $('<h5>'+ r.username +'</h5>').appendTo(c);
                 });
             });
         });
