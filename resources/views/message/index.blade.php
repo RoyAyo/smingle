@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-5">
+		<div class="col-md-5 useless-message">
 			<div class="card" style="font-family: serif;">
 				<h3 style="text-align: center;" class="card-header">Messages </h3>
 				<div style="padding: 1rem 1.2rem">
@@ -14,7 +14,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-7">
+		<div class="col-md-7 useless-chat">
 			<div class="card">
 				<div class="message-card">
 					<div class="messages">
@@ -28,7 +28,7 @@
 							</div>
 							<div class="message-input">
 								<form action="">
-									<input type="hidden" id="otherid" value="">
+									<input type="hidden" id="otherid" value="{{$message->other_id}}">
 									<input id="chat-message" type="text" placeholder="Message..." /><button type="submit" id="send-message-btn" style="display: inline-block;" class="btn btn-sm"><img src="{{ asset('images/icons/arrow-right-128.png') }}"></button>
 				        		</form>
 			        		</div>

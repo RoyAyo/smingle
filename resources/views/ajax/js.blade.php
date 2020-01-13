@@ -157,7 +157,7 @@
             const message = $('#chat-message').val();
             const other_id = $('#otherid').val();
 
-            $.post(other_id,{
+            $.post('message/'+other_id,{
                 '_token':token,
                 'message':message
             });
