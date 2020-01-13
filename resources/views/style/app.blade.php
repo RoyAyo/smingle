@@ -1,5 +1,6 @@
 <style>
 	/* Default properties for the website */
+	message-card
 	*{
 		box-sizing: border-box;
 	}
@@ -277,14 +278,16 @@
 		margin-bottom: 0.5rem;
 	}
 	/* Messaging styles */
-		.message-card{
+	.message-card{
 		height: calc(100vh - 58px);
+		
 	}
 	.messages{
 		position: relative;
 		width: 100%;
 		height: calc(100vh - 58px);
 		background-color: #E6EAEA;
+		display: none;
 	}
 	.message-header{
 		background-color: #fff;
@@ -371,6 +374,13 @@
 		width: 20px;
 	}
 
+	#default-m{
+		position: relative;
+		top: calc(((100vh - 58px) / 2) - 15px);
+		text-align: center;
+		font-size: 18pt;
+	}
+
 
 	/*media query for profile pahe*/
 @media screen and (max-width: 600px) {
@@ -408,12 +418,6 @@
 	.event-name a:hover{
 		color: rgba(220,0,0,0.5);
 	}
-	@media(max-width: 700px){
-		.event-avatar img{
-			width: 250px;
-			height: 250px;
-		}
-	}
 
 	.verify:hover,.event_match:hover,.attend_event:hover{
 		background-color: blue;
@@ -425,4 +429,64 @@
 	#studentship{
 		display: none;
 	}
+	#matched-div{
+		position: fixed;
+		z-index: 999999;
+		width: 100vw;
+		height: 100vh;
+		top: 0;
+		display: none;
+	}
+	.match-imgs{
+		display: flex;
+		justify-content:space-around;
+	}
+	.match-imgs .imdiv{
+		display: flex;
+		flex-direction: column;
+	}
+	.match-imgs .imdiv div{
+		margin-bottom: 0.25rem;
+	}
+	.match-imgs img{
+		height: 300px;
+		width: 300px;
+		border-radius: 50%;
+	}
+	.match-imgs .arrow{
+		position: relative;
+		top: 130px;
+		font-size: 30pt;
+		font-weight: bold;
+	}
+	@media(max-width: 730px){
+		.event-avatar img{
+			width: 250px;
+			height: 250px;
+		}
+		.match-imgs img{
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+		}
+		.match-imgs .arrow{
+			top: 60px;
+			font-size: 20pt;
+		}
+	}
+	@media(max-width: 420px){
+		.match-imgs{
+			margin-top: 60px;
+		}
+		.match-imgs img{
+			height: 120px;
+			width: 120px;
+			border-radius: 50%;
+		}
+		.match-imgs .arrow{
+			top: 50px;
+			font-size: 12pt;
+		}
+	}
+
 </style>

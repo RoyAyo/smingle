@@ -111,7 +111,7 @@
         });
         
 
-        pusher for my messages
+        // //pusher for my messages
             Pusher.logToConsole = true;
 
             var pusher = new Pusher('0af97750b30e5e72df02', {
@@ -123,12 +123,34 @@
             channel.bind('my-event', function(data) {
                 $('#chat-message').val("");
                 if (data.message.sender_id == {{auth()->user()->id}}) {
-                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
+                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
                 }else{
-                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                    
+                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
                 }
             });
-    
+        
+
+        $('.chatwithme').on('click',function(){
+            const other_id = $(this).attr('ide');
+            const name = $(this).html();
+            const chats = JSON.parse($(this).attr('mess'));
+
+
+            $('#default-m').hide();
+            $('.messages').show();
+            $('#chat-name').html(name);
+
+            //go and include all the chats init
+            chats.forEach((e) => {
+                const id = e.sender_id;
+                if (id == {{auth()->user()->id}}) {
+                    $('<p class="sent"><span class="text">' + e.message + '</span></p>').appendTo('#chats');
+                }else{
+                    $('<p class="replies"><span class="text">' + e.message + '</span></p>').appendTo('#chats');
+                }
+            });
+
+        })
 
         $('#send-message-btn').on('click', (e) => {
             e.preventDefault();

@@ -32,6 +32,8 @@ class MessagesController extends Controller
                 $id = $message->sender_id == $user_id ? $message->receiver_id : $message->sender_id;
                 $message->name = User::find($id)->name;
                 $message->other_id = User::find($id)->id;
+                $chats = $this->message($id);
+                $message->all_chats = $chats;
                 array_push($f_messages, $message);
                 array_push($check, $a);
             }
@@ -53,6 +55,8 @@ class MessagesController extends Controller
         	$query->where('sender_id','=',$other_id)
         	->where('receiver_id','=',$user_id);
         })->orderBy('created_at')->get();
+
+        return $messages;
 
 
         $other_name = User::find($other_id)->username;

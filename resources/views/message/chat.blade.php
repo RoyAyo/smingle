@@ -1,6 +1,6 @@
-@extends('layouts.myapp')
+@extends('message.index')
 
-@section('content')
+@section('thechats')
 <div class="message-card">
 		<div class="messages">
 			<div class="message-header">

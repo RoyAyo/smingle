@@ -19,8 +19,8 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"> -->
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -103,10 +103,10 @@
 			<div id="page-content-wrapper">
 	            <div class="container-fluid">
 	                <div class="row">
-	                    <div class="col-lg-9">
+	                    <div class="col-lg-10">
 	                    	@yield('content')
 	                    </div>
-	                    <div class="col-lg-3">
+	                    <div class="col-lg-2">
 	                    	
 	                    </div>
 	                </div>
@@ -116,7 +116,31 @@
         </article>
 	</div>
 	<div id="loader-div">
-		<div id="loader">
+		<div id="loader"></div>
+	</div>
+	<div id="matched-div">
+		<div class="card" style="width: 100vw;height: 100vh;background-color: rgba(180,180,180,0.8);">
+			<div class="card-header" style="background-color: #fff">
+				<button type="button" class="close">&times;</button>
+			</div>
+			<div class="card-body">
+				<div class="match-imgs">
+					<div class="imdiv">
+						<div>
+							<img src="{{ asset('images/uploads/4.jpg') }}">
+						</div>
+						<div class="name">
+							{{auth()->user()->name}}
+						</div>
+					</div>
+					<div class="arrow"><--></div>
+					<div class="imdiv">
+							Kate Kendall
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 	@extends('ajax.js')
