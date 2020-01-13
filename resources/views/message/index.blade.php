@@ -1,9 +1,9 @@
 @extends('layouts.myapp')
 
-@section('content')
+@section('message')
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-5 useless-message">
+		<div class="col-lg-4 useless-message">
 			<div class="card" style="font-family: serif;">
 				<h3 style="text-align: center;" class="card-header">Messages </h3>
 				<div style="padding: 1rem 1.2rem">
@@ -14,7 +14,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-md-7 useless-chat">
+		<div class="col-lg-8 useless-chat">
 			<div class="card">
 				<div class="message-card">
 					<div class="messages">

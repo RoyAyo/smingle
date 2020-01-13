@@ -459,8 +459,8 @@
 		font-size: 30pt;
 		font-weight: bold;
 	}
-	@media(max-width: 730px){
-		.event-avatar img{
+	@media(max-width: 768px){
+		.event-avatar img{	
 			width: 250px;
 			height: 250px;
 		}
@@ -486,6 +486,11 @@
 		.match-imgs .arrow{
 			top: 50px;
 			font-size: 12pt;
+		}
+	}
+	@media(max-width: 990px){
+		.useless-chat{
+			display: none;
 		}
 	}
 
