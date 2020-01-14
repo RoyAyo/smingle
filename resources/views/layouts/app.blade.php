@@ -23,6 +23,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @extends('style.app')
 </head>
 <body>
     <div id="app">
@@ -71,12 +72,6 @@
                                     </form>
                                 </div>
                             </li>
-                            <div style="margin-left: 2rem;text-decoration: none;color: red;font-size: 12.5pt;margin-top: 0.2rem">
-                                <a href="{{ route('filter') }}"> Filter </a>
-                            </div>
-                            <div style="margin-left: 2rem;text-decoration: none;color: red;font-size: 12.5pt;margin-top: 0.2rem">
-                                <a href="{{ route('about') }}"> Take Survey </a>
-                            </div>
                         @endguest
                     </ul>
                 </div>
@@ -86,6 +81,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @extends('ajax.js')
     </div>
 </body>
 </html>

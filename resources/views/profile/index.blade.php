@@ -131,61 +131,69 @@
                 @endif
             </div>
         </div>
+        
         <div class="form-group row">
-        	<label for="student" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
+            <label for="student" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
+
             <div class="col-md-6">
-                <input type="checkbox" name="student" id="student" value=1 checked>
+                <select id="student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" >
+                    <option value="0"> No </option>
+                    <option value="1"> Yes </option>
+                </select>
+
                 @if ($errors->has('student'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('student') }}</strong>
                     </span>
                 @endif
             </div>
-            
         </div>
-        <div class="form-group row">
-            <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('School') }}</label>
+        <div id="studentship">
+            <div class="form-group row">
+                <label for="school" class="col-md-4 col-form-label text-md-right">{{ __('School') }}</label>
 
-            <div class="col-md-6">
-                <input type="text" name="school" id="school" class="form-control{{ $errors->has('school') ? ' is-invalid' : '' }}" value="{{ old('school') }}" >
-                @if ($errors->has('school'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('school') }}</strong>
-                    </span>
-                @endif
+                <div class="col-md-6">
+                    <input type="text" name="school" id="school" class="form-control{{ $errors->has('school') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->school : '' }}" >
+                    @if ($errors->has('school'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('school') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
+            <div class="form-group row">
+                <label for="course" class="col-md-4 col-form-label text-md-right">{{ __('Course') }}</label>
 
-            <div class="col-md-6">
-                <input type="text" name="course" id="course" class="form-control{{ $errors->has('course') ? ' is-invalid' : '' }}" value="{{ old('course') }}" >
-                @if ($errors->has('course'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('course') }}</strong>
-                    </span>
-                @endif
+                <div class="col-md-6">
+                    <input type="text" name="course" id="course" class="form-control{{ $errors->has('course') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->course : '' }}" >
+                    @if ($errors->has('course'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('course') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('level') }}</label>
+            <div class="form-group row">
+                <label for="level" class="col-md-4 col-form-label text-md-right">{{ __('level') }}</label>
 
-            <div class="col-md-6">
-                <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
-                    <option value="1"> 100 </option>
-                    <option value="2"> 200 </option>
-                    <option value="3"> 300 </option>
-                    <option value="4"> 400 </option>
-                    <option value="5"> 500 </option>
-                    <option value="6"> Masters </option>
-                    <option value="7"> phD </option>
-                </select>
+                <div class="col-md-6">
+                    <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
+                        <option value="0"> Indifferent </option>
+                        <option value="1"> 100 </option>
+                        <option value="2"> 200 </option>
+                        <option value="3"> 300 </option>
+                        <option value="4"> 400 </option>
+                        <option value="5"> 500 </option>
+                        <option value="6"> Masters </option>
+                        <option value="6"> Ph.D </option>
+                    </select>
 
-                @if ($errors->has('level'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('level') }}</strong>
-                    </span>
-                @endif
+                    @if ($errors->has('level'))
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('level') }}</strong>
+                        </span>
+                    @endif
+                </div>
             </div>
         </div>
         <div class="form-group row mb-0">
@@ -195,6 +203,5 @@
                 </button>
             </div>
         </div>
-
 	</form>
 @endsection
