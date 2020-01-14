@@ -28,7 +28,7 @@
 							</div>
 							<div class="message-input">
 								<form action="">
-									<input type="hidden" id="otherid" value="{{$message->other_id}}">
+									<input type="hidden" id="otherid" >
 									<input id="chat-message" type="text" placeholder="Message..." /><button type="submit" id="send-message-btn" style="display: inline-block;" class="btn btn-sm"><img src="{{ asset('images/icons/arrow-right-128.png') }}"></button>
 				        		</form>
 			        		</div>

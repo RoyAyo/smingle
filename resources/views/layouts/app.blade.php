@@ -71,12 +71,6 @@
                                     </form>
                                 </div>
                             </li>
-                            <div style="margin-left: 2rem;text-decoration: none;color: red;font-size: 12.5pt;margin-top: 0.2rem">
-                                <a href="{{ route('filter') }}"> Filter </a>
-                            </div>
-                            <div style="margin-left: 2rem;text-decoration: none;color: red;font-size: 12.5pt;margin-top: 0.2rem">
-                                <a href="{{ route('about') }}"> Take Survey </a>
-                            </div>
                         @endguest
                     </ul>
                 </div>

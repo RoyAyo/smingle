@@ -141,14 +141,17 @@
             $('#chat-name').html(name);
 
             //go and include all the chats init
+            $('#chats').empty();
             chats.forEach((e) => {
                 const id = e.sender_id;
+
                 if (id == {{auth()->user()->id}}) {
                     $('<p class="sent"><span class="text">' + e.message + '</span></p>').appendTo('#chats');
                 }else{
                     $('<p class="replies"><span class="text">' + e.message + '</span></p>').appendTo('#chats');
                 }
             });
+                $('#otherid').attr('value',other_id);
 
         })
 
@@ -156,6 +159,8 @@
             e.preventDefault();
             const message = $('#chat-message').val();
             const other_id = $('#otherid').val();
+
+            alert(other_id);
 
             $.post('message/'+other_id,{
                 '_token':token,
