@@ -176,6 +176,14 @@
                 $('#studentship').fadeOut(200);
             }
         });
+        $('#student').on('change',function() {
+            const s = $(this).val();
+            if (s == 1) {
+                $('#studentship').fadeIn(200);
+            }else{
+                $('#studentship').fadeOut(200);
+            }
+        });
 
         $('#user-search').on('click',(e) => {
             e.preventDefault();
