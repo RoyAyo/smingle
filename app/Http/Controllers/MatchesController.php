@@ -46,7 +46,7 @@ class MatchesController extends Controller
     	$user_id = json_encode($user_id);
     	$filter = json_encode($filter);
 
-    	$process = new Process('python3 ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level);
+    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level);
 		$process->run();
 
 		if (!$process->isSuccessful()) {
@@ -58,16 +58,18 @@ class MatchesController extends Controller
 		$d = json_decode($best_match);
 		if ($d === 0) {
 			if ($user_gender == 2) {
-				return "Nobody Matches Your Perfect Self, Please Edit Your Filters Or Try Again Later";
+				return json_encode("Nobody Matches Your Perfect Self, Please Edit Your Filters Or Try Again Later");
 			}else{
-				return "Nobody Found For Now, Please Edit Your Filters or Try Again Later";
+				return json_encode("Nobody Found For Now, Please Edit Your Filters or Try Again Later");
 			}
 		}
 		$best_id = $d->id;
 		$score = $d->match;
 
 		$match = User::find($best_id);
-		return $match->name;
+        $match->score = $score;
+
+		return json_encode($match);
     }
 
     protected function check_filled($based_on,$user_id){

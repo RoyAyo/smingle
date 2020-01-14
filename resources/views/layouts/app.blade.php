@@ -23,7 +23,11 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @extends('style.app')
+    <style>
+        #studentship{
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -81,7 +85,16 @@
         <main class="py-4">
             @yield('content')
         </main>
-        @extends('ajax.js')
+        <script type="text/javascript">
+            $('#student').on('change',function() {
+                const s = $(this).val();
+                if (s == 1) {
+                    $('#studentship').fadeIn(200);
+                }else{
+                    $('#studentship').fadeOut(200);
+                }
+            });
+        </script>
     </div>
 </body>
 </html>

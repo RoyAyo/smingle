@@ -127,8 +127,9 @@
 	</div>
 	<div id="matched-div">
 		<div class="card" style="width: 100vw;height: 100vh;background-color: rgba(180,180,180,0.8);">
-			<div class="card-header" style="background-color: #fff">
-				<button type="button" class="close">&times;</button>
+			<div class="card-header" style="background-color: #fff;font-size: 15pt;text-align: center;">
+				<span style="font-weight:bold;" class="text-info">Match Found</span>
+				<button type="button" class="close" style="font-size: 20pt;" id="closematchdiv">&times;</button>
 			</div>
 			<div class="card-body">
 				<div class="match-imgs">
@@ -136,19 +137,33 @@
 						<div>
 							<img src="{{ asset('images/uploads/4.jpg') }}">
 						</div>
-						<div class="name">
-							{{auth()->user()->name}}
+						<div class="namematch" style="">
+							You
 						</div>
 					</div>
 					<div class="arrow"><--></div>
-					<div class="imdiv">
+					<div class="imdiv" id="immatch">
 						<div>
 							<img src="{{ asset('images/uploads/4.jpg') }}">
 						</div>
-						<div class="name">
+						<div class="namematch" style="" id="namematch">
 							Kate Kendall
 						</div>
+						<div id="agematch">
+							24
+						</div>
 					</div>
+				</div>
+				<div id="matchscore" class="text-default">
+					48%
+				</div>
+			</div>
+			<div class="card-footer" id="matchdivfooter">
+				<div>
+					<button class="btn btn-primary">Save Match</button>
+				</div>
+				<div>
+					<button class="btn btn-danger">Visit Profile</button>
 				</div>
 			</div>
 		</div>

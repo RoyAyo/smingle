@@ -47,8 +47,23 @@
                'course' : course,
                'level' : level
             },(res) => {
+                const result = JSON.parse(res);
+
+                if (typeof result == 'string') {
+                    alert(result);
+                    return;
+                }
+
                 $('#loader-div').hide();
-                alert(res);
+
+                $('#namematch').html(result.name);
+
+                $('#matchscore').html(result.score)
+
+                //$('#agematch').html(res.age);
+
+                $('#matched-div').show();
+
             });
         });
     
@@ -160,8 +175,6 @@
             const message = $('#chat-message').val();
             const other_id = $('#otherid').val();
 
-            alert(other_id);
-
             $.post('message/'+other_id,{
                 '_token':token,
                 'message':message
@@ -169,14 +182,6 @@
         });
 
         $('#filter_student').on('change',function() {
-            const s = $(this).val();
-            if (s == 1) {
-                $('#studentship').fadeIn(200);
-            }else{
-                $('#studentship').fadeOut(200);
-            }
-        });
-        $('#student').on('change',function() {
             const s = $(this).val();
             if (s == 1) {
                 $('#studentship').fadeIn(200);
@@ -206,6 +211,10 @@
                     $('<h5>'+ r.username +'</h5>').appendTo(c);
                 });
             });
+        });
+
+        $('#closematchdiv').on('click',() => {
+            $('#matched-div').fadeOut(500)
         });
     });
 

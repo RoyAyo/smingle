@@ -1,6 +1,5 @@
 <style>
 	/* Default properties for the website */
-	message-card
 	*{
 		box-sizing: border-box;
 	}
@@ -386,13 +385,8 @@
 @media screen and (max-width: 600px) {
 	
 	.jumbo {
-		height: 400px !important;
+		height: 350px !important;
 	}
-	
-	.icons {
-		justify-content: center !important;
-	}
-	
 }
 
 /* for the events page*/
@@ -431,7 +425,7 @@
 	}
 	#matched-div{
 		position: fixed;
-		z-index: 999999;
+		z-index: 9999999;
 		width: 100vw;
 		height: 100vh;
 		top: 0;
@@ -440,6 +434,7 @@
 	.match-imgs{
 		display: flex;
 		justify-content:space-around;
+		margin-bottom: 40px;
 	}
 	.match-imgs .imdiv{
 		display: flex;
@@ -459,6 +454,34 @@
 		font-size: 30pt;
 		font-weight: bold;
 	}
+
+	#agematch{
+		text-align: center;
+		font-size: 10.5pt;
+		color: grey;
+		position: relative;
+		bottom: 4px;
+
+	}
+
+	.namematch{
+		text-align: center;
+		font-size: 14pt;
+		font-weight: bold;
+	}
+
+	#matchscore{
+		text-align: center;
+		font-size: 30pt;
+		font-weight: bold;
+	}
+
+	#matchdivfooter{
+		display: flex;
+		justify-content: space-around;
+		padding: 0.5rem 4rem;
+	}
+
 	@media(max-width: 768px){
 		.event-avatar img{	
 			width: 250px;
@@ -473,10 +496,14 @@
 			top: 60px;
 			font-size: 20pt;
 		}
+		.match-imgs{
+			margin-bottom: 80px;
+		}
 	}
 	@media(max-width: 420px){
 		.match-imgs{
-			margin-top: 60px;
+			margin-top: 40px;
+			margin-bottom: 110px;
 		}
 		.match-imgs img{
 			height: 120px;
@@ -493,5 +520,6 @@
 			display: none;
 		}
 	}
+
 
 </style>
