@@ -4,7 +4,7 @@ import sys
 import numpy as np
 
 
-model = joblib.load('..\database\model.pickle')
+model = joblib.load('..\..\..\database\model.pickle')
 
 data = json.loads(sys.argv[1])
 data = np.array([data])
