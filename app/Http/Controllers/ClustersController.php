@@ -32,7 +32,7 @@ class ClustersController extends Controller
 
     	$c = json_encode($clusters);
 
-    	$process = new Process('python ../public/python/cluster.py '.$c);
+    	$process = new Process('python3 ../public/python/cluster.py '.$c);
 
     	$process->run();
 
