@@ -94,7 +94,7 @@
 				<h5 style="font-weight: bold;font-family: sans-serif;font-size: 12pt;"> Choose One </h5>
 				<input type="radio" name="gen13" value="1"><span class="label" style="margin-right: 1rem;"> Rema </span><br>
 				<input type="radio" name="gen13" value="2"><span class="label" style="margin-right: 1rem;"> Fireboy </span><br>
-				<input type="radio" name="gen13" value="3"><span class="label" style="margin-right: 1rem;"> Lighter </span><br>
+				<input type="radio" name="gen13" value="3"><span class="label" style="margin-right: 1rem;"> Lyta </span><br>
 				<input type="radio" name="gen13" value="4"><span class="label" style="margin-right: 1rem;"> None </span>
 			</div>
 			<div style="margin-bottom: 1rem;">
