@@ -29,7 +29,7 @@
 </head>
 <body>
 	<div id="app">
-		<nav class="navbar-light navbar-laravel">
+		<nav class="navbar-light navbar-laravel" style="background-color: yellow">
 			<header id="nav">
 				<div id="nav-left">
                     <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="navbar-toggler-icon"></span></a>	
@@ -65,7 +65,7 @@
 		</nav>
 		<article>
 		<div id="wrapper">
-			<div id="sidebar-wrapper">
+			<div id="sidebar-wrapper" style="background-color: yellow;">
 	            <ul class="sidebar-nav">
 	                <li class="sidebar-brand">
 	                    <span style="color: grey;">

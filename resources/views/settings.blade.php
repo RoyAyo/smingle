@@ -11,18 +11,18 @@
 					<div class="card-body">
 						<a href="{{ route('profile') }}" class="btn btn-md">Change Profile Settings</a><br><br>
 						<a href="#" class="btn btn-md">Change Matched Settings</a><br><br>
-						<a data-target="#dpModal" data-toggle="modal" class="btn btn-md btn-info">Change Cover Picture</a>
                     </div>
                 </div>
-            </div>
+            </div><br>
             <div class="col-md-6">
                 <div class="card">
-				    <div class="card-header">
-						Add Handles For People To Find You On
-					</div>
-					<div class="card-body">
-						<a data-target="#IG" data-toggle="modal" class="btn btn-info " >Instagram Handle</a><br><br>
-						<a data-target="#Twitter" data-toggle="modal" class="btn btn-info ">Twitter Handle</a>
+                    <div class="card-header" style="background-color: yellow;">
+                        Quick Settings
+                    </div>
+                    <div class="card-body">
+						<a data-target="#dpModal" data-toggle="modal" class="btn btn-md" style="background-color: orange;"> Change Cover Picture</a><br><br>
+						<a data-target="#IG" data-toggle="modal" class="btn" style="background-color: orange;">Change Instagram Handle</a><br><br>
+						<a data-target="#Twitter" data-toggle="modal" class="btn" style="background-color: orange;">Change Twitter Handle</a>
 					</div>
 				</div>
 			</div>
@@ -40,11 +40,8 @@
             <div class="modal-body">
                 <form role="form" action="#" method="POST">
                     <input type="file" name="dp" id="dp" required/>
-                    <button id="user-sub" type="submit" class="btn btn-default"><img src="{{ asset('images/icons/arrow-right-128.png') }}" style="width: 20px;height: 20px;"></button>
+                    <button id="user-sub" type="submit" class="btn btn-default">Change</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -61,11 +58,8 @@
                 <form role="form" class="form-group" action="#" method="POST">
                     <label for="check-user-match"> IG Handle </label>
                     <input type="text" name="ig-handle" id="id-handle" class="form-control" required/>
-                    <button id="user-sub" type="submit" class="btn btn-default"><img src="{{ asset('images/icons/arrow-right-128.png') }}" style="width: 20px;height: 20px;"></button>
+                    <button id="user-sub" type="submit" class="btn btn-default">Change</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -83,11 +77,8 @@
                 <form role="form" class="form-group" action="#" method="POST">
                     <label for="check-user-match"> Twitter Handle </label>
                     <input type="text" name="ig-handle" id="id-handle" class="form-control" required/>
-                    <button id="user-sub" type="submit" class="btn btn-default"><img src="{{ asset('images/icons/arrow-right-128.png') }}" style="width: 20px;height: 20px;"></button>
+                    <button id="user-sub" type="submit" class="btn btn-default">Change</button>
                 </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

@@ -15,6 +15,9 @@ class CreateHandlesTable extends Migration
     {
         Schema::create('handles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->string('twitter');
+            $table->string('instagram');
             $table->timestamps();
         });
     }
