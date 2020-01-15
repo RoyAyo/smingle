@@ -54,4 +54,8 @@ class User extends Authenticatable
     public function anonmessage(){
         return $this->hasMany('App\Messages');
     }
+
+    public function handle(){
+        return $this->hasOne('App\handles');
+    }
 }
