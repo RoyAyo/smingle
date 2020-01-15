@@ -46,7 +46,7 @@ class MatchesController extends Controller
     	$user_id = json_encode($user_id);
     	$filter = json_encode($filter);
 
-    	$process = new Process('python3 ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level);
+    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level);
 		$process->run();
 
 		if (!$process->isSuccessful()) {
