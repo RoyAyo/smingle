@@ -96,7 +96,7 @@
 	                    <a data-target="#searchModal" data-toggle="modal"  style="color: grey;cursor: pointer;"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">Search For User</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-settings-100.png') }}">Settings</a>
+	                    <a href="{{ route('settings') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-settings-100.png') }}">Settings</a>
 	                </li>
 	            </ul>
 		    </div>

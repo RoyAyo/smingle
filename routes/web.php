@@ -77,3 +77,4 @@ Route::get('events/privateparty/{id}','EventsController@privatepart')->name('eve
 Route::get('events/admin','AdminsController@index')->name('adminevent');
 Route::post('events/admin/verify/{id}','AdminsController@verify');
 
+Route::get('/settings','SettingsController@index')->name('settings');
