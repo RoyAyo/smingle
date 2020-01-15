@@ -216,24 +216,10 @@
 		.jumbo {
 		width: 100%;
 		height: 400px;
-		background-size: contain;
-		background: url( {{ asset('images/uploads/1.jpg') }} ) center center;
+		background-size: cover;
+		background-position: bottom;
+		background: url( {{ asset('images/uploads/4.jpg') }} );
 	}
-	
-	.icons {
-		display: flex;
-		justify-content: center;
-	}
-
-	.big-icon {
-			width: 180px;
-			height: 180px;
-			background-size: contain;
-			border-radius: 50%;
-			border: 2px solid white;
-			margin-top: -90px;
-			background: url( {{ asset('images/uploads/4.jpg') }} ) center top no-repeat;
-		}
 	
 	.details {
 		display: flex;
@@ -498,6 +484,9 @@
 		}
 		.match-imgs{
 			margin-bottom: 80px;
+		}
+		#matchdivfooter{
+			padding: 0.5rem 1rem;
 		}
 	}
 	@media(max-width: 420px){

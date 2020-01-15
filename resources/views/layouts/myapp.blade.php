@@ -135,7 +135,7 @@
 				<div class="match-imgs">
 					<div class="imdiv">
 						<div>
-							<img src="{{ asset('images/uploads/4.jpg') }}">
+							<img src="{{ asset('images/uploads/2.jpg') }}">
 						</div>
 						<div class="namematch" style="">
 							You
@@ -147,7 +147,7 @@
 							<img src="{{ asset('images/uploads/4.jpg') }}">
 						</div>
 						<div class="namematch" style="" id="namematch">
-							Kate Kendall
+							
 						</div>
 						<div id="agematch">
 							24
@@ -163,7 +163,13 @@
 					<button class="btn btn-primary">Save Match</button>
 				</div>
 				<div>
-					<button class="btn btn-danger">Visit Profile</button>
+					<button class="btn btn-danger"><a id="matchedsmprofile" href="#" style="color: black;">Smingle Profile</a></button>
+				</div>
+				<div>
+					<button class="btn btn-danger"><a id="matchedtwprofile" href="#" style="color: black;">Twitter Profile</a></button>
+				</div>
+				<div>
+					<button class="btn btn-danger"><a id="matchedigprofile" href="#" style="color: black;">Instagram Profile</a></button>
 				</div>
 			</div>
 		</div>

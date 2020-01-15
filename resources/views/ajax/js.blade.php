@@ -59,7 +59,9 @@
 
                 $('#namematch').html(result.name);
 
-                $('#matchscore').html(result.score)
+                $('#matchscore').html(result.score);
+
+                $('#matchedsmprofile').attr('href','user/'+result.id)
 
                 //$('#agematch').html(res.age);
 

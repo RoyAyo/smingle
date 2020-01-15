@@ -67,7 +67,7 @@ class MatchesController extends Controller
 		$score = $d->match;
 
 		$match = User::find($best_id);
-        $match->score = strval(round($score,3)).'%';
+        $match->score = strval(round($score,2)).'%';
 
 		return $match;
     }
