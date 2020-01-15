@@ -5,24 +5,24 @@
 		<div class="row">
 			<div class="col-md-6">
 				<div class="card">
-					<div class="card-header">
+					<div class="card-header" style="background-color: orange">
 						Change Your Settings
 					</div>
 					<div class="card-body">
-						<a href="{{ route('profile') }}" class="btn btn-md">Change Profile Settings</a><br><br>
-						<a href="#" class="btn btn-md">Change Matched Settings</a><br><br>
+						<a href="{{ route('profile') }}" class="btn btn-md" style="background-color:yellow">Change Profile Settings</a><br><br>
+						<a href="#" class="btn btn-md" style="background-color:yellow">Change Matched Settings</a><br><br>
                     </div>
                 </div>
             </div><br>
             <div class="col-md-6">
                 <div class="card">
-                    <div class="card-header" style="background-color: yellow;">
+                    <div class="card-header" style="background-color: orange;">
                         Quick Settings
                     </div>
                     <div class="card-body">
-						<a data-target="#dpModal" data-toggle="modal" class="btn btn-md" style="background-color: orange;"> Change Cover Picture</a><br><br>
-						<a data-target="#IG" data-toggle="modal" class="btn" style="background-color: orange;">Change Instagram Handle</a><br><br>
-						<a data-target="#Twitter" data-toggle="modal" class="btn" style="background-color: orange;">Change Twitter Handle</a>
+						<a data-target="#dpModal" data-toggle="modal" class="btn btn-md" style="background-color: yellow"> Change Cover Picture</a><br><br>
+						<a data-target="#IG" data-toggle="modal" class="btn" style="background-color: yellow">Change Instagram Handle</a><br><br>
+						<a data-target="#Twitter" data-toggle="modal" class="btn" style="background-color: yellow">Change Twitter Handle</a>
 					</div>
 				</div>
 			</div>
