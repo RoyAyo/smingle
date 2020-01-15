@@ -68,7 +68,7 @@ def mse(a2):
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
-		cluster_diff = 0.1
+		cluster_diff = 0.05
 	return cluster_diff
 
 def bday_match(bd):

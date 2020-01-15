@@ -47,14 +47,15 @@
                'course' : course,
                'level' : level
             },(res) => {
-                const result = JSON.parse(res);
+                const result = res;
 
                 if (typeof result == 'string') {
                     alert(result);
+                    $('#loader-div').hide();
                     return;
                 }
+                    $('#loader-div').hide();
 
-                $('#loader-div').hide();
 
                 $('#namematch').html(result.name);
 
