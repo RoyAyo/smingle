@@ -127,9 +127,9 @@
 	</div>
 	<div id="matched-div">
 		<div class="card" style="width: 100vw;height: 100vh;background-color: rgba(180,180,180,0.8);">
-			<div class="card-header" style="background-color: #fff;font-size: 15pt;text-align: center;">
-				<span style="font-weight:bold;" class="text-info">Match Found</span>
-				<button type="button" class="close" style="font-size: 20pt;" id="closematchdiv">&times;</button>
+			<div class="card-header" style="background-color: #fff;font-size: 20pt;text-align: center;">
+				<span style="font-weight:bold;" class="text-info">Match Found!!!</span>
+				<button type="button" class="close" id="closematchdiv">&times;</button>
 			</div>
 			<div class="card-body">
 				<div class="match-imgs">
@@ -163,13 +163,13 @@
 					<button class="btn btn-primary">Save Match</button>
 				</div>
 				<div>
-					<button class="btn btn-danger"><a id="matchedsmprofile" href="#" style="color: black;">Smingle Profile</a></button>
+					<button class="btn btn-danger"><a id="matchedsmprofile" href="#" style="color: black;" target="_blank">Smingle Profile</a></button>
 				</div>
 				<div>
-					<button class="btn btn-danger"><a id="matchedtwprofile" href="#" style="color: black;">Twitter Profile</a></button>
+					<button class="btn btn-danger"><a id="matchedtwprofile" href="#" style="color: black;" target="_blank">Twitter Profile</a></button>
 				</div>
 				<div>
-					<button class="btn btn-danger"><a id="matchedigprofile" href="#" style="color: black;">Instagram Profile</a></button>
+					<button class="btn btn-danger"><a id="matchedigprofile" href="#" style="color: black;" target="_blank">Instagram Profile</a></button>
 				</div>
 			</div>
 		</div>

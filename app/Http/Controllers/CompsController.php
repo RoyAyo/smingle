@@ -57,7 +57,9 @@ class CompsController extends Controller
 
 		
 		$match_perc = strval($m). '%';
+
+        $check_user->score = $match_perc; 
 		
-		return $match_perc;
+		return $check_user;
     }
 }

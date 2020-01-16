@@ -35,21 +35,21 @@ dob = df.DOB
 df.drop(['id','created_at','updated_at',"zodiac","cluster","DOB"],axis=1,inplace=True)
 
 #how similar answers are
-error = math.sqrt(mse(df.loc[int(user_id1)].values,df.loc[int(user_id2)].values))
+error = mse(df.loc[int(user_id1)].values,df.loc[int(user_id2)].values)
 
-tot_err = math.sqrt(135)
+
+tot_err = 125
 
 if (error > tot_err):
-	corr = 0.2
+	corr = 0.15
 else:
-	corr = (abs(tot_err - error) / tot_err)	
+	corr = (abs(tot_err - error) / tot_err)
+
 
 cluster_diff = abs(cluster.loc[int(user_id1)] - cluster.loc[int(user_id2)])
 	
 if cluster_diff > 0:
-	cluster_diff == 0.1
-
-#formular == corr/cluster_diff + zodiac
+	cluster_diff = 0.05
 
 dob1 = dob.loc[int(user_id1)]
 month1 = dob1.split('-')[1]
@@ -71,7 +71,7 @@ else:
 		if(z2 in zs):
 			i = zs.index(z2)
 			if i > 1:
-				zod = -0.1
+				zod = -0.05
 			else:
 				zod = 0.1
 		else:

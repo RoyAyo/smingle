@@ -21,7 +21,7 @@
         </div>
             <hr>
         <div>
-            {{$user->profile()->first()->Location}}
+            {{$user->profile()->first()->location}}
         </div>
         <hr>
         <div>
@@ -31,7 +31,7 @@
             Religion : {{$user->profile()->first()->religion}}
         </div><hr>
         <div>
-             Range : {{$user->profile()->first()->height}}
+             Zodiac-Sign : {{$user->zodiac}}
         </div>
         @if($user->profile()->first()->student==1)
             <hr>

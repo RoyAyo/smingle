@@ -11,8 +11,27 @@
                '_token' : token,
                'username' : username
             },(res) => {
-                $('#loader-div').hide(100);
-                $('#match-perc').html(res);
+                const result = res;
+
+                if (typeof result == 'string') {
+                    $('#match-perc').html(res);
+                    $('#loader-div').hide();
+                    return;
+                }
+                
+                $('#loader-div').hide();
+
+
+                $('#namematch').html(result.name);
+
+                $('#matchscore').html(result.score);
+
+                $('#matchedsmprofile').attr('href','user/'+result.id)
+
+                //$('#agematch').html(res.age);
+
+                $('#matched-div').show();
+
             });
         });
 
