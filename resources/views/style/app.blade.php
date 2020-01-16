@@ -467,6 +467,7 @@
 		display: flex;
 		justify-content: space-around;
 		padding: 0.5rem 4rem;
+		flex-wrap: wrap;
 	}
 
 	@media(max-width: 768px){
@@ -484,7 +485,7 @@
 			font-size: 20pt;
 		}
 		.match-imgs{
-			margin-bottom: 80px;
+			margin-bottom: 70px;
 		}
 		#matchdivfooter{
 			padding: 0.5rem 1rem;
@@ -493,7 +494,7 @@
 	@media(max-width: 420px){
 		.match-imgs{
 			margin-top: 40px;
-			margin-bottom: 110px;
+			margin-bottom: 80px;
 		}
 		.match-imgs img{
 			height: 120px;
@@ -509,6 +510,11 @@
 		.useless-chat{
 			display: none;
 		}
+	}
+
+	#closematchdiv{
+		position: relative;
+		top: 5px;
 	}
 
 

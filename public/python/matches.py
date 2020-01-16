@@ -56,8 +56,7 @@ def mse(a2):
 		err = abs(a1[i] - a2[i])
 		e = math.pow(err,2)
 		error += e
-	error = math.sqrt(error)
-	tot_err = math.sqrt(135)
+	tot_err = 135
 
 	if (error > tot_err):
 		corr = 0.2

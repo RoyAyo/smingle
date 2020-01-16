@@ -18,7 +18,11 @@
                     $('#loader-div').hide();
                     return;
                 }
+                $('.matched-title').html('Your Match!!!');
                 
+                $('#twm').hide();
+                $('#igm').hide();
+
                 $('#loader-div').hide();
 
 
@@ -74,6 +78,7 @@
                     return;
                 }
                     $('#loader-div').hide();
+
 
 
                 $('#namematch').html(result.name);
