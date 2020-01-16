@@ -155,7 +155,7 @@
 					</div>
 				</div>
 				<div id="matchscore" class="text-default">
-					48%
+					
 				</div>
 			</div>
 			<div class="card-footer" id="matchdivfooter">

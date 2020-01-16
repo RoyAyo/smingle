@@ -213,12 +213,13 @@
 	}
 
 	/*for profile page */
-		.jumbo {
+	.jumbo {
 		width: 100%;
 		height: 400px;
+		border-radius: 3px;
 		background-size: cover;
-		background-position: bottom;
-		background: url( {{ asset('images/uploads/4.jpg') }} );
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 	
 	.details {
