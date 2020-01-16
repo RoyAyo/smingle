@@ -1,6 +1,9 @@
 @extends('layouts.myapp')
 
 @section('content')
+    @php
+
+    @endphp
     <div class="jumbo" style="background-image: url( {{ asset('images/uploads/4.jpg') }} );"></div>
     <div class="details">
         <h3 style="font-weight: bold;">{{ $user->name }}</h3>
@@ -13,12 +16,12 @@
         @endif
     </div>
     <div class="bio">
-        <div>
-            {{$user->profile()->first()->Location}}
-            <hr>
-        </div>
         <div class="content" style="font-size: 12pt;">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro officiis fugit hic vel voluptates perferendis aut quibusdam sit omnis unde aspernatur</p>
+        </div>
+            <hr>
+        <div>
+            {{$user->profile()->first()->Location}}
         </div>
         <hr>
         <div>
@@ -35,6 +38,7 @@
             <div>
                 School : {{$user->profile()->first()->school}}
             </div>
+            <hr>
             <div>
                 Course : {{$user->profile()->first()->course}}
             </div>

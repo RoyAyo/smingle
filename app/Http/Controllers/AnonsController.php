@@ -26,7 +26,8 @@ class AnonsController extends Controller
 
     	AnonMessage::create([
     		'user_id' => $request->anonreceiver,
-    		'message' => $request->message
+    		'message' => $request->message,
+            'sender_id' => auth()->user()->id
     	]);
 
         Session::flash('anon','Your Anonymous Message has been successfully sent');
