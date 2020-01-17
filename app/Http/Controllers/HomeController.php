@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Events\MessageSent;
+use App\Notifications;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,8 @@ class HomeController extends Controller
     {
         broadcast(new MessageSent(""));
 
-        return view('home');
+        $Notification = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
+
+        return view('home2')->with('Notifications',$Notification);
     }
 }

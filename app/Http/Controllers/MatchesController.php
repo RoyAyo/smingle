@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Filled;
+use App\Notifications;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 
@@ -68,6 +69,13 @@ class MatchesController extends Controller
 
 		$match = User::find($best_id);
         $match->score = strval(round($score,2)).'%';
+
+        Notifications::create([
+            'user_id'=>$best_id,
+            'notification_type'=>1,
+            'involved_id'=>$user_id
+        ]);
+
 
 		return $match;
     }
