@@ -27,6 +27,8 @@ class HomeController extends Controller
     {
         broadcast(new MessageSent(""));
 
+        $user_id = auth()->user()->id;
+
         $Notification = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
 
         return view('home2')->with('Notifications',$Notification);

@@ -36,7 +36,7 @@ class MatchesController extends Controller
     	$need = $request->need;
     	$student = $request->student;
     	$level = $request->level;
-    	$based_on = $request->based_on;
+    	$based_on = 'generals';
 
 
     	$check = $this->check_filled($based_on,$user_id);
