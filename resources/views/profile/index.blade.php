@@ -49,7 +49,6 @@
                 	<option value="2" {{ $profile->religion==2? 'selected':'' }}> Muslim </option>
                 	<option value="3" {{ $profile->religion==3? 'selected':'' }}> Traditional </option>
                 	<option value="4" {{ $profile->religion==4? 'selected':'' }}> Others </option>
-                </select>
 
                 @if ($errors->has('religion'))
                     <span class="invalid-feedback" role="alert">
@@ -154,7 +153,6 @@
                     <option value="3" {{ $profile->need==3? 'selected':'' }}> Fun </option>
                     <option value="4" {{ $profile->need==4? 'selected':'' }}> Something Causual </option>
                     <option value="5" {{ $profile->need==5? 'selected':'' }}> Neutral </option>
-                </select>
 
                 @if ($errors->has('need'))
                     <span class="invalid-feedback" role="alert">

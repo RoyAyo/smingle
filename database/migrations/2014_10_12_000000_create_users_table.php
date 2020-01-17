@@ -27,7 +27,10 @@ class CreateUsersTable extends Migration
             $table->text('about')->nullable();
             $table->integer('cluster')->nullable();
             $table->integer('sub')->default(1);
+<<<<<<< HEAD
             $table->integer('jobs')->default(0);
+=======
+>>>>>>> 2081252c3055c9c464cf04d6c3a6f6e61ec4a1ab
             $table->rememberToken();
             $table->timestamps();
         });

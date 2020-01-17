@@ -21,9 +21,8 @@
                         Quick Settings
                     </div>
                     <div class="card-body">
-						<a data-target="#dpModal" data-toggle="modal" class="btn btn-md"> Change Cover Picture</a><br><br>
 						<a data-target="#IG" data-toggle="modal" class="btn">Change Instagram Handle</a><br><br>
-                        <a data-target="#Twitter" data-toggle="modal" class="btn">Change Twitter Handle</a><br><br>
+						<a data-target="#Twitter" data-toggle="modal" class="btn">Change Twitter Handle</a>
 					</div>
 				</div>
 			</div>

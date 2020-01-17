@@ -88,7 +88,7 @@ class RegisterController extends Controller
             'user_id' => $user->id
         ]);
 
-        $filled = Jobs::create([
+        $jobs = Jobs::create([
             'user_id' => $user->id
         ]);
 

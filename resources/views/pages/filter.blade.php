@@ -6,22 +6,6 @@
 		@csrf
 
         <div class="form-group row">
-            <label for="based_on" class="col-md-4 col-form-label text-md-right">{{ __('Based On') }}</label>
-
-            <div class="col-md-6">
-                <select id="filter_based_on" class="form-control{{ $errors->has('based_on') ? ' is-invalid' : '' }}" name="based_on" value="1" autofocus>
-                    <option value="relationships"> Defaults </option>
-                    <option value="generals"> Generals </option>
-                    <option value="jobs"> Jobs </option>
-                </select>
-                @if ($errors->has('based_on'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('based_on') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
-        <div class="form-group row">
             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
 
             <div class="col-md-6">
@@ -223,7 +207,8 @@
                         <option value="4"> 400 </option>
                         <option value="5"> 500 </option>
                         <option value="6"> Masters </option>
-                        <option value="6"> Ph.D </option>
+                        <option value="7"> Ph.D </option>
+                        <option value="8"> Others </option>
                     </select>
 
                     @if ($errors->has('level'))
