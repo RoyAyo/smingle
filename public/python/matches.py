@@ -53,7 +53,7 @@ def create_query(gender,age,country,state,religion,height,r_status,m_status,stud
 			query+= " and profiles.shape = " + shape
 	if(job != "0"):
 			query+= " and profiles.jobs = " + job
-	if(model != "0"):
+	if(model != "2"):
 			query+= " and profiles.model = " + model
 	if(student != "2"):
 			query+=" and profiles.student = " + student

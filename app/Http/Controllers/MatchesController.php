@@ -53,6 +53,7 @@ class MatchesController extends Controller
     	$filter = json_encode($filter);
 
     	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$country.' '.$state.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level. ' '.$skin_colour.' '.$body_shape.' '.$job.' '.$model);
+
 		$process->run();
 
 		if (!$process->isSuccessful()) {
@@ -62,6 +63,7 @@ class MatchesController extends Controller
 		$best_match = $process->getOutput();
 
 		$d = json_decode($best_match);
+
 		if ($d === 0) {
 			if ($user_gender == 2) {
 				return "Nobody Matches Your Perfect Self, Please Edit Your Filters Or Try Again Later";
@@ -73,7 +75,7 @@ class MatchesController extends Controller
 		$score = $d->match;
 
 		$match = User::find($best_id);
-        $match->score = strval(round($score,2)).'%';
+        $match->score = strval(round($score,3) * 100).'%';
 
         Notifications::create([
             'user_id'=>$best_id,

@@ -85,9 +85,7 @@
                     $('#loader-div').hide();
                     return;
                 }
-                    $('#loader-div').hide();
-
-
+                $('#loader-div').hide();
 
                 $('#namematch').html(result.name);
 

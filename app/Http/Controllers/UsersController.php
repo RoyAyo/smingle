@@ -59,7 +59,7 @@ class UsersController extends Controller
         }
     }
 
-    public function inst($Request $request){
+    public function inst(Request $request){
         $new_handle = $request->instagram;
 
         $user_id = auth()->user()->id;
@@ -75,7 +75,7 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
-public function twit($Request $request){
+public function twit(Request $request){
         $new_handle = $request->twitter;
 
         $user_id = auth()->user()->id;
@@ -86,7 +86,7 @@ public function twit($Request $request){
 
         $user->save();
 
-        Session::flash('changedig','Your Twitter Handle has been changed');
+        Session::flash('changedtwit','Your Twitter Handle has been changed');
 
         return redirect()->back();
     }
