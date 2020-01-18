@@ -258,6 +258,7 @@
 
                 <div class="col-md-6">
                     <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
+                        <option value="9" {{ $profile->level==1? 'selected':'' }}> Secondary School </option>
                         <option value="1" {{ $profile->level==1? 'selected':'' }}> 100 </option>
                         <option value="2" {{ $profile->level==2? 'selected':'' }}> 200 </option>
                         <option value="3" {{ $profile->level==3? 'selected':'' }}> 300 </option>
