@@ -21,12 +21,17 @@ class ProfileController extends Controller
 
         $user = Profile::find($id);
     	$age = $request->age;
-    	$location = $request->location;
+        $country = $request->country;
+    	$state = $request->state;
     	$r_status = $request->r_status;
     	$m_status= $request->m_status;
     	$student = $request->student || 0;
     	$religion = $request->religion;
-    	$height = $request->height;
+        $height = $request->height;
+        $body_shape = $request->body_shape;
+        $skin_colour = $request->skin_colour;
+    	$job = $request->job;
+        $model = $request->model;
     	$need = $request->need;
 
         if ($student != 0) {
@@ -35,20 +40,26 @@ class ProfileController extends Controller
             $school = $request->school;
         }
 
-		$user->location = $location;
+        $user->country = $country;
+		$user->state = $state;
 		$user->age = $age;
 		$user->r_status = $r_status;
 		$user->m_status = $m_status;
 		$user->student = $student;
 		$user->religion = $religion;
 		$user->height = $height;
-		$user->need = $need;
+        $user->need = $need;
+        $user->body_shape = $body_shape;
+        $user->skin_colour = $skin_colour;
+        $user->model = $model;
+		$user->job = $job;
 
         if ($student != 0) {
             $user->level = $level;
             $user->course = $course;
             $user->school = $school;
         }
+        
         $user->save();
 
         return redirect()->route('cluster');

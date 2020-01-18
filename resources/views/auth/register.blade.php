@@ -6,7 +6,7 @@
         @csrf
 
         <div class="form-group row">
-            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Full Name') }}<span style='color:red;margin-right: 3rem;'>*</span></label>
+            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Full Name') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
@@ -20,7 +20,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}<span style='color:red;margin-right: 3rem;'>*</span></label>
+            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<span style='color:red;margin-right: 3rem;'>*</span></label>
+            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
@@ -48,35 +48,35 @@
         </div>
 
         <div class="form-group row">
-            <label for="instagram" class="col-md-4 col-form-label text-md-right">{{ __('IG Handle') }}</label>
+            <label for="instagram_form" class="col-md-4 col-form-label text-md-right">{{ __('IG Handle') }}</label>
 
             <div class="col-md-6">
-                <input id="instagram" type="instagram" class="form-control{{ $errors->has('instagram') ? ' is-invalid' : '' }}" name="instagram" value="{{ old('instagram') }}" placeholder="To get the best of our features, Include this">
+                <input id="instagram_form" type="instagram_form" class="form-control{{ $errors->has('instagram') ? ' is-invalid' : '' }}" name="instagram" value="{{ old('instagram') }}" placeholder="Jane_doe">
 
-                @if ($errors->has('instagram'))
+                @if ($errors->has('instagram_form'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('instagram') }}</strong>
+                        <strong>{{ $errors->first('instagram_form') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="twitter" class="col-md-4 col-form-label text-md-right">{{ __('Twitter Handle') }}</label>
+            <label for="twitter_form" class="col-md-4 col-form-label text-md-right">{{ __('Twitter Handle') }}</label>
 
             <div class="col-md-6">
-                <input id="twitter" type="twitter" class="form-control{{ $errors->has('twitter') ? ' is-invalid' : '' }}" name="twitter" value="{{ old('twitter') }}" placeholder="To get the best of our features, Include this...">
+                <input id="twitter_form" type="twitter_form" class="form-control{{ $errors->has('twitter') ? ' is-invalid' : '' }}" name="twitter" value="{{ old('twitter') }}" placeholder="John_Doe..">
 
-                @if ($errors->has('twitter'))
+                @if ($errors->has('twitter_form'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('twitter') }}</strong>
+                        <strong>{{ $errors->first('twitter_form') }}</strong>
                     </span>
                 @endif
             </div>
         </div>
 
         <div class="form-group row">
-            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}<span style='color:red;margin-right: 3rem;'>*</span></label>
+            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <select id="gender" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="{{ old('gender') }}" >
@@ -92,7 +92,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('DATE OF BIRTH') }}<span style='color:red;margin-right: 3rem;'>*</span></label>
+            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('DATE OF BIRTH') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input type="date" id="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" >
@@ -105,7 +105,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
@@ -119,7 +119,7 @@
         </div>
 
         <div class="form-group row">
-            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>

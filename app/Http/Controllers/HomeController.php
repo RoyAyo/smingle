@@ -29,18 +29,26 @@ class HomeController extends Controller
 
         $user_id = auth()->user()->id;
 
-        $Notification = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
+        $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
 
         foreach ($Notifications as $Notification) {
             $other_id = $Notification->user_id == $user_id? $Notification->involved_id : $Notification->user_id;
+            if ($Notification->event == '1') {
+                $event = Event::find($other_id);
 
-            $other_user = User::find($other_id);
+                $Notification->event_name = $event->name;
+                $Notification->show = $event->show=='1'? 'Show' : 'Party';
 
-            $Notification->other_name = $other_user->username;
-            $Notification->other_id = $other_id;
-            $Notification->notification_type = $Notification->user_id == $user_id ? '1':'2';
+            }else{
+
+                $other_user = User::find($other_id);
+
+                $Notification->other_name = $other_user->username;
+                $Notification->other_id = $other_id;
+                $Notification->notification_type = $Notification->user_id == $user_id ? '1':'2';
+            }
         }
 
-        return view('home2')->with('Notifications',$Notification);
+        return view('home')->with('Notifications',$Notifications);
     }
 }

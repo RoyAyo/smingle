@@ -1,26 +1,10 @@
 @extends('layouts.myapp')
 
 @section('content')
-
+<div class="card">
+    <div class="card-header" style="font-weight: bold;text-align: center;">Filter who should be matched With You</div>
 	<form action="{{ route('match.check') }}" method="POST" style="padding-top: 1rem;">
 		@csrf
-
-        <div class="form-group row">
-            <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('Gender') }}</label>
-
-            <div class="col-md-6">
-                <select id="filter_gender" class="form-control{{ $errors->has('gender') ? ' is-invalid' : '' }}" name="gender" value="1" autofocus>
-                    <option value="0"> Indifferent </option>
-                    <option value="1"> Male </option>
-                    <option value="2"> Female </option>
-                </select>
-                @if ($errors->has('gender'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('gender') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
 
         <div class="form-group row">
             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age Range') }}</label>
@@ -43,13 +27,25 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
+            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
 
             <div class="col-md-6">
-                <input type="text" name="location" id="filter_location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->location : '' }}" >
-                @if ($errors->has('location'))
+                <input type="text" name="country" id="filter_country" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->country : '' }}" >
+                @if ($errors->has('country'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('location') }}</strong>
+                        <strong>{{ $errors->first('country') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
+
+            <div class="col-md-6">
+                <input type="text" name="state" id="filter_state" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" value="{{ isset($filter) ? $filter->state : '' }}" >
+                @if ($errors->has('state'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('state') }}</strong>
                     </span>
                 @endif
             </div>
@@ -159,7 +155,7 @@
             <div class="col-md-6">
                 <select id="filter_body_shape" class="form-control{{ $errors->has('filter_body_shape') ? ' is-invalid' : '' }}" name="filter_body_shape" value="{{ old('filter_body_shape') }}">
                         <option value="0">Indifferent</option>
-                    @if($profile->user()->first()->gender == 2)
+                    @if(auth()->user()->gender == 2)
                         <option value="1"> Slim </option>
                         <option value="2"> Slim With Packs </option>
                         <option value="3"> Great Build </option>
@@ -326,6 +322,6 @@
                 </button>
             </div>
         </div>
-
 	</form>
+</div>
 @endsection

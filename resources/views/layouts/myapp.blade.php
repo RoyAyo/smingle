@@ -78,7 +78,7 @@
 	                    <a href="{{route('user',['id'=> auth()->user()->id])}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Profile</a>
 	                </li>
 	                <li>
-	                    <a href="{{route'findmatch'}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Find Match</a>
+	                    <a href="{{route('findmatch')}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Find Match</a>
 	                </li>
 	                <li>
 	                    <a href="{{ route('about') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>

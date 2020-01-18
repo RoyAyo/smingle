@@ -15,7 +15,8 @@
                             if($Notification->notification_type == 1){
                                 $m = 'You were Matched with @'.$Notification->other_user;
                             }else{   
-                                $ m =$Notification->other_user.' was matched with you';
+                                $m =$Notification->other_user.' was matched with you';
+                            }
                         @endphp
                         <div class="card" style="padding: 1rem;margin-bottom: 0.3rem;">
                             <p>
@@ -24,7 +25,6 @@
                                 <span style="float: right;">{{ $Notification->created_at }}</span>
                             </p>
                         </div>
-                    }
                 	@endforeach
                 </div>
             </div>

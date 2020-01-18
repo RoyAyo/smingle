@@ -27,6 +27,10 @@
         #studentship{
             display: none;
         }
+        #instagram_form::placeholder,#twitter_form::placeholder{
+            font-weight:lighter;
+            font-size: 10pt;
+        }
     </style>
 </head>
 <body>

@@ -29,13 +29,25 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="location" class="col-md-4 col-form-label text-md-right">{{ __('Location') }}</label>
+            <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
 
             <div class="col-md-6">
-                <input type="text" name="location" id="location" class="form-control{{ $errors->has('location') ? ' is-invalid' : '' }}" value="{{ isset($profile->location) ? $profile->location : '' }}" required >
-                @if ($errors->has('location'))
+                <input type="country" name="country" id="country" class="form-control{{ $errors->has('country') ? ' is-invalid' : '' }}" value="{{ isset($profile->country) ? $profile->country : '' }}" required >
+                @if ($errors->has('country'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('location') }}</strong>
+                        <strong>{{ $errors->first('country') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
+
+            <div class="col-md-6">
+                <input type="text" name="state" id="state" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" value="{{ isset($profile->state) ? $profile->state : '' }}" required >
+                @if ($errors->has('state'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('state') }}</strong>
                     </span>
                 @endif
             </div>
@@ -49,6 +61,7 @@
                 	<option value="2" {{ $profile->religion==2? 'selected':'' }}> Muslim </option>
                 	<option value="3" {{ $profile->religion==3? 'selected':'' }}> Traditional </option>
                 	<option value="4" {{ $profile->religion==4? 'selected':'' }}> Others </option>
+                </select>
 
                 @if ($errors->has('religion'))
                     <span class="invalid-feedback" role="alert">
