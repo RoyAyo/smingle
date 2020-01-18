@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Events\MessageSent;
 use App\Notifications;
+use App\User;
+use App\Event;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -29,7 +32,7 @@ class HomeController extends Controller
 
         $user_id = auth()->user()->id;
 
-        $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
+        $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->orderBy('created_at','desc')->get();
 
         foreach ($Notifications as $Notification) {
             $other_id = $Notification->user_id == $user_id? $Notification->involved_id : $Notification->user_id;
@@ -45,7 +48,10 @@ class HomeController extends Controller
 
                 $Notification->other_name = $other_user->username;
                 $Notification->other_id = $other_id;
-                $Notification->notification_type = $Notification->user_id == $user_id ? '1':'2';
+                $Notification->notification_type = $Notification->user_id == $user_id ? '2':'1';
+                // $d = Carbon::createFromFormat('y-m-d h:m:s',$Notification->created_at)->diffForHumans();
+                // $d = Carbon::createFromFormat('Y-m-d H:i:s',$Notification->created_at)->diffForHumans();
+                // $Notification->date = $d;
             }
         }
 

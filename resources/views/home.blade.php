@@ -10,19 +10,17 @@
                 <div class="card-body">
                 	@foreach($Notifications as $Notification)
                 		@php 
-                            $message = $Nots_type[$Notification->notification_type];
-
-                            if($Notification->notification_type == 1){
-                                $m = 'You were Matched with @'.$Notification->other_user;
-                            }else{   
-                                $m =$Notification->other_user.' was matched with you';
-                            }
+                            
                         @endphp
-                        <div class="card" style="padding: 1rem;margin-bottom: 0.3rem;">
+                        <div class="card" style="padding: 0.7rem;margin-bottom: 0.3rem;">
                             <p>
-                                {{$m}}
-                                <button class="btn btn-info btn-sm" style="margin-right: 0.05rem;">Check</button>
-                                <span style="float: right;">{{ $Notification->created_at }}</span>
+                                @if($Notification->notification_type == 1)
+                                    You were Matched with <a href="#">{{'@'.$Notification->other_name}}</a>
+                                @else   
+                                    <a href="#">{{'@'.$Notification->other_name}}</a> was matched with you'
+                                @endif
+                                <button class="btn btn-info" style="margin-left: 1rem;">View</button>
+                                <span style="float: right;">{{ $Notification->created_at->diffForHumans() }}</span>
                             </p>
                         </div>
                 	@endforeach
