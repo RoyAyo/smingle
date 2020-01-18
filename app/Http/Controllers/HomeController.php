@@ -49,9 +49,6 @@ class HomeController extends Controller
                 $Notification->other_name = $other_user->username;
                 $Notification->other_id = $other_id;
                 $Notification->notification_type = $Notification->user_id == $user_id ? '2':'1';
-                // $d = Carbon::createFromFormat('y-m-d h:m:s',$Notification->created_at)->diffForHumans();
-                // $d = Carbon::createFromFormat('Y-m-d H:i:s',$Notification->created_at)->diffForHumans();
-                // $Notification->date = $d;
             }
         }
 

@@ -12,8 +12,12 @@ class UsersController extends Controller
         $this->middleware('auth');
 	}
 
-    public function index($id){
-    	$user = User::find($id);
+    public function index($username){
+    	$user = User::where('username',$username)->first();
+
+        if(is_null($user)){
+            return redirect()->route('home');
+        }
 
     	if ($user->id == auth()->user()->id) {
     		$owner = 1;

@@ -15,9 +15,9 @@
                         <div class="card" style="padding: 0.7rem;margin-bottom: 0.3rem;">
                             <p>
                                 @if($Notification->notification_type == 1)
-                                    You were Matched with <a href="#">{{'@'.$Notification->other_name}}</a>
+                                    You were Matched with <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a>
                                 @else   
-                                    <a href="#">{{'@'.$Notification->other_name}}</a> was matched with you
+                                    <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a> was matched with you
                                 @endif
                                 <button class="btn btn-info" style="margin-left: 1rem;">View</button>
                                 <span id="not-time">{{ $Notification->created_at->diffForHumans() }}</span>
@@ -29,5 +29,4 @@
         </div>
     </div>
 </div>
-
 @endsection

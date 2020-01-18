@@ -30,7 +30,7 @@
 
                 $('#matchscore').html(result.score);
 
-                $('#matchedsmprofile').attr('href','user/'+result.id)
+                $('#matchedsmprofile').attr('href','user/'+result.username)
 
                 //$('#agematch').html(res.age);
 

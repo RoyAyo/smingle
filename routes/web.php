@@ -54,7 +54,7 @@ Route::get('/messages','MessagesController@index')->name('messages');
 Route::get('/message/{id}','MessagesController@message')->name('message');
 Route::post('/message/{id}','MessagesController@store')->name('message.store');
 
-Route::get('/user/{id}','UsersController@index')->name('user');
+Route::get('/user/{username}','UsersController@index')->name('user');
 Route::post('pp','UsersController@pics')->name('pics');
 
 Route::get('anon','AnonsController@index')->name('anon');
