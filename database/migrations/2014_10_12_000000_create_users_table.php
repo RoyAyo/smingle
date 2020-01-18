@@ -25,9 +25,10 @@ class CreateUsersTable extends Migration
             $table->string('zodiac');
             $table->string('avatar')->nullable();
             $table->text('about')->nullable();
-            $table->integer('cluster')->nullable();
+            $table->integer('cluster')->default(0);
             $table->integer('sub')->default(1);
-            $table->integer('jobs')->default(0);
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

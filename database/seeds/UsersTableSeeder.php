@@ -21,22 +21,26 @@ class UsersTableSeeder extends Seeder
             'about' => "I own this freaking site niggas,I am a goat",
             'cluster' => 1,
             'zodiac' => "Cancer",
-            'sub' => 3
+            'sub' => 3,
+            'twitter'=>'RoyAyo',
+            'instagram'=>'ay0_roy'
         ]);
 
         App\Profile::create([
         		'user_id' => 1,
 				'age' => 2,
-				'location' => "Lagos,Nigeria",
+                'country' => "Nigeria",
+				'State' => "Lagos",
 				'r_status' => 1,
-				'm_status' => 1,
+				'm_status' => 3,
 				'student' => 1,
 				'religion' => 1,
 				'height' => 2,
 				'need' => 1,
                 'school' => 'Unilag',
                 'level' => 5,
-                'course' => "Chemical Engr"
+                'course' => "Chemical Engr",
+                'jobs' => '5'
         ]);
         App\Filled::create([
                 'user_id' => 1

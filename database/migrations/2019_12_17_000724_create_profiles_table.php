@@ -17,7 +17,8 @@ class CreateProfilesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('age')->nullable();
-            $table->string('location')->nullable();
+            $table->string('country')->nullable();
+            $table->string('state')->nullable();
             $table->integer('student')->nullable();
             $table->integer('religion')->nullable();
             $table->integer('r_status')->nullable();
@@ -27,6 +28,7 @@ class CreateProfilesTable extends Migration
             $table->string('school')->nullable();
             $table->string('course')->nullable();
             $table->integer('level')->nullable();
+            $table->integer('jobs')->default(0);
             $table->timestamps();
         });
     }
