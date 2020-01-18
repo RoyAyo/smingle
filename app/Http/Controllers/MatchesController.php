@@ -33,7 +33,11 @@ class MatchesController extends Controller
     	$height = $request->height;
     	$r_status = $request->r_status;
     	$m_status = $request->m_status;
-    	$need = $request->need;
+        $need = $request->need;
+        $body_shape = $request->body_shape;
+        $model = $request->model;
+        $skin_colour = $request->skin_colour;
+    	$job = $request->job;
     	$student = $request->student;
     	$level = $request->level;
     	$based_on = 'generals';

@@ -144,6 +144,26 @@
             </div>
         </div>
         <div class="form-group row">
+            <label for="skin_colour" class="col-md-4 col-form-label text-md-right">{{ __('Relationship Status') }}</label>
+
+            <div class="col-md-6">
+                <select id="skin_colour" class="form-control{{ $errors->has('skin_colour') ? ' is-invalid' : '' }}" name="skin_colour" value="{{ old('skin_colour') }}">
+                    <option value="1" {{ $profile->skin_colour==1? 'selected':'' }}> Very Black </option>
+                    <option value="2" {{ $profile->skin_colour==2? 'selected':'' }}> Chocolate </option>
+                    <option value="3" {{ $profile->skin_colour==3? 'selected':'' }}> Melanin </option>
+                    <option value="4" {{ $profile->skin_colour==4? 'selected':'' }}> Fair </option>
+                    <option value="5" {{ $profile->skin_colour==5? 'selected':'' }}> Yellow </option>
+                    <option value="6" {{ $profile->skin_colour==6? 'selected':'' }}> White </option>
+                </select>
+
+                @if ($errors->has('skin_colour'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('skin_colour') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        <div class="form-group row">
             <label for="need" class="col-md-4 col-form-label text-md-right">{{ __('Looking For') }}</label>
 
             <div class="col-md-6">
@@ -153,6 +173,36 @@
                     <option value="3" {{ $profile->need==3? 'selected':'' }}> Fun </option>
                     <option value="4" {{ $profile->need==4? 'selected':'' }}> Something Causual </option>
                     <option value="5" {{ $profile->need==5? 'selected':'' }}> Neutral </option>
+
+                @if ($errors->has('need'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('need') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+        
+        <div class="form-group row">
+            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
+
+            <div class="col-md-6">
+                <select id="job" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}">
+                <option value="0">None</option>
+                <option value="1"> Back-End-Developer </option>
+                <option value="2"> Cloths/Perfumes/Hand-Bags Store</option>
+                <option value="3"> Designer(UI/UX) </option>
+                <option value="4"> Front-End-Developer </option>
+                <option value="5"> Help </option>
+                <option value="6"> Influencer/Promoter </option>
+                <option value="7"> Interior Decorator </option>
+                <option value="8"> Make Up Artist </option>
+                <option value="9"> Mobile-Developer </option>
+                <option value="10"> Photographer </option>
+                <option value="11"> Phone/Laptop Repairs </option>
+                <option value="12"> Phone/Laptop Sales </option>
+                <option value="13"> Shoe-Store </option>
+                <option value="14"> Shoe-Maker/Palm-Maker </option>
+                <option value="15"> Tailor </option>
 
                 @if ($errors->has('need'))
                     <span class="invalid-feedback" role="alert">
