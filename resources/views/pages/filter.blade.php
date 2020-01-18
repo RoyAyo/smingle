@@ -154,7 +154,106 @@
         </div>
         
         <div class="form-group row">
-            <label for="need" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
+            <label for="filter_body_shape" class="col-md-4 col-form-label text-md-right">{{ __('Body Shape ') }}</label>
+
+            <div class="col-md-6">
+                <select id="filter_body_shape" class="form-control{{ $errors->has('filter_body_shape') ? ' is-invalid' : '' }}" name="filter_body_shape" value="{{ old('filter_body_shape') }}">
+                    @if($profile->user()->first()->gender == 2)
+                        <option value="1"> Slim </option>
+                        <option value="2"> Slim With Packs </option>
+                        <option value="3"> Great Build </option>
+                        <option value="4"> Muscle Man </option>
+                        <option value="5"> Nothing To Show </option>
+                        <option value="6"> Thick </option>
+                    @else
+                        <option value="1"> Slim </option>
+                        <option value="2"> Figure 8 </option>
+                        <option value="3"> Nothing To Show</option>
+                        <option value="4"> Petite </option>
+                        <option value="5"> Full Package </option>
+                        <option value="6"> Thick </option>
+                    @endif
+                </select>
+
+                @if ($errors->has('#filter_body_shape'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('#filter_body_shape') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="filter_skin_colour" class="col-md-4 col-form-label text-md-right">{{ __('Skin Colour') }}</label>
+
+            <div class="col-md-6">
+                <select id="filter_skin_colour" class="form-control{{ $errors->has('filter_skin_colour') ? ' is-invalid' : '' }}" name="filter_skin_colour" value="{{ old('filter_skin_colour') }}">
+                    <option value="0"> Indifferent </option>
+                    <option value="1"> Very Black </option>
+                    <option value="2"> Chocolate </option>
+                    <option value="3"> Melanin </option>
+                    <option value="4"> Fair </option>
+                    <option value="5"> Yellow </option>
+                    <option value="6"> White </option>
+                </select>
+                @if ($errors->has('filter_skin_colour'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('filter_skin_colour') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
+
+            <div class="col-md-6">
+                <select id="job" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}">
+                    <option value="0">Indifferent</option>
+                    <option value="1"> Back-End-Developer </option>
+                    <option value="2"> Cloths/Perfumes/Hand-Bags Store</option>
+                    <option value="3"> Designer(UI/UX) </option>
+                    <option value="4"> Front-End-Developer </option>
+                    <option value="5"> Help </option>
+                    <option value="6"> Influencer/Promoter </option>
+                    <option value="7"> Interior Decorator </option>
+                    <option value="8"> Make Up Artist </option>
+                    <option value="9"> Mobile-Developer </option>
+                    <option value="10" > Photographer </option>
+                    <option value="11" > Phone/Laptop Repairs </option>
+                    <option value="12" > Phone/Laptop Sales </option>
+                    <option value="13" > Shoe-Store </option>
+                    <option value="14" > Shoe-Maker/Palm-Maker </option>
+                    <option value="15" > Tailor </option>
+                </select>
+                @if ($errors->has('need'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('need') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="filter_model" class="col-md-4 col-form-label text-md-right">{{ __('Model') }}</label>
+
+            <div class="col-md-6">
+                <select id="filter_model" class="form-control{{ $errors->has('filter_model') ? ' is-invalid' : '' }}" name="filter_model" >
+                    <option value="2"> Indifferent </option>
+                    <option value="1"> Yes </option>
+                    <option value="0"> No </option>
+                </select>
+
+                @if ($errors->has('filter_model'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('filter_model') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="filter_student" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
 
             <div class="col-md-6">
                 <select id="filter_student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" >

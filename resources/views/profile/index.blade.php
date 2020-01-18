@@ -120,19 +120,19 @@
             <div class="col-md-6">
                 <select id="body_shape" class="form-control{{ $errors->has('body_shape') ? ' is-invalid' : '' }}" name="body_shape" value="{{ old('body_shape') }}">
                     @if($profile->user()->first()->gender == 1)
-                        <option value="1"> Slim </option>
-                        <option value="2"> Slim With Packs </option>
-                        <option value="3"> Great Build </option>
-                        <option value="4"> Muscle Man </option>
-                        <option value="5"> Nothing To Show </option>
-                        <option value="6"> Thick </option>
+                        <option value="1" {{ $profile->body_shape=='1' ? 'selected':'' }}> Slim </option>
+                        <option value="2" {{ $profile->body_shape=='2' ? 'selected':'' }}> Slim With Packs </option>
+                        <option value="3" {{ $profile->body_shape=='3' ? 'selected':'' }}> Great Build </option>
+                        <option value="4" {{ $profile->body_shape=='4' ? 'selected':'' }}> Muscle Man </option>
+                        <option value="5" {{ $profile->body_shape=='5' ? 'selected':'' }}> Nothing To Show </option>
+                        <option value="6" {{ $profile->body_shape=='6' ? 'selected':'' }}> Thick </option>
                     @else
-                        <option value="1"> Slim </option>
-                        <option value="2"> Figure 8 </option>
-                        <option value="3"> Nothing To Show</option>
-                        <option value="4"> Petite </option>
-                        <option value="5"> Full Package </option>
-                        <option value="6"> Thick </option>
+                        <option value="1" {{ $profile->body_shape=='1' ? 'selected':'' }}> Slim </option>
+                        <option value="2" {{ $profile->body_shape=='2' ? 'selected':'' }}> Figure 8 </option>
+                        <option value="3" {{ $profile->body_shape=='3' ? 'selected':'' }}> Nothing To Show</option>
+                        <option value="4" {{ $profile->body_shape=='4' ? 'selected':'' }}> Petite </option>
+                        <option value="5" {{ $profile->body_shape=='5' ? 'selected':'' }}> Full Package </option>
+                        <option value="6" {{ $profile->body_shape=='6' ? 'selected':'' }}> Thick </option>
                     @endif
                 </select>
 
@@ -144,7 +144,7 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="skin_colour" class="col-md-4 col-form-label text-md-right">{{ __('Relationship Status') }}</label>
+            <label for="skin_colour" class="col-md-4 col-form-label text-md-right">{{ __('Skin Colour') }}</label>
 
             <div class="col-md-6">
                 <select id="skin_colour" class="form-control{{ $errors->has('skin_colour') ? ' is-invalid' : '' }}" name="skin_colour" value="{{ old('skin_colour') }}">
@@ -173,6 +173,7 @@
                     <option value="3" {{ $profile->need==3? 'selected':'' }}> Fun </option>
                     <option value="4" {{ $profile->need==4? 'selected':'' }}> Something Causual </option>
                     <option value="5" {{ $profile->need==5? 'selected':'' }}> Neutral </option>
+                </select>
 
                 @if ($errors->has('need'))
                     <span class="invalid-feedback" role="alert">
@@ -187,23 +188,23 @@
 
             <div class="col-md-6">
                 <select id="job" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}">
-                <option value="0">None</option>
-                <option value="1"> Back-End-Developer </option>
-                <option value="2"> Cloths/Perfumes/Hand-Bags Store</option>
-                <option value="3"> Designer(UI/UX) </option>
-                <option value="4"> Front-End-Developer </option>
-                <option value="5"> Help </option>
-                <option value="6"> Influencer/Promoter </option>
-                <option value="7"> Interior Decorator </option>
-                <option value="8"> Make Up Artist </option>
-                <option value="9"> Mobile-Developer </option>
-                <option value="10"> Photographer </option>
-                <option value="11"> Phone/Laptop Repairs </option>
-                <option value="12"> Phone/Laptop Sales </option>
-                <option value="13"> Shoe-Store </option>
-                <option value="14"> Shoe-Maker/Palm-Maker </option>
-                <option value="15"> Tailor </option>
-
+                    <option value="0" {{ $profile->job=='0' ? 'selected' : ''}} >None</option>
+                    <option value="1" {{ $profile->job=='1' ? 'selected' : ''}} > Back-End-Developer </option>
+                    <option value="2" {{ $profile->job=='2' ? 'selected' : ''}} > Cloths/Perfumes/Hand-Bags Store</option>
+                    <option value="3" {{ $profile->job=='3' ? 'selected' : ''}} > Designer(UI/UX) </option>
+                    <option value="4" {{ $profile->job=='4' ? 'selected' : ''}} > Front-End-Developer </option>
+                    <option value="5" {{ $profile->job=='5' ? 'selected' : ''}} > Help </option>
+                    <option value="6" {{ $profile->job=='6' ? 'selected' : ''}} > Influencer/Promoter </option>
+                    <option value="7" {{ $profile->job=='7' ? 'selected' : ''}} > Interior Decorator </option>
+                    <option value="8" {{ $profile->job=='8' ? 'selected' : ''}} > Make Up Artist </option>
+                    <option value="9" {{ $profile->job=='9' ? 'selected' : ''}} > Mobile-Developer </option>
+                    <option value="10" {{ $profile->job=='10' ? 'selected' : ''}} > Photographer </option>
+                    <option value="11" {{ $profile->job=='11' ? 'selected' : ''}} > Phone/Laptop Repairs </option>
+                    <option value="12" {{ $profile->job=='12' ? 'selected' : ''}} > Phone/Laptop Sales </option>
+                    <option value="13" {{ $profile->job=='13' ? 'selected' : ''}} > Shoe-Store </option>
+                    <option value="14" {{ $profile->job=='14' ? 'selected' : ''}} > Shoe-Maker/Palm-Maker </option>
+                    <option value="15" {{ $profile->job=='15' ? 'selected' : ''}} > Tailor </option>
+                </select>
                 @if ($errors->has('need'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('need') }}</strong>
@@ -211,9 +212,25 @@
                 @endif
             </div>
         </div>
-        
         <div class="form-group row">
-            <label for="student" class="col-md-4 col-form-label text-md-right">{{ __('Student') }}</label>
+            <label for="model" class="col-md-4 col-form-label text-md-right">{{ __('Model?') }}</label>
+
+            <div class="col-md-6">
+                <select id="model" class="form-control{{ $errors->has('model') ? ' is-invalid' : '' }}" name="model" >
+                    <option value="0" {{ $profile->model==0? 'selected':'' }}> No </option>
+                    <option value="1" {{ $profile->model==1? 'selected':'' }}> Yes </option>
+                </select>
+
+                @if ($errors->has('model'))
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $errors->first('model') }}</strong>
+                    </span>
+                @endif
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="student" class="col-md-4 col-form-label text-md-right">{{ __('Student?') }}</label>
 
             <div class="col-md-6">
                 <select id="student" class="form-control{{ $errors->has('student') ? ' is-invalid' : '' }}" name="student" >

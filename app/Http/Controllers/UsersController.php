@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Session;
 
 class UsersController extends Controller
 {
@@ -56,5 +57,37 @@ class UsersController extends Controller
 
             return json_encode($search);
         }
+    }
+
+    public function inst($Request $request){
+        $new_handle = $request->instagram;
+
+        $user_id = auth()->user()->id;
+
+        $user = User::find($user_id);
+
+        $user->instagram = $new_handle;
+
+        $user->save();
+
+        Session::flash('changedig','Your Instagram Handle has been changed');
+
+        return redirect()->back();
+    }
+
+public function twit($Request $request){
+        $new_handle = $request->twitter;
+
+        $user_id = auth()->user()->id;
+
+        $user = User::find($user_id);
+
+        $user->twitter = $new_handle;
+
+        $user->save();
+
+        Session::flash('changedig','Your Twitter Handle has been changed');
+
+        return redirect()->back();
     }
 }
