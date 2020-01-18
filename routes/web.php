@@ -80,9 +80,3 @@ Route::get('events/admin','AdminsController@index')->name('adminevent');
 Route::post('events/admin/verify/{id}','AdminsController@verify');
 
 Route::get('/settings','SettingsController@index')->name('settings');
-Route::get('/jobsettings','JobsController@index')->name('jsettings');
-Route::post('/jobsettings','JobsController@store')->name('js.post');
-
-
-Route::get('/jquest','AdminsController@jobquest')->name('jq');
-Route::post('/jquest','AdminsController@jobqpost')->name('jq.post');
