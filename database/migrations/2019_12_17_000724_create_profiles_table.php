@@ -27,6 +27,7 @@ class CreateProfilesTable extends Migration
             $table->integer('body_shape')->nullable();
             $table->integer('skin_colour')->nullable();
             $table->integer('need')->nullable();
+            $table->string('model')->nullable();
             $table->string('school')->nullable();
             $table->string('course')->nullable();
             $table->integer('level')->nullable();

@@ -20,11 +20,15 @@ student = sys.argv[11]
 school = sys.argv[12]
 course = sys.argv[13]
 level = sys.argv[14]
+skin = sys.argv[15]
+shape = sys.argv[16]
+job = sys.argv[17]
+model = sys.argv[18]
 
 
 conn = sqlite3.connect('../database/match.sqlite')
 
-def create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level):
+def create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level,skin,shape,job,model):
 	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
 	if(age != "0"):
 			query+= " and profiles.age = " + age
@@ -40,6 +44,14 @@ def create_query(gender,age,location,religion,height,r_status,m_status,student,s
 			query+= " and profiles.m_status >= " + m_status
 	if(need != "0"):
 			query+= " and profiles.need = " + need
+	if(skin != "0"):
+			query+= " and profiles.skin = " + skin
+	if(shape != "0"):
+			query+= " and profiles.shape = " + shape
+	if(job != "0"):
+			query+= " and profiles.job = " + job
+	if(model != "0"):
+			query+= " and profiles.model = " + model
 	if(student != "2"):
 			query+=" and profiles.student = " + student
 			if (school != "0"):
@@ -83,7 +95,7 @@ def bday_match(bd):
 		else:
 			return 0.0
 #connections and all
-query1 = create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level)
+query1 = create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level,skin,shape,job,model)
 
 query = "Select u.cluster,u.DOB," + based_on + ".* from " + based_on + " join (" + query1 + ") as u On u.id = " + based_on + ".user_id"
 
