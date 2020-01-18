@@ -8,7 +8,7 @@ class Profile extends Model
 {
 
 	protected $fillable = [
-        'user_id', 'gender', 'age','country','state','m_status','r_status','height','religion','student','need','level','course','school','job','model','body_shape','skin_colour'
+        'user_id', 'gender', 'age','country','state','m_status','r_status','height','religion','student','need','level','course','school','jobs','model','body_shape','skin_colour'
     ];
 
     public function user(){

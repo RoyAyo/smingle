@@ -10,6 +10,7 @@ class Notifications extends Model
     	'user_id',
     	'involved_id',
     	'notification_type',
-    	'recommendation'
+    	'recommendation',
+    	'event'
     ];
 }

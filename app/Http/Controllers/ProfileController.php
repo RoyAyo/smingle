@@ -30,7 +30,7 @@ class ProfileController extends Controller
         $height = $request->height;
         $body_shape = $request->body_shape;
         $skin_colour = $request->skin_colour;
-    	$job = $request->job;
+    	$jobs = $request->jobs;
         $model = $request->model;
     	$need = $request->need;
 
@@ -52,7 +52,7 @@ class ProfileController extends Controller
         $user->body_shape = $body_shape;
         $user->skin_colour = $skin_colour;
         $user->model = $model;
-		$user->job = $job;
+		$user->jobs = $jobs;
 
         if ($student != 0) {
             $user->level = $level;

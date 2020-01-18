@@ -197,30 +197,30 @@
         </div>
         
         <div class="form-group row">
-            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
+            <label for="jobs" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
 
             <div class="col-md-6">
-                <select id="job" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}">
-                    <option value="0" {{ $profile->job=='0' ? 'selected' : ''}} >None</option>
-                    <option value="1" {{ $profile->job=='1' ? 'selected' : ''}} > Back-End-Developer </option>
-                    <option value="2" {{ $profile->job=='2' ? 'selected' : ''}} > Cloths/Perfumes/Hand-Bags Store</option>
-                    <option value="3" {{ $profile->job=='3' ? 'selected' : ''}} > Designer(UI/UX) </option>
-                    <option value="4" {{ $profile->job=='4' ? 'selected' : ''}} > Front-End-Developer </option>
-                    <option value="5" {{ $profile->job=='5' ? 'selected' : ''}} > Help </option>
-                    <option value="6" {{ $profile->job=='6' ? 'selected' : ''}} > Influencer/Promoter </option>
-                    <option value="7" {{ $profile->job=='7' ? 'selected' : ''}} > Interior Decorator </option>
-                    <option value="8" {{ $profile->job=='8' ? 'selected' : ''}} > Make Up Artist </option>
-                    <option value="9" {{ $profile->job=='9' ? 'selected' : ''}} > Mobile-Developer </option>
-                    <option value="10" {{ $profile->job=='10' ? 'selected' : ''}} > Photographer </option>
-                    <option value="11" {{ $profile->job=='11' ? 'selected' : ''}} > Phone/Laptop Repairs </option>
-                    <option value="12" {{ $profile->job=='12' ? 'selected' : ''}} > Phone/Laptop Sales </option>
-                    <option value="13" {{ $profile->job=='13' ? 'selected' : ''}} > Shoe-Store </option>
-                    <option value="14" {{ $profile->job=='14' ? 'selected' : ''}} > Shoe-Maker/Palm-Maker </option>
-                    <option value="15" {{ $profile->job=='15' ? 'selected' : ''}} > Tailor </option>
+                <select id="jobs" class="form-control{{ $errors->has('jobs') ? ' is-invalid' : '' }}" name="jobs" value="{{ old('jobs') }}">
+                    <option value="0" {{ $profile->jobs=='0' ? 'selected' : ''}} >None</option>
+                    <option value="1" {{ $profile->jobs=='1' ? 'selected' : ''}} > Back-End-Developer </option>
+                    <option value="2" {{ $profile->jobs=='2' ? 'selected' : ''}} > Cloths/Perfumes/Hand-Bags Store</option>
+                    <option value="3" {{ $profile->jobs=='3' ? 'selected' : ''}} > Designer(UI/UX) </option>
+                    <option value="4" {{ $profile->jobs=='4' ? 'selected' : ''}} > Front-End-Developer </option>
+                    <option value="5" {{ $profile->jobs=='5' ? 'selected' : ''}} > Help </option>
+                    <option value="6" {{ $profile->jobs=='6' ? 'selected' : ''}} > Influencer/Promoter </option>
+                    <option value="7" {{ $profile->jobs=='7' ? 'selected' : ''}} > Interior Decorator </option>
+                    <option value="8" {{ $profile->jobs=='8' ? 'selected' : ''}} > Make Up Artist </option>
+                    <option value="9" {{ $profile->jobs=='9' ? 'selected' : ''}} > Mobile-Developer </option>
+                    <option value="10" {{ $profile->jobs=='10' ? 'selected' : ''}} > Photographer </option>
+                    <option value="11" {{ $profile->jobs=='11' ? 'selected' : ''}} > Phone/Laptop Repairs </option>
+                    <option value="12" {{ $profile->jobs=='12' ? 'selected' : ''}} > Phone/Laptop Sales </option>
+                    <option value="13" {{ $profile->jobs=='13' ? 'selected' : ''}} > Shoe-Store </option>
+                    <option value="14" {{ $profile->jobs=='14' ? 'selected' : ''}} > Shoe-Maker/Palm-Maker </option>
+                    <option value="15" {{ $profile->jobs=='15' ? 'selected' : ''}} > Tailor </option>
                 </select>
-                @if ($errors->has('need'))
+                @if ($errors->has('jobs'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('need') }}</strong>
+                        <strong>{{ $errors->first('jobs') }}</strong>
                     </span>
                 @endif
             </div>
