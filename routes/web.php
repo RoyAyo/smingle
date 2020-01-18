@@ -19,6 +19,9 @@ Route::get('/welcome', function () {
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/match', function(){
+	return view('match');
+})->name('findmatch');
 
 Auth::routes();
 
@@ -31,7 +34,6 @@ Route::get('/student','StudentsController@index')->name('student');
 Route::post('/student/{id}','StudentsController@update')->name('student.update');
 
 Route::get('/filter','FiltersController@index')->name('filter');
-// Route::post('/filter/{id}','FiltersController@store')->name('filter.store');
 
 Route::get('/about','AboutController@index')->name('about');
 
