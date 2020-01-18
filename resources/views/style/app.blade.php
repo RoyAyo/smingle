@@ -516,6 +516,12 @@
 		position: relative;
 		top: 5px;
 	}
+	#not-time{
+		float: right;
+	}
+	#not-time:after{
+		clear: both;
+	}
 
 
 </style>

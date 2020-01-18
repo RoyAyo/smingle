@@ -17,10 +17,10 @@
                                 @if($Notification->notification_type == 1)
                                     You were Matched with <a href="#">{{'@'.$Notification->other_name}}</a>
                                 @else   
-                                    <a href="#">{{'@'.$Notification->other_name}}</a> was matched with you'
+                                    <a href="#">{{'@'.$Notification->other_name}}</a> was matched with you
                                 @endif
                                 <button class="btn btn-info" style="margin-left: 1rem;">View</button>
-                                <span style="float: right;">{{ $Notification->created_at->diffForHumans() }}</span>
+                                <span id="not-time">{{ $Notification->created_at->diffForHumans() }}</span>
                             </p>
                         </div>
                 	@endforeach
