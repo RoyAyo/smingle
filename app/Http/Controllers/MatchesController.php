@@ -22,7 +22,8 @@ class MatchesController extends Controller
     	$filter = [];
 
 
-    	$loc = isset($request->location) ? $request->location : "0";
+        $country = isset($request->country) ? $request->country : "0";
+    	$state = isset($request->state) ? $request->state : "0";
     	$school = isset($request->school) ? $request->school : "0";
     	$course = isset($request->course) ? $request->course : "0";
 
@@ -51,7 +52,7 @@ class MatchesController extends Controller
     	$user_id = json_encode($user_id);
     	$filter = json_encode($filter);
 
-    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$loc.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level. ' '.$skin_colour.' '.$body_shape.' '.$job.' '.$model);
+    	$process = new Process('python ../public/python/matches.py '.$user_id.' '.$based_on.' '.$gen.' '.$age.' '.$country.' '.$state.' '.$rel.' '.$height.' '.$r_status.' '.$m_status.' '.$need.' '.$student.' '.$school.' '.$course.' '.$level. ' '.$skin_colour.' '.$body_shape.' '.$job.' '.$model);
 		$process->run();
 
 		if (!$process->isSuccessful()) {
