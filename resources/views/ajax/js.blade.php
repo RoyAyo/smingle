@@ -54,6 +54,10 @@
             const school = $('#filter_school').val();
             const course = $('#filter_course').val();
             const level = $('#filter_level').val();
+            const job = $('#filter_job').val();
+            const body_shape = $('#filter_body_shape').val();
+            const skin_colour = $('#filter_skin_colour').val();
+            const model = $('#filter_model').val();
 
             $.post("{{ route('match.check') }}",{
                '_token' : token,
@@ -68,7 +72,11 @@
                'student' : student,
                'school' : school,
                'course' : course,
-               'level' : level
+               'level' : level,
+               'job' : job,
+               'body_shape':body_shape,
+               'skin_colour':skin_colour,
+               'model':model
             },(res) => {
                 const result = res;
 

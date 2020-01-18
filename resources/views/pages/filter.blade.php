@@ -158,6 +158,7 @@
 
             <div class="col-md-6">
                 <select id="filter_body_shape" class="form-control{{ $errors->has('filter_body_shape') ? ' is-invalid' : '' }}" name="filter_body_shape" value="{{ old('filter_body_shape') }}">
+                        <option value="0">Indifferent</option>
                     @if($profile->user()->first()->gender == 2)
                         <option value="1"> Slim </option>
                         <option value="2"> Slim With Packs </option>
@@ -205,10 +206,10 @@
         </div>
 
         <div class="form-group row">
-            <label for="job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
+            <label for="filter_job" class="col-md-4 col-form-label text-md-right">{{ __('Job') }}</label>
 
             <div class="col-md-6">
-                <select id="job" class="form-control{{ $errors->has('job') ? ' is-invalid' : '' }}" name="job" value="{{ old('job') }}">
+                <select id="filter_job" class="form-control{{ $errors->has('filter_job') ? ' is-invalid' : '' }}" name="filter_job" value="{{ old('filter_job') }}">
                     <option value="0">Indifferent</option>
                     <option value="1"> Back-End-Developer </option>
                     <option value="2"> Cloths/Perfumes/Hand-Bags Store</option>
@@ -226,9 +227,9 @@
                     <option value="14" > Shoe-Maker/Palm-Maker </option>
                     <option value="15" > Tailor </option>
                 </select>
-                @if ($errors->has('need'))
+                @if ($errors->has('filter_job'))
                     <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('need') }}</strong>
+                        <strong>{{ $errors->first('#filter_job') }}</strong>
                     </span>
                 @endif
             </div>

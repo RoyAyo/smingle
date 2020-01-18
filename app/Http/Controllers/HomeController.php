@@ -31,6 +31,16 @@ class HomeController extends Controller
 
         $Notification = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->get();
 
+        foreach ($Notifications as $Notification) {
+            $other_id = $Notification->user_id == $user_id? $Notification->involved_id : $Notification->user_id;
+
+            $other_user = User::find($other_id);
+
+            $Notification->other_name = $other_user->username;
+            $Notification->other_id = $other_id;
+            $Notification->notification_type = $Notification->user_id == $user_id ? '1':'2';
+        }
+
         return view('home2')->with('Notifications',$Notification);
     }
 }

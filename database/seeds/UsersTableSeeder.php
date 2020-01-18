@@ -37,10 +37,13 @@ class UsersTableSeeder extends Seeder
 				'religion' => 1,
 				'height' => 2,
 				'need' => 1,
+                'skin_colour'=>2,
+                'model'=>0,
+                'body_shape'=>1,
                 'school' => 'Unilag',
                 'level' => 5,
                 'course' => "Chemical Engr",
-                'jobs' => '5'
+                'jobs' => '1'
         ]);
         App\Filled::create([
                 'user_id' => 1
