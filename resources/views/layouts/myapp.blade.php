@@ -161,9 +161,6 @@
 			</div>
 			<div class="card-footer" id="matchdivfooter">
 				<div>
-					<button class="btn btn-primary">Save Match</button>
-				</div>
-				<div>
 					<button class="btn btn-danger"><a id="matchedsmprofile" href="#" style="color: black;" target="_blank">Smingle Profile</a></button>
 				</div>
 				<div id="twm">

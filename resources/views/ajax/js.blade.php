@@ -30,7 +30,11 @@
 
                 $('#matchscore').html(result.score);
 
-                $('#matchedsmprofile').attr('href','user/'+result.username)
+                $('#matchedsmprofile').attr('href','user/'+result.username);
+
+                $('#matchedtwprofile').attr('href','https://twitter.com/'+request.twitter);
+                
+                $('#matchedigprofile').attr('href','https://www.instagram.com/'+request.instagram);
 
                 //$('#agematch').html(res.age);
 
