@@ -31,8 +31,4 @@ class AdminsController extends Controller
 
     	return $request->v;
     }
-
-    public function jquest(){
-        return view('admin.jquest');
-    }
 }

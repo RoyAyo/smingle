@@ -177,13 +177,6 @@
 	</div>
 	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 	@extends('ajax.js')
-	<script>
-		@if(Session::has('anon'))
-			toastr.success("{{Session::get('anon')}}")
-		@endif
-		@if(Session::has('eventVerified'))
-			toastr.success("{{Session::get('eventVerified')}}")
-		@endif
-	</script>
+	@extends('ajax.session')	
 </body>
 </html>

@@ -12,10 +12,7 @@
                     </button><br><br>
                     <button>
                         <a href="{{ route('event.party') }}" class="btn btn-default btn-center"> Parties </a>
-                    </button><br><br>
-                    <button>
-                        <a href="{{ route('event.movie') }}" class="btn btn-default btn-center"> Movies </a>
-                    </button>
+                    </button><br>
                 </div>
             </div>
         </div>
@@ -44,9 +41,6 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body">
-                <button>
-                        <a href="{{ route('event.suggest') }}" class="btn btn-default btn-center"> Suggest Event To Us </a>
-                </button><br><br>
                 <button>
                         <a href="{{ route('event.createparty') }}" class="btn btn-default btn-center"> Host A Party </a>
                 </button><br><br>

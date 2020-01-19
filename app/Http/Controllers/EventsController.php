@@ -93,13 +93,6 @@ class EventsController extends Controller
                                     ->with('e','Parties');
     }
 
-    public function movie(){
-        $events = Event::where('verified',1)->where('category',3)->where('public',1)->paginate(10);
-
-        return view('events.events')->with('events',$events)   
-                                    ->with('e','Movies');
-    }
-
     public function createshow(){    
     	return view('events.createshow');
     }
@@ -120,6 +113,8 @@ class EventsController extends Controller
             'category'=>1
         ]);
 
+        Session::flash('partyStored','Your party has been saved and can now be found in the parties in event');
+
         return redirect()->route('events');
     }
 
@@ -135,10 +130,8 @@ class EventsController extends Controller
             'category'=>2
         ]);
 
-        return redirect()->route('events');
-    }
-    
-    public function view(){
+        Session::flash('showStored','Your party has been saved and can now be found in the shows in event');
 
+        return redirect()->route('events');
     }
 }
