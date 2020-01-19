@@ -3,7 +3,7 @@
 	font-family:Helvetica,Arial,sans-serif;
 	box-sizing:border-box;
 	background-color:#F6F6F6;
-	width:50vw;
+	width:70vw;
 	border:none;
 	margin: 0 auto;
 	overflow:hidden;

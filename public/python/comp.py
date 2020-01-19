@@ -38,7 +38,7 @@ df.drop(['id','created_at','updated_at',"zodiac","cluster","DOB"],axis=1,inplace
 error = mse(df.loc[int(user_id1)].values,df.loc[int(user_id2)].values)
 
 
-tot_err = 125
+tot_err = 105
 
 if (error > tot_err):
 	corr = 0.15
@@ -49,7 +49,7 @@ else:
 cluster_diff = abs(cluster.loc[int(user_id1)] - cluster.loc[int(user_id2)])
 	
 if cluster_diff > 0:
-	cluster_diff = 0.05
+	cluster_diff = 0.035
 
 dob1 = dob.loc[int(user_id1)]
 month1 = dob1.split('-')[1]
@@ -79,7 +79,7 @@ else:
 
 m = (corr - cluster_diff) + zod
 
-ml_error_rate = 0.02
+ml_error_rate = 0.01
 
 m -= ml_error_rate
 

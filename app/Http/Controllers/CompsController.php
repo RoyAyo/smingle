@@ -18,9 +18,18 @@ class CompsController extends Controller
 
     public function check(Request $request){
 
+        $with = $request->using;
+
+        if ($with==3) {
+            $check_user = User::where('instagram',$request->username)->first();
+        }elseif ($with==2) {
+            $check_user = User::where('twitter',$request->username)->first();
+        }else{
+    	   $check_user = User::where('username',$request->username)->first();
+        }
+
     	$user_id = json_encode(Auth::user()->id);
 
-    	$check_user = User::where('username',$request->username)->first();
 
     	if (is_null($check_user)) {
     		return "Please Input A Valid User";

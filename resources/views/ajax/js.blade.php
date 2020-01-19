@@ -6,10 +6,12 @@
             e.preventDefault();
             $('#loader-div').show();
             const username = $('#check-user-match').val();
+            const using = $('#comp-with').val();
 
             $.post("{{ route('comp.check') }}",{
                '_token' : token,
-               'username' : username
+               'username' : username,
+               'using' : using
             },(res) => {
                 const result = res;
 
@@ -31,10 +33,6 @@
                 $('#matchscore').html(result.score);
 
                 $('#matchedsmprofile').attr('href','user/'+result.username);
-
-                $('#matchedtwprofile').attr('href','https://twitter.com/'+request.twitter);
-                
-                $('#matchedigprofile').attr('href','https://www.instagram.com/'+request.instagram);
 
                 //$('#agematch').html(res.age);
 
@@ -95,7 +93,11 @@
 
                 $('#matchscore').html(result.score);
 
-                $('#matchedsmprofile').attr('href','user/'+result.id)
+                $('#matchedsmprofile').attr('href','user/'+result.username);
+
+                $('#matchedtwprofile').attr('href','https://twitter.com/'+request.twitter);
+                
+                $('#matchedigprofile').attr('href','https://www.instagram.com/'+request.instagram);
 
                 //$('#agematch').html(res.age);
 

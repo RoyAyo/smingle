@@ -71,7 +71,7 @@ def mse(a2):
 		err = abs(a1[i] - a2[i])
 		e = math.pow(err,2)
 		error += e
-	tot_err = 135
+	tot_err = 105
 
 	if (error > tot_err):
 		corr = 0.2
@@ -82,7 +82,7 @@ def mse(a2):
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
-		cluster_diff = 0.05
+		cluster_diff = 0.035
 	return cluster_diff
 
 def bday_match(bd):
@@ -127,11 +127,11 @@ else:
 
 		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
 
-		ml_error_rate = 0.02
+		ml_error_rate = 0.01
 
 		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
 
-		df_top = df_search['match'].nlargest(1)
+		df_top = df_search['match'].nlargest(20)
 
 		r = random.randint(0,len(df_top)-1)
 
