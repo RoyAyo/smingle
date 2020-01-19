@@ -82,3 +82,7 @@ Route::get('events/admin','AdminsController@index')->name('adminevent');
 Route::post('events/admin/verify/{id}','AdminsController@verify');
 
 Route::get('/settings','SettingsController@index')->name('settings');
+
+Route::get('lol',function(){
+	return view('pages.test');
+});
