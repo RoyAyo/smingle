@@ -522,6 +522,9 @@
 	#not-time:after{
 		clear: both;
 	}
+	.prof-filters{
+		font-weight: bold;
+	}
 
 
 </style>

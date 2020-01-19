@@ -16,7 +16,7 @@
         <h3 style="font-weight: bold;margin-bottom: 0.05rem;">{{ $user->name }}</h3>
         <h5 style="color: grey;margin-bottom: 0px;">24</h5>
         @if($user->profile()->first()->model == 1)
-            <h5 style="color: orange;font-weight: bold;">Model</h5>
+            <h5 style="color: skyblue;">Model</h5>
         @endif
     </div>
     <div id="message-user">
@@ -27,7 +27,9 @@
     </div>
     <div class="bio">
         <div class="content" style="font-size: 12pt;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro officiis fugit hic vel voluptates perferendis aut quibusdam sit omnis unde aspernatur</p>
+            <center>
+                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.3rem;word-break: keep-all;word-wrap: break-word;">Fuck you and anything you think of me...</p>
+            </center>
         </div>
         <div>
             <hr>
@@ -35,43 +37,43 @@
         </div>
         <hr>
         <div>
-            Height Range : {{ $h[$user->profile()->first()->height] }}
+            Height Range : <span class="prof-filters">{{ $h[$user->profile()->first()->height] }}</span>
         </div><hr>
         <div>
-            Religion : {{ $r[$user->profile()->first()->religion] }}
+            Religion : <span class='prof-filters'>{{ $r[$user->profile()->first()->religion] }}</span>
         </div><hr>
         @if($user->gender == '1')
             <div>
-                Body_Shape : {{ $b_s1[$user->profile()->first()->body_shape]}}
+                Body_Shape : <span class='prof-filters'>{{ $b_s1[$user->profile()->first()->body_shape]}}</span>
             </div><hr>
         @else
             <div>
-                Body_Shape : {{ $b_s2[$user->profile()->first()->body_shape]}}
+                Body_Shape : <span class='prof-filters'>{{ $b_s2[$user->profile()->first()->body_shape]}}</span>
             </div><hr>
         @endif
         <div>
-            Skin_Colour : {{ $s_c[$user->profile()->first()->skin_colour]}}
+            Skin_Colour : <span class='prof-filters'>{{ $s_c[$user->profile()->first()->skin_colour]}}</span>
         </div><hr>
         <div>
-            Money_Status : {{ $m_s[$user->profile()->first()->m_status]}}
+            Money_Status : <span class='prof-filters'>{{ $m_s[$user->profile()->first()->m_status]}}</span>
         </div><hr>
         <div>
-             Zodiac_Sign : {{$user->zodiac}}
+             Zodiac_Sign : <span class='prof-filters'>{{$user->zodiac}}</span>
         </div>
         @if($user->profile()->first()->student==1)
             <hr>
             <div>
-                School : {{$user->profile()->first()->school}}
+                School : <span class='prof-filters'>{{$user->profile()->first()->school}}</span>
             </div>
             <hr>
             <div>
-                Course : {{$user->profile()->first()->course}}
+                Course : <span class='prof-filters'>{{$user->profile()->first()->course}}</span>
             </div>
         @endif
         @if($user->profile()->first()->job!=0)
             <hr>
             <div>
-                Job:{{$user->profile()->first()->job}}
+                Job:<span class='prof-filters'>{{$user->profile()->first()->job}}</span>
             </div>
         @endif
     </div>
