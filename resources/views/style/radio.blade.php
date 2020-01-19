@@ -4,10 +4,11 @@
 	box-sizing:border-box;
 	background-color:#F6F6F6;
 	width:50vw;
-	border:1px solid red;
+	border:none;
+	margin: 0 auto;
 	overflow:hidden;
-	margin-bottom: 0.3rem;
-	padding: 0.1rem 0.2rem;
+	margin-bottom: 0.5rem;
+	padding: 0.1rem 1rem;
 }
 .q p{
 		box-sizing:border-box;
@@ -34,6 +35,7 @@ label span{
 	display:block;
 	width:80%;
 	padding:15px;
+	margin: 0 auto;
 	background-color:#FFF;
 	margin-bottom:10px;
 	font-family:new-cursive;

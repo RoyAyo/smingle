@@ -16,7 +16,7 @@ class GeneralsController extends Controller
     public function index(){
     	$user_id = Auth::user()->id;
 
-    	return view('pages.pages.general')->with('id',$user_id);
+    	return view('pages.pages.you')->with('id',$user_id);
     }
 
     public function store(Request $request,$id){

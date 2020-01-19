@@ -19,13 +19,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
 
-<!--     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css"> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @extends('style.app')
 	@extends('style.loader')
+	@extends('style.radio')
 </head>
 <body>
 	<div id="app">
@@ -81,7 +82,7 @@
 	                    <a href="{{route('findmatch')}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Find Match</a>
 	                </li>
 	                <li>
-	                    <a href="{{ route('about') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>
+	                    <a href="{{ route('general') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>
 	                </li>
 	                <li>
 	                    <a href="{{ route('anon') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}">Anonymous Messages</a>
@@ -174,7 +175,7 @@
 			</div>
 		</div>
 	</div>
-<!-- 	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script> -->
+	 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 	@extends('ajax.js')
 	<script>
 		@if(Session::has('anon'))
