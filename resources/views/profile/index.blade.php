@@ -15,9 +15,9 @@
                 <select id="age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" autofocus>
                 	<option value="1" {{ $profile->age==1 ? 'selected':'' }}> 15-18 </option>
                 	<option value="2" {{ $profile->age==2 ? 'selected':'' }}> 19-23 </option>
-                	<option value="3" {{ $profile->age==3 ? 'selected':'' }}> 24-29 </option>
+                	<option value="3" {{ $profile->age==3 ? 'selected':'' }}> 24-28 </option>
                 	<option value="4" {{ $profile->age==4 ? 'selected':'' }}> 29-32 </option>
-                    <option value="5" {{ $profile->age==5? 'selected':'' }}> 32-40 </option>
+                    <option value="5" {{ $profile->age==5? 'selected':'' }}> 33-40 </option>
                 	<option value="6" {{ $profile->age==6? 'selected':'' }}> >40 </option>
                 </select>
 
