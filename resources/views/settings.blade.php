@@ -55,9 +55,9 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form role="form" class="form-group" action="#" method="POST">
+                <form role="form" class="form-group" action="{{route('cig')}}" method="POST">
                     <label for="check-user-match"> IG Handle </label>
-                    <input type="text" name="ig-handle" id="id-handle" class="form-control" required/>
+                    <input type="text" name="instagram" id="id-handle" class="form-control" required/>
                     <button id="user-sub" type="submit" class="btn btn-default">Change</button>
                 </form>
             </div>
@@ -74,9 +74,9 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form role="form" class="form-group" action="#" method="POST">
+                <form role="form" class="form-group" action="{{route('ctwit')}}" method="POST">
                     <label for="check-user-match"> Twitter Handle </label>
-                    <input type="text" name="ig-handle" id="id-handle" class="form-control" required/>
+                    <input type="text" name="twitter" id="id-handle" class="form-control" required/>
                     <button id="user-sub" type="submit" class="btn btn-default">Change</button>
                 </form>
             </div>

@@ -55,7 +55,9 @@ Route::get('/message/{id}','MessagesController@message')->name('message');
 Route::post('/message/{id}','MessagesController@store')->name('message.store');
 
 Route::get('/user/{username}','UsersController@index')->name('user');
-Route::post('pp','UsersController@pics')->name('pics');
+Route::post('/pp','UsersController@pics')->name('pics');
+Route::post('/cig','UsersController@pics')->name('updateig');
+Route::post('/ctwit','UsersController@pics')->name('updatetwit');
 
 Route::get('anon','AnonsController@index')->name('anon');
 Route::post('anon','AnonsController@create')->name('anon.create');
@@ -66,13 +68,11 @@ Route::get('events/event/{id}','EventsController@event')->name('event.id');
 Route::post('events/event/attend/{id}','EventsController@attend')->name('event.attend');
 Route::get('events/shows','EventsController@show')->name('event.show');
 Route::get('events/parties','EventsController@party')->name('event.party');
-Route::get('events/movies','EventsController@movie')->name('event.movie');
 Route::post('events/storeshow','EventsController@storeshow')->name('event.storeshow');
 Route::post('events/storeparty','EventsController@storeparty')->name('event.storeparty');
 Route::post('events/storemovie','EventsController@storemovie')->name('event.storemovie');
 Route::get('events/addshow','EventsController@createshow')->name('event.createshow');
 Route::get('events/addparty','EventsController@createparty')->name('event.createparty');
-Route::get('events/addmovie','EventsController@createmovie')->name('event.createmovie');
 Route::get('events/suggest','EventsController@suggest')->name('event.suggest');
 Route::get('events/notifications','EventsController@notifications')->name('event.notifications');
 Route::post('events/suggest','EventsController@storesuggest')->name('event.storesuggest');
@@ -82,7 +82,3 @@ Route::get('events/admin','AdminsController@index')->name('adminevent');
 Route::post('events/admin/verify/{id}','AdminsController@verify');
 
 Route::get('/settings','SettingsController@index')->name('settings');
-
-Route::get('lol',function(){
-	return view('pages.test');
-});

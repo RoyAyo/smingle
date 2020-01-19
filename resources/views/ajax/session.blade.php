@@ -20,7 +20,7 @@
 	@if(Session::has('changedig'))
 		toastr.info("{{Session::get('changedig')}}")
 	@endif
-	@if(Session::has('changedIg'))
+	@if(Session::has('changedtwit'))
 		toastr.info("{{Session::get('changedtwit')}}")
 	@endif
 </script>
