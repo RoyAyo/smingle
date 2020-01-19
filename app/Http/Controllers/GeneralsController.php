@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\General;
 use App\Filled;
+use Session;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -55,6 +56,8 @@ class GeneralsController extends Controller
             $req->gen14 = $gen14;
             $req->gen15 = $gen15;
             $req->save();
+
+            Session::flash('aboutFilled','About you has been updated');
             
         }else{
             General::create([
@@ -80,7 +83,10 @@ class GeneralsController extends Controller
             $filled->general = 1;
 
             $filled->save();
+
+            Session::flash('aboutFilled','Your response is saved, you can now find a match');
         }
+
 
         return redirect()->route('home');
     }

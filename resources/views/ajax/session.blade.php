@@ -14,10 +14,13 @@
 	@if(Session::has('showStored'))
 		toastr.success("{{Session::get('showStored')}}")
 	@endif
-	@if(Session::has('eventVerified'))
-		toastr.success("{{Session::get('eventVerified')}}")
+	@if(Session::has('aboutFilled'))
+		toastr.success("{{Session::get('aboutFilled')}}")
 	@endif
-	@if(Session::has('eventVerified'))
-		toastr.success("{{Session::get('eventVerified')}}")
+	@if(Session::has('changedig'))
+		toastr.info("{{Session::get('changedig')}}")
+	@endif
+	@if(Session::has('changedIg'))
+		toastr.info("{{Session::get('changedtwit')}}")
 	@endif
 </script>
