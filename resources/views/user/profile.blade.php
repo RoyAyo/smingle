@@ -14,10 +14,8 @@
     <div class="jumbo" style="background-image: url( {{ asset('images/uploads/4.jpg') }} );"></div>
     <div class="details">
         <h3 style="font-weight: bold;margin-bottom: 0.05rem;">{{ $user->name }}</h3>
+        <h4 style="margin-bottom: 0.05rem;color: skyblue">{{'@'.$user->username }}</h4>
         <h5 style="color: grey;margin-bottom: 0px;">24</h5>
-        @if($user->profile()->first()->model == 1)
-            <h5 style="color: skyblue;">Model</h5>
-        @endif
     </div>
     <div id="message-user">
         @if($owner == 0 )
@@ -35,6 +33,12 @@
             <hr>
             {{$user->profile()->first()->state}}
         </div>
+        @if($user->profile()->first()->model == 1)
+            <hr>
+            <div style="font-weight: bold;">
+                Model
+            </div>
+        @endif
         <hr>
         <div>
             Height Range : <span class="prof-filters">{{ $h[$user->profile()->first()->height] }}</span>

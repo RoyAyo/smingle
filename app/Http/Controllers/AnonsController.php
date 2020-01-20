@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\AnonMessage;
+use App\User;
 use Session;
 
 class AnonsController extends Controller
@@ -30,7 +31,7 @@ class AnonsController extends Controller
             'sender_id' => auth()->user()->id
     	]);
 
-        Session::flash('anon','Your Anonymous Message has been successfully sent');
+        Session::flash('anon','Your Anonymous Message has been successfully sent to @'.User::find($request->anonreceiver)->username);
 
     	return redirect()->back();
     }
