@@ -1,5 +1,4 @@
 <style>
-messages
 	/* Default properties for the website */
 	*{
 		box-sizing: border-box;

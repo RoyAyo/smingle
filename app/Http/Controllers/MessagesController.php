@@ -56,7 +56,6 @@ class MessagesController extends Controller
         	->where('receiver_id','=',$user_id);
         })->orderBy('created_at')->get();
 
-
         $other_name = User::find($other_id)->username;
 
         return view('message.chat')->with('messages',$messages)

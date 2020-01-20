@@ -80,6 +80,7 @@ public function twit(Request $request){
 
         return redirect()->back();
     }
+<<<<<<< HEAD
 
     public function settings(){
         $t = is_null(auth()->user()->twitter) ? '' : auth()->user()->twitter;
@@ -87,4 +88,6 @@ public function twit(Request $request){
         return view('settings')->with('ig_handle',$i)
                                ->with('twitter_handle',$t);
     }
+=======
+>>>>>>> c0712bd25aff8a6b5635e436aba188cb3112961d
 }

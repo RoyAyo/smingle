@@ -58,7 +58,6 @@ Route::get('/user/{username}','UsersController@index')->name('user');
 Route::post('/pp','UsersController@pics')->name('pics');
 Route::post('/cig','UsersController@inst')->name('cig');
 Route::post('/ctwit','UsersController@twit')->name('ctwit');
-
 Route::get('anon','AnonsController@index')->name('anon');
 Route::post('anon','AnonsController@create')->name('anon.create');
 

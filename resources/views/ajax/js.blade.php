@@ -183,7 +183,6 @@
             //     }
             // });
         
-
         $('#send-message-btn').on('click', (e) => {
             e.preventDefault();
             const message = $('#chat-message').val();
