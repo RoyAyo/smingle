@@ -62,7 +62,7 @@ class CompsController extends Controller
 		$match = $process->getOutput();
 
 
-		$m = round(floatval($match) * 100,2);
+		$m = round(floatval($match) * 100,1);
 
 		
 		$match_perc = strval($m). '%';

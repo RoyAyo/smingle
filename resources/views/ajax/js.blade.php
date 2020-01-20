@@ -20,7 +20,7 @@
                     $('#loader-div').hide();
                     return;
                 }
-                $('.matched-title').html('Your Match!!!');
+                $('.matched-title').html('!!!');
                 
                 $('#twm').hide();
                 $('#igm').hide();

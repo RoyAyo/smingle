@@ -75,7 +75,7 @@ class MatchesController extends Controller
 		$score = $d->match;
 
 		$match = User::find($best_id);
-        $match->score = strval(round($score,3) * 100).'%';
+        $match->score = strval(round($score,1) * 100).'%';
 
         Notifications::create([
             'user_id'=>$best_id,
