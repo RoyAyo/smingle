@@ -142,7 +142,7 @@
 							You
 						</div>
 					</div>
-					<div class="arrow"><--></div>
+					<div class="arrow">&#11012</div>
 					<div class="imdiv" id="immatch">
 						<div>
 							<img src="{{ asset('images/uploads/4.jpg') }}">

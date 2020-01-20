@@ -437,8 +437,8 @@
 	}
 	.match-imgs .arrow{
 		position: relative;
-		top: 130px;
-		font-size: 30pt;
+		top: 80px;
+		font-size: 100px !important;
 		font-weight: bold;
 	}
 
@@ -469,7 +469,6 @@
 		padding: 0.5rem 4rem;
 		flex-wrap: wrap;
 	}
-
 	@media(max-width: 768px){
 		.event-avatar img{	
 			width: 250px;
@@ -481,8 +480,8 @@
 			border-radius: 50%;
 		}
 		.match-imgs .arrow{
-			top: 60px;
-			font-size: 20pt;
+			top: 10px;
+			font-size: 80px !important;
 		}
 		.match-imgs{
 			margin-bottom: 70px;
@@ -502,8 +501,8 @@
 			border-radius: 50%;
 		}
 		.match-imgs .arrow{
-			top: 50px;
-			font-size: 12pt;
+			top: 10px;
+			font-size: 60px !important;
 		}
 	}
 	@media(max-width: 990px){

@@ -34,9 +34,9 @@ def create_query(gender,age,country,state,religion,height,r_status,m_status,stud
 	if(age != "0"):
 			query+= " and profiles.age = " + age
 	if(country != "0"):
-			query+= " and profiles.country = '" + country + "'"
+			query+= " and profiles.country Like '%" + country + "%'"
 	if(state != "0"):
-			query+= " and profiles.state = '" + state + "'"
+			query+= " and profiles.state Like '%" + state + "%'"
 	if(religion != "0"):
 			query+= " and profiles.religion = " + religion
 	if(height != "0"):
@@ -58,7 +58,7 @@ def create_query(gender,age,country,state,religion,height,r_status,m_status,stud
 	if(student != "2"):
 			query+=" and profiles.student = " + student
 			if (school != "0"):
-				query+= " and profiles.school = '" + school + "'"
+				query+= " and profiles.school Like '%" + school + "%'"
 			if(course != "0"):
 					query+= " and profiles.course = '" + course + "'"
 			if(level != "0"):
@@ -101,6 +101,7 @@ def bday_match(bd):
 query1 = create_query(gender,age,country,state,religion,height,r_status,m_status,student,school,course,level,skin,shape,job,model)
 
 query = "Select u.cluster,u.DOB," + based_on + ".* from " + based_on + " join (" + query1 + ") as u On u.id = " + based_on + ".user_id"
+
 
 df = pd.read_sql_query(query,conn)
 
