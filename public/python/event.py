@@ -109,46 +109,45 @@ query1 = create_query(gender,age,country,state,religion,height,r_status,m_status
 
 query = "Select u.cluster,u.DOB," + based_on + ".* from " + based_on + " join (" + query1 + ") as u On u.id = " + based_on + ".user_id"
 
-print(query)
 
 df = pd.read_sql_query(query,conn)
-print(len(df))
 
-# if len(df) == 0:
-# 	print(json.dumps(0))
-# else:
-# 	df.set_index('user_id',inplace=True)
-# 	df.drop(['id','created_at','updated_at'],axis=1,inplace=True)
 
-# 	a = df.loc[user_id].values
-# 	user_cluster = a[0]
-# 	user_bday = a[1]
-# 	a1 = a[2:]
+if len(df) == 0:
+	print(json.dumps(0))
+else:
+	df.set_index('user_id',inplace=True)
+	df.drop(['id','created_at','updated_at'],axis=1,inplace=True)
 
-# 	df_search = df.drop(user_id)
-# 	if len(df_search) == 0:
-# 		print(json.dumps(0))
-# 	else:
-# 		#you must pass the first critereria stage
+	a = df.loc[user_id].values
+	user_cluster = a[0]
+	user_bday = a[1]
+	a1 = a[2:]
 
-# 		df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
+	df_search = df.drop(user_id)
+	if len(df_search) == 0:
+		print(json.dumps(0))
+	else:
+		#you must pass the first critereria stage
 
-# 		df_search['cluster'] = df['cluster'].apply(clus)
+		df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
 
-# 		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
+		df_search['cluster'] = df['cluster'].apply(clus)
 
-# 		ml_error_rate = 0.01
+		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
 
-# 		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
+		ml_error_rate = 0.01
 
-# 		df_top = df_search['match'].nlargest(20)
+		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
 
-# 		r = random.randint(0,len(df_top)-1)
+		df_top = df_search['match'].nlargest(20)
 
-# 		i = df_top.index[r]
+		r = random.randint(0,len(df_top)-1)
 
-# 		best = {}
-# 		best["id"] = int(i)
-# 		best["match"] = df_top.loc[i]
+		i = df_top.index[r]
 
-# 		print(json.dumps(best))
+		best = {}
+		best["id"] = int(i)
+		best["match"] = df_top.loc[i]
+
+		print(json.dumps(best))
