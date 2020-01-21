@@ -75,8 +75,8 @@ def mse(a2):
 		error += e
 	tot_err = 105
 
-	if (error > tot_err):
-		corr = 0.2
+	if (error >= (tot_err-5)):
+			corr = 0.1
 	else:
 		corr = (abs(tot_err - error) / tot_err)	
 	return corr
@@ -84,7 +84,7 @@ def mse(a2):
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
-		cluster_diff = 0.035
+		cluster_diff = 0.04
 	return cluster_diff
 
 def bday_match(bd):

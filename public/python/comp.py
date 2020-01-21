@@ -42,8 +42,8 @@ error = mse(df.loc[int(user_id1)].values,df.loc[int(user_id2)].values)
 
 tot_err = 105
 
-if (error > tot_err):
-	corr = 0.15
+if (error > (tot_err-10)):
+	corr = 0.12
 else:
 	corr = (abs(tot_err - error) / tot_err)
 
@@ -85,7 +85,7 @@ ml_error_rate = 0.01
 
 m -= ml_error_rate
 
-if m >= 1.0:
+if m >= 0.98:
 	print(0.98)
 else:
 	print(m)
