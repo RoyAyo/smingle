@@ -74,6 +74,6 @@ Route::get('events/addparty','EventsController@createparty')->name('event.create
 Route::get('events/privateshow/{id}','EventsController@privateshow')->name('event.privateshow');
 Route::get('events/privateparty/{id}','EventsController@privatepart')->name('event.privateparty');
 Route::get('events/admin','AdminsController@index')->name('adminevent');
-Route::post('events/admin/verify/{id}','AdminsController@verify');
+Route::post('events/admin/verify/{id}','AdminsController@verify')->name('event.verify');
 
 Route::get('/settings','UsersController@settings')->name('settings');

@@ -7,7 +7,7 @@
 			<div id="all-events">
 				@if($events->count() == 0)
 					<div>
-						<h3 style="font-weight: bold;">There are currently no events at this time</h3>
+						<h3 style="font-weight: bold;">.....</h3>
 					</div>
 				@endif
 				@foreach($events as $event)
@@ -23,7 +23,9 @@
 						<h4 class="event-name"> Users Going: {{ $event->users_going}} </h4>
 						<h4 class="event-name"> Verified: {{$event->verified}} </h4>
 						<h4 class="event-name"> Attending: No </h4>
-						<button class="btn btn-default btn-lg verify" verified='{{ $event->verified == 0 ? 0:1 }}' ide="{{ $event->id }}">{{ $event->verified == 0 ? 'Verify' : 'Unverify' }}  </button>
+						<form method="POST" action="{{route('event.verify',['id'=>{{$event->id}}])}}">
+							<button class="btn btn-default btn-lg verify" verified='{{ $event->verified == 0 ? 0:1 }}' ide="{{ $event->id }}" type="submit">{{ $event->verified == 0 ? 'Verify' : 'Unverify' }}  </button>
+						</form>
 					</div>
 				@endforeach
 			</div>

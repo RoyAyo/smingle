@@ -41,7 +41,7 @@
 				<input type="radio" name="clus5" value="3"><span>It's A Good Thing But Not For Me</span><br>
 				<input type="radio" name="clus5" value="4"><span>I prefer the safer side</span>
 			</div>
-			<input type="submit" value="submit" id="cluster-submit">
+			<input type="submit" value="Submit!" id="cluster-submit" class="btn btn-info">
 		</form>
 	</div>
 

@@ -140,22 +140,22 @@
 				</span>
 			</div>
 			<div class="q">
-				<p>Yahoo Boys?</p>
+				<p>What would you pick as most important?</p>
 				<span>
 					<input type="radio" name="gen8" id="opt28" class="btnQ" value='1'>
-					<label for="opt28"><span>They were pushed to the edge by country</span></label>
+					<label for="opt28"><span>Religion</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen8" id="opt29" class="btnQ" value='2'>
-					<label for="opt29"><span>I could care less</span></label>
+					<label for="opt29"><span>Respect</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen8" id="opt30" class="btnQ" value='3'>
-					<label for="opt30"><span>Stupid people</span></label>
+					<label for="opt30"><span>Education</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen8" id="opt31" class="btnQ" value='4'>
-					<label for="opt31"><span>Something serious really needs to be done about them.</span></label>
+					<label for="opt31"><span>Money</span></label>
 				</span>
 			</div>
 			<div class="q">
@@ -288,7 +288,7 @@
 				</span>
 				<span>
 					<input type="radio" name="gen15" id="opt59" class="btnQ" value='4'>
-					<label for="opt59"><span>Gambling</span></label>
+					<label for="opt59"><span>Something Illegal</span></label>
 				</span>
 			</div>
 			<div style="text-align: center;">
