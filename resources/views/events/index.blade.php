@@ -12,20 +12,17 @@
                     </button><br><br>
                     <button>
                         <a href="{{ route('event.party') }}" class="btn btn-default btn-center"> Parties </a>
+                    </button><br><br>
+                    <button>
+                        <a data-target='#addyourevent' data-toggle='modal' class="btn btn-default btn-center"> Add Event </a>
                     </button><br>
                 </div>
             </div>
         </div>
         <div class="col-md-5">
             <div class="card">
-                <div class="card-header">Others</div>
+                <div class="card-header">Hosted</div>
                 <div class="card-body">
-                    <button>
-                        <a href="{{ route('event.notifications') }}" class="btn btn-default btn-center"> Notifications </a>
-                    </button><br><br>
-                    <button>
-                        <a data-target='#addyourevent' data-toggle='modal' class="btn btn-default btn-center"> Add Event </a>
-                    </button><br><br>
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
     <div class="details">
         <h3 style="font-weight: bold;margin-bottom: 0.05rem;">{{ $user->name }}</h3>
         <h4 style="margin-bottom: 0.05rem;color: skyblue">{{'@'.$user->username }}</h4>
-        <h5 style="color: grey;margin-bottom: 0px;">24</h5>
+        <h5 style="color: grey;margin-bottom: 0px;">{{Carbon\Carbon::parse($user->DOB)->age}}</h5>
     </div>
     <div id="message-user">
         @if($owner == 0 )

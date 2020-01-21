@@ -112,76 +112,25 @@
             $("#wrapper").toggleClass("toggled");
         });
         
-
-        $('.verify').on('click',function() {
-            const id = $(this).attr('ide');
-            var v = $(this).attr('verified');
-            if (v == "0") {
-                v = 1;
-                $(this).attr('verified','1');
-                $(this).html('Unverify');
-            }else{
-                v = 0;
-                $(this).attr('verified','0');
-                $(this).html('Verify');
-            }
-
-            $.post('admin/verify/'+id,{
-                '_token' : token,
-                'v' : v
-            },(res)=>{
-             if (res == '1') {
-                $('.event_going_'+id).attr('attending',res);
-                $('.event_going_'+id).html('Users Going: '+res);
-             }else{
-                $('.event_going_'+id).attr('attending',res);
-                $('.event_going_'+id).html('Users Going: '+res);
-             }
-            });
-        });
-
-
-        $('.attend_event').on('click',function(){
-            const id = $(this).attr('ide');
-            var a = $(this).attr('attend');
-            if (a == "0") {
-                a = 1;
-                $(this).attr('attend','1');
-                $(this).html('Unattend');
-            }else{
-                a = 0;
-                $(this).attr('attend','0');
-                $(this).html('Attend');
-            }
-            alert(a)
-            $.post('attend/'+id,{
-                '_token' : token,
-                'a' : a
-            },(res) => {
-                $('.event_going_'+id).attr('attending',res);
-                $('.event_going_'+id).html('Users Going: '+res);
-            });
-
-        });
         
 
-        // //pusher for my messages
-            // Pusher.logToConsole = true;
+        //pusher for my messages
+            Pusher.logToConsole = true;
 
-            // var pusher = new Pusher('0af97750b30e5e72df02', {
-            //     cluster: 'eu',
-            //     forceTLS: true
-            // });
+            var pusher = new Pusher('0af97750b30e5e72df02', {
+                cluster: 'eu',
+                forceTLS: true
+            });
 
-            // var channel = pusher.subscribe('my-channel');
-            // channel.bind('my-event', function(data) {
-            //     $('#chat-message').val("");
-            //     if (data.message.sender_id == {{auth()->user()->id}}) {
-            //         $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
-            //     }else{
-            //         $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
-            //     }
-            // });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+                $('#chat-message').val("");
+                if (data.message.sender_id == {{auth()->user()->id}}) {
+                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
+                }else{
+                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
+                }
+            });
         
         $('#send-message-btn').on('click', (e) => {
             e.preventDefault();
@@ -227,7 +176,7 @@
         });
 
         $('#closematchdiv').on('click',() => {
-            $('#matched-div').fadeOut(500)
+            $('#matched-div').fadeOut(400)
         });
     });
 

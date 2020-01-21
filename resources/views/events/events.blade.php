@@ -1,23 +1,28 @@
 @extends('layouts.myapp')
 
 @section('content')
-
 	<div class="container">
 		<div class="bg-white">
 			<div id="all-events">
 				@if($events->count() == 0)
-					<div>
-						<h3 style="font-weight: bold;">There are currently no Hosted {{$e}} at this time</h3>
+					<div class="panel" style="height: calc(100vh - 58px)">
+						
 					</div>
 				@endif
 				@foreach($events as $event)
-					<div class="event card" style="padding-left: 0.4rem;margin-bottom: 0.5rem;">
-						<h2 class="event-date"> -) {{ $event->event_name }}</h2>
-						<center>
-							<p class="event-avatar"> <img src="{{ asset('images/uploads/3.jpg') }}"> </p>
-						</center>
-						<h4 class="event-name"><a href="{{ route('event.id',['id' => $event->id]) }}"> Hosted By: {{$event->host_name}} </a></h4>
-						<h4 class="event-name"> Date: {{$event->event_date}} </h4>
+					<div class="card" style="margin-bottom: 0.3rem;">
+						<a href="{{ route('event.id',['id' => $event->id]) }}" style="display: block;"> 
+						<div class="card-header">
+							<h4 style="font-weight: bold;"> {{ $event->event_name }}</h4>
+						</div>
+						<div class="card-body">
+							<span style="float: right;position: relative;bottom: 13px;font-size: 40px;">&#8250</span>
+							<span>
+							<h6>Hosted By: {{$event->host_name}}</h6>
+							<h6> Date: {{$event->event_date}} </h6>
+							</span>
+						</div>
+						</a>
 					</div>
 				@endforeach
 			</div>

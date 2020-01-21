@@ -29,6 +29,6 @@ class AdminsController extends Controller
 
     	Session::flash('eventVerified',$message);
 
-    	return $request->v;
+    	return redirect()->back();
     }
 }

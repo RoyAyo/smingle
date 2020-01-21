@@ -51,15 +51,17 @@ class EventsController extends Controller
 
         $attend = Attending::Where('user_id',$user_id)->where('event_id',$event_id);
 
-        $a = $request->a;
         if ($attend->count() == 0) {
             Attending::create([
                 'user_id' => $user_id,
                 'event_id'=> $event_id,
-                'attending'=> $a
+                'attending'=> 1
             ]);
+            $a = 1;
         }else{
             $attendv = Attending::Where('user_id',$user_id)->where('event_id',$event_id)->first();
+
+            $a = $attendv->attending == 1? '0' : '1';
             $attendv->attending = $a;
             $attendv->save();
         }
@@ -77,7 +79,7 @@ class EventsController extends Controller
 
         Session::flash('attendVerified',$message);
 
-        return $going;
+        return redirect()->back();
     }
 
     public function show(){
@@ -110,10 +112,11 @@ class EventsController extends Controller
             'about' => $request->about,
             'public' => $request->private,
             'host_contact' => $request->contact,
-            'category'=>1
+            'category'=>1,
+            'verified'=>1
         ]);
 
-        Session::flash('partyStored','Your party has been saved and can now be found in the parties in event');
+        Session::flash('partyStored','Your party has been saved and can now be found in the parties in event,tell users to join so they can be matched');
 
         return redirect()->route('events');
     }
@@ -127,10 +130,11 @@ class EventsController extends Controller
             'about' => $request->about,
             'public' => $request->private,
             'host_contact' => $request->contact,
-            'category'=>2
+            'category'=>2,
+            'verified'=>1
         ]);
 
-        Session::flash('showStored','Your party has been saved and can now be found in the shows in event');
+        Session::flash('showStored','Your party has been saved and can now be found in the shows in event,tell users to attend so they can be matched');
 
         return redirect()->route('events');
     }

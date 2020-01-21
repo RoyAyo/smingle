@@ -238,7 +238,7 @@
 	}
 	
 	.bio {
-		margin-bottom: 80px;
+		margin-bottom: 5px;
 	}
 	.bio .title .h6 {
 		color: #212121;
@@ -398,10 +398,7 @@
 	.event-name a:hover{
 		color: rgba(220,0,0,0.5);
 	}
-
-	.verify:hover,.event_match:hover,.attend_event:hover{
-		background-color: blue;
-	}
+	bio
 	.event-going:after{
 		clear: both;
 	}
