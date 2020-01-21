@@ -13,6 +13,8 @@ def mse(a1,a2):
 	for i in range(0,15):
 		err = abs(a1[i] - a2[i])
 		e = math.pow(err,2)
+		if e == 1:
+			e *= 2
 		error += e
 	return error
 

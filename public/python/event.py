@@ -7,11 +7,11 @@ import random
 
 
 user_id = int(sys.argv[1])
-event_id = int(sys.argv[2])
-based_on = sys.argv[3]
-gender = sys.argv[4]
-age = sys.argv[5]
-location = sys.argv[6]
+event_id = sys.argv[2]
+gender = sys.argv[3]
+age = sys.argv[4]
+country = sys.argv[5]
+state = sys.argv[6]
 religion = sys.argv[7]
 height = sys.argv[8]
 r_status = sys.argv[9]
@@ -21,17 +21,24 @@ student = sys.argv[12]
 school = sys.argv[13]
 course = sys.argv[14]
 level = sys.argv[15]
+skin = sys.argv[16]
+shape = sys.argv[17]
+job = sys.argv[18]
+model = sys.argv[19]
+
+based_on = "generals"
 
 
 conn = sqlite3.connect('../database/match.sqlite')
 
-def create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level):
-	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
+def create_query(gender,age,country,state,religion,height,r_status,m_status,student,school,course,level,skin,shape,job,model):
 	query = "Select users.* from users join profiles on users.id = profiles.user_id where users.id = "+ str(user_id) + " or users.gender != " + gender
 	if(age != "0"):
 			query+= " and profiles.age = " + age
-	if(location != "0"):
-			query+= " and profiles.location = '" + location + "'"
+	if(country != "0"):
+			query+= " and profiles.country Like '%" + country + "%'"
+	if(state != "0"):
+			query+= " and profiles.state Like '%" + state + "%'"
 	if(religion != "0"):
 			query+= " and profiles.religion = " + religion
 	if(height != "0"):
@@ -42,10 +49,18 @@ def create_query(gender,age,location,religion,height,r_status,m_status,student,s
 			query+= " and profiles.m_status >= " + m_status
 	if(need != "0"):
 			query+= " and profiles.need = " + need
+	if(skin != "0"):
+			query+= " and profiles.skin = " + skin
+	if(shape != "0"):
+			query+= " and profiles.shape = " + shape
+	if(job != "0"):
+			query+= " and profiles.jobs = " + job
+	if(model != "2"):
+			query+= " and profiles.model = " + model
 	if(student != "2"):
 			query+=" and profiles.student = " + student
 			if (school != "0"):
-				query+= " and profiles.school = '" + school + "'"
+				query+= " and profiles.school Like '%" + school + "%'"
 			if(course != "0"):
 					query+= " and profiles.course = '" + course + "'"
 			if(level != "0"):
@@ -57,9 +72,10 @@ def mse(a2):
 	for i in range(0,15):
 		err = abs(a1[i] - a2[i])
 		e = math.pow(err,2)
+		if e == 1:
+			e *= 2
 		error += e
-	error = math.sqrt(error)
-	tot_err = math.sqrt(135)
+	tot_err = 105
 
 	if (error > tot_err):
 		corr = 0.2
@@ -70,7 +86,7 @@ def mse(a2):
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
-		cluster_diff = 0.1
+		cluster_diff = 0.035
 	return cluster_diff
 
 def bday_match(bd):
@@ -86,7 +102,8 @@ def bday_match(bd):
 		else:
 			return 0.0
 #connections and all
-query1 = create_query(gender,age,location,religion,height,r_status,m_status,student,school,course,level)
+
+query1 = create_query(gender,age,country,state,religion,height,r_status,m_status,student,school,course,level,skin,shape,job,model)
 
 query = "Select u.cluster,u.DOB," + based_on + ".* from " + based_on + " join (" + query1 + ") as u On u.id = " + based_on + ".user_id"
 
@@ -115,11 +132,11 @@ else:
 
 		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
 
-		ml_error_rate = 0.02
+		ml_error_rate = 0.01
 
 		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) - ml_error_rate  
 
-		df_top = df_search['match'].nlargest(1)
+		df_top = df_search['match'].nlargest(20)
 
 		r = random.randint(0,len(df_top)-1)
 
