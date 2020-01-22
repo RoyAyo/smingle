@@ -25,7 +25,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @extends('style.app')
-	@extends('style.loader2')
+	@extends('style.loader')
 	@extends('style.radio')
 </head>
 <body>
