@@ -360,16 +360,6 @@
 
 
 	/*media query for profile pahe*/
-@media screen and (max-width: 600px) {
-	
-	.jumbo {
-		height: 350px !important;
-	}
-	.user-pages img{
-		
-	}
-}
-
 /* for the events page*/
 	.event-date{
 		color: rgba(200,200,200,0.8);
@@ -523,5 +513,16 @@
 		margin-right: 1rem;
 		cursor: pointer;
 	}
+@media screen and (max-width: 600px) {
+	
+	.jumbo {
+		height: 350px !important;
+	}
+	.user-pages img{
+		width: 27px;
+		height: 27px;
+		margin-right: 0.6rem;
+	}
+}
 
 </style>

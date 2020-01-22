@@ -22,8 +22,8 @@
             <a href="{{route('message.id',['username'=>$user->username])}}"><img src="{{ asset('images/icons/icons8-new-message-16.png') }}" class="message-icon"></img></a>
             <a href="#" data-target="#anonModal" data-toggle="modal"><img src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}" class="message-icon"></img></a>
         @endif
-        <a href="#"><img src="{{ asset('images/icons/twitter.svg') }}"></a>
-        <a href="#"><img src="{{ asset('images/icons/instagram.svg') }}"></a>
+        <a href="{{ is_null($user->twitter) ? '#' : 'https://twitter.com/'.$user->twitter }}"><img src="{{ asset('images/icons/twitter.svg') }}"></a>
+        <a href="{{ is_null($user->instagram) ? '#' : 'https://instagram.com/'.$user->instagram }}"><img src="{{ asset('images/icons/instagram.svg') }}"></a>
     </div>
     <div class="bio">
         <div class="content" style="font-size: 12pt;">
