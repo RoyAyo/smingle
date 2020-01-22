@@ -25,7 +25,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @extends('style.app')
-	@extends('style.loader')
+	@extends('style.loader2')
 	@extends('style.radio')
 </head>
 <body>
@@ -124,7 +124,7 @@
         </article>
 	</div>
 	<div id="loader-div">
-		<div id="loader"></div>
+		<div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
 	</div>
 	<div id="matched-div">
 		<div class="card" style="width: 100vw;height: 100vh;background-color: rgba(180,180,180,0.8);">
@@ -161,13 +161,13 @@
 			</div>
 			<div class="card-footer" id="matchdivfooter">
 				<div>
-					<button class="btn btn-danger" style="margin-bottom: 0.2rem;"><a id="matchedsmprofile" href="#" style="color: black;" target="_blank">Smingle Profile</a></button>
+					<button class="btn btn-outline-info" style="margin-bottom: 0.2rem;"><a id="matchedsmprofile" href="#" style="color: black;" target="_blank">Smingle Profile</a></button>
 				</div>
 				<div id="twm">
-					<button class="btn btn-danger" style="margin-bottom: 0.2rem;"><a id="matchedtwprofile" href="#" style="color: black;" target="_blank">Twitter Profile</a></button>
+					<button class="btn btn-outline-success" style="margin-bottom: 0.2rem;"><a id="matchedtwprofile" href="#" style="color: black;" target="_blank">Twitter Profile</a></button>
 				</div>
 				<div id="igm">
-					<button class="btn btn-danger" style="margin-bottom: 0.2rem;"><a id="matchedigprofile" href="#" style="color: black;" target="_blank">Instagram Profile</a></button>
+					<button class="btn btn-outline-danger" style="margin-bottom: 0.2rem;"><a id="matchedigprofile" href="#" style="color: black;" target="_blank">Instagram Profile</a></button>
 				</div>
 			</div>
 		</div>
