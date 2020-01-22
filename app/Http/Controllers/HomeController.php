@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         $user_id = auth()->user()->id;
 
-        $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->orderBy('created_at','desc')->get();
+        $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->orderBy('created_at','desc')->paginate(8);
 
         foreach ($Notifications as $Notification) {
             $other_id = $Notification->user_id == $user_id? $Notification->involved_id : $Notification->user_id;

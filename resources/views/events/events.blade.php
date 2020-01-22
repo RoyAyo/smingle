@@ -25,6 +25,7 @@
 						</a>
 					</div>
 				@endforeach
+				{{$events->links()}}
 			</div>
 		</div>
 	</div>

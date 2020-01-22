@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid" style="padding-top: 20px;">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-7">
             <div class="card">
                 <div class="card-header">Options</div>
 
@@ -14,6 +14,14 @@
                     <button>
                         <a href="{{ route('filter') }}" class="btn btn-default btn-center" style="color: black;"> Find Match </a>
                     </button><br><br>
+                </div>
+            </div>
+        </div>    
+        <div class="col-lg-5">
+            <div class="card">
+                <div class="card-header">Top Match</div>
+                <div class="card-body">
+                </div>
             </div>
         </div>
     </div>
