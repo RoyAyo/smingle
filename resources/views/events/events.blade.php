@@ -25,7 +25,9 @@
 						</a>
 					</div>
 				@endforeach
-				{{$events->links()}}
+				<div style="display: flex;justify-content: center;">
+					{{$events->links()}}
+				</div>
 			</div>
 		</div>
 	</div>

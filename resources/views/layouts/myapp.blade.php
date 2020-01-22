@@ -79,10 +79,10 @@
 	                    <a href="{{route('user',['id'=> auth()->user()->username])}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Profile</a>
 	                </li>
 	                <li>
-	                    <a href="{{route('findmatch')}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">Find Match</a>
+	                    <a href="{{route('findmatch')}}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-couple-50.png') }}">Find Match</a>
 	                </li>
 	                <li>
-	                    <a href="{{ route('general') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-user-male-80.png') }}">About You</a>
+	                    <a href="{{ route('general') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-about-100.png') }}">About You</a>
 	                </li>
 	                <li>
 	                    <a href="{{ route('anon') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}">Anonymous Messages</a>

@@ -247,14 +247,6 @@
 	.bio .content .p {
 		color: #727272;
 	}
-
-	.message-icon{
-		width: 25px;
-		height:25px;
-		margin-right: 0.4rem;
-		position: relative;
-		bottom: 3px;
-	}
 	#message-user a{
 		display: block;
 		font-size: 12pt;
@@ -372,6 +364,9 @@
 	
 	.jumbo {
 		height: 350px !important;
+	}
+	.user-pages img{
+		
 	}
 }
 
@@ -521,5 +516,12 @@
 		font-weight: bold;
 	}
 
+	.user-pages img{
+		width: 30px;
+		height: 30px;
+		outline: none;
+		margin-right: 1rem;
+		cursor: pointer;
+	}
 
 </style>

@@ -17,16 +17,18 @@
         <h4 style="margin-bottom: 0.05rem;color: skyblue">{{'@'.$user->username }}</h4>
         <h5 style="color: grey;margin-bottom: 0px;">{{Carbon\Carbon::parse($user->DOB)->age}}</h5>
     </div>
-    <div id="message-user">
+    <div class="user-pages">
         @if($owner == 0 )
-            <a href="{{route('message.id',['username'=>$user->username])}}"><img src="{{ asset('images/icons/icons8-new-message-16.png') }}" class="message-icon"></img> Send Message</a>
-            <a href="#" data-target="#anonModal" data-toggle="modal"><img src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}" class="message-icon"></img> Send Anonymous Message</a>
+            <a href="{{route('message.id',['username'=>$user->username])}}"><img src="{{ asset('images/icons/icons8-new-message-16.png') }}" class="message-icon"></img></a>
+            <a href="#" data-target="#anonModal" data-toggle="modal"><img src="{{ asset('images/icons/icons8-theatre-mask-64.png') }}" class="message-icon"></img></a>
         @endif
+        <a href="#"><img src="{{ asset('images/icons/twitter.svg') }}"></a>
+        <a href="#"><img src="{{ asset('images/icons/instagram.svg') }}"></a>
     </div>
     <div class="bio">
         <div class="content" style="font-size: 12pt;">
             <center>
-                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.3rem;word-break: keep-all;word-wrap: break-word;">Fuck you and anything you think of me...</p>
+                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.3rem;word-break: keep-all;word-wrap: break-word;">{{ $user->about }}</p>
             </center>
         </div>
         <div>
