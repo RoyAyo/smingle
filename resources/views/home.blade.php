@@ -9,10 +9,7 @@
 
                 <div class="card-body">
                 	@foreach($Notifications as $Notification)
-                		@php 
-                            
-                        @endphp
-                        <div class="card" style="padding: 0.7rem;margin-bottom: 0.3rem;">
+                		<div class="card" style="padding: 0.7rem;margin-bottom: 0.3rem;">
                             <p>
                                 @if($Notification->notification_type == 1)
                                     You were Matched with <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a>
