@@ -247,7 +247,7 @@
             return;
         });
 
-        if ($('.message-body').lengthww > 0 ) {
+        if ($('.message-body').length > 0 ) {
 
             $('.message-body').stop().animate({
                 scrollTop:$('.message-body')[0].scrollHeight

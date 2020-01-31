@@ -288,7 +288,12 @@
 		bottom: 35px;
 		width: 100%;
 		max-height: calc(100% - 85px);
+		ms-overflow-style:none;
 	}
+	.message-body::-webkit-scrollbar {
+  		display: none;
+	}
+
 	#chats{
 		padding: 0.2rem;
 	}
