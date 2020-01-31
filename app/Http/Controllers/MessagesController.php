@@ -17,7 +17,6 @@ class MessagesController extends Controller
     public function index()
     {
         $user_id = auth()->user()->id;
-
         $messages = Messages::where('sender_id','=',$user_id)->orWhere('receiver_id','=',$user_id)->orderBy('created_at','desc')->paginate(6);
 
         $check = [];
@@ -52,7 +51,6 @@ class MessagesController extends Controller
         if ($other->count() == 0) {
             return redirect()->route('home');
         }
-
         $other_id = User::where('username',$other_user)->first()->id;
 
         $messages = Messages::where(function($query) use ($user_id,$other_id) {

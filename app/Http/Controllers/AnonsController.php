@@ -48,7 +48,6 @@ class AnonsController extends Controller
 
     	return redirect()->back();
     }
-
     public function reply(Request $request){
 
         $this->validate($request,[

@@ -12,9 +12,6 @@
 		text-decoration: none;
 	}
 
-	.card-header{
-		
-	}
 	/* Properties for the layout page/template */
 	
 	/*header*/
@@ -274,7 +271,7 @@
 		height: 50px;
 		position: absolute;
 		top: 0;
-		z-index: 3;
+		z-index: 4;
 		width: 100%;
 		padding-left: 0.8rem;
 		padding-top: 0.7rem;
@@ -293,7 +290,7 @@
 		max-height: calc(100% - 85px);
 	}
 	#chats{
-		padding: 0.2rem;	
+		padding: 0.2rem;
 	}
 	.message-body p{
 		width: 100%;
@@ -334,9 +331,6 @@
 		bottom: 0px;
 		z-index: 4;
 	}
-	.message-input form{
-		
-	}
 	.message-input input{
 		font-family: "proxima-nova",  "Source Sans Pro", sans-serif;
 		border: none;
@@ -369,8 +363,6 @@
 		font-size: 18pt;
 	}
 
-
-	/*media query for profile page*/
 /* for the events page*/
 	.event-date{
 		color: rgba(200,200,200,0.8);
@@ -413,7 +405,7 @@
 	.match-imgs{
 		display: flex;
 		justify-content:center;
-		margin-bottom: 40px;
+		margin-bottom: 50px;
 	}
 	.match-imgs .imdiv{
 		display: flex;
@@ -488,8 +480,7 @@
 		.match-imgs .imdiv{
 			padding: 0rem 1rem;
 		}
-	}
-	#closematchdiv{
+	}	#closematchdiv{
 		position: relative;
 		top: 5px;
 	}

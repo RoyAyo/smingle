@@ -69,8 +69,8 @@ class CompsController extends Controller
 		$match_perc = strval($m). '%';
 
         $check_user->score = $match_perc; 
+        
         $check_user->age = Carbon::parse($check_user->DOB)->age;
-
 		
 		return $check_user;
     }

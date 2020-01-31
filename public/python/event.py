@@ -88,7 +88,6 @@ def mse(a2):
 		corr = (abs(tot_err - error) / tot_err)
 	return corr
 
-
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:

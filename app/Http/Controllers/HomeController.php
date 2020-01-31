@@ -28,8 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // broadcast(new MessageSent(""));
-
         $user_id = auth()->user()->id;
 
         $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->orderBy('created_at','desc')->paginate(8);

@@ -23,7 +23,10 @@
 	@if(Session::has('changedtwit'))
 		toastr.info("{{Session::get('changedtwit')}}")
 	@endif
+<<<<<<< HEAD
 	@if(Session::has('changedp'))
 		toastr.info("{{Session::get('changedp')}}")
 	@endif
+=======
+>>>>>>> 235932240f7b4fae238d3e1b55fc34a7b78bdf73
 </script>

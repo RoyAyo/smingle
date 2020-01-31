@@ -82,7 +82,7 @@
                 const result = res;
 
                 if (typeof result == 'string') {
-                    alert(result);
+                    toastr.error(result);
                     $('#loader-div').hide();
                     return;
                 }
@@ -166,17 +166,13 @@
                 
                 $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
 
-                //$('#agematch').html(res.age);
+                $('#agematch').html(result.age);
 
                 $('#matched-div').show();
 
             });
         });
     
-
-
-
-
         $("#menu-toggle").on('click',(e) => {
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
@@ -185,22 +181,22 @@
         
 
         //pusher for my messages
-            // Pusher.logToConsole = true;
+            Pusher.logToConsole = true;
 
-            // var pusher = new Pusher('0af97750b30e5e72df02', {
-            //     cluster: 'eu',
-            //     forceTLS: true
-            // });
+            var pusher = new Pusher('0af97750b30e5e72df02', {
+                cluster: 'eu',
+                forceTLS: true
+            });
 
-            // var channel = pusher.subscribe('my-channel');
-            // channel.bind('my-event', function(data) {
-            //     $('#chat-message').val("");
-            //     if (data.message.sender_id == {{auth()->user()->id}}) {
-            //         $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
-            //     }else{
-            //         $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
-            //     }
-            // });
+            var channel = pusher.subscribe('my-channel');
+            channel.bind('my-event', function(data) {
+                $('#chat-message').val("");
+                if (data.message.sender_id == {{auth()->user()->id}}) {
+                    $('<p class="sent"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');                 
+                }else{
+                    $('<p class="replies"><span class="text">' + data.message.message + '</span></p>').appendTo('#chats');
+                }
+            });
         
         $('#send-message-btn').on('click', (e) => {
             e.preventDefault();

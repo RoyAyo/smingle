@@ -55,7 +55,6 @@ class User extends Authenticatable
     public function handle(){
         return $this->hasOne('App\handles');
     }
-
     public function top(){
         return $this->hasOne('App\Top');
     }

@@ -104,7 +104,6 @@ class MatchesController extends Controller
 			return True;
 		}
     }
-
     public function event(Request $request,$event_id){
         $user_id = Auth::user()->id;
         $user_gender = Auth::user()->gender;
@@ -167,7 +166,7 @@ class MatchesController extends Controller
 
         $match = User::find($best_id);
         $match->age = Carbon::parse($match->DOB)->age; 
-        $match->score = strval(round($score,1) * 100).'%';
+        $match->score = strval(round($score,3) * 100).'%';
 
         Notifications::create([
             'user_id'=>$best_id,

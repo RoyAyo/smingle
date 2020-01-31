@@ -29,6 +29,7 @@ class AdminsController extends Controller
     	$event = Event::find($id);
 
     	$message = $event->event_name."Has Been Verified";
+        
     	$event->verified = $request->verified;
 
     	$event->save();

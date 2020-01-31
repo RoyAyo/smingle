@@ -41,8 +41,7 @@ Route::get('general','GeneralsController@index')->name('general');
 Route::post('/general/{id}','GeneralsController@store')->name('general.store');
 
 Route::get('test','TestController@index')->name('test');
-
-Route::get('/cluster','ClustersController@index')->name('cluster');#
+Route::get('/cluster','ClustersController@index')->name('cluster');
 Route::post('/cluster','ClustersController@cluster')->name('cluster.cluster');
 
 Route::post('/comp','CompsController@check')->name('comp.check');
@@ -78,5 +77,4 @@ Route::post('events/admin/verify/{id}','AdminsController@verify')->name('event.v
 
 Route::get('events/event/{id}/filter','FiltersController@event')->name('event.filter');
 Route::post('events/event/{id}','MatchesController@event')->name('event.match');
-
 Route::get('/settings','UsersController@settings')->name('settings');

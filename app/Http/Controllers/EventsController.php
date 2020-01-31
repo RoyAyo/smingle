@@ -83,13 +83,13 @@ class EventsController extends Controller
     }
 
     public function show(){
-        $events = Event::where('verified',1)->where('category',2)->where('public',1)->orderBy('users_going','desc')->paginate(10);
+        $events = Event::where('verified',1)->where('category',2)->where('public',1)->orderBy('users_going','desc')->paginate(6);
 
         return view('events.events')->with('events',$events)
                                     ->with('e','Shows');
     }
     public function party(){
-        $events = Event::where('verified',1)->where('category',1)->where('public',1)->orderBy('users_going','desc')->paginate(10);
+        $events = Event::where('verified',1)->where('category',1)->where('public',1)->orderBy('users_going','desc')->paginate(6);
 
         return view('events.events')->with('events',$events)
                                     ->with('e','Parties');
