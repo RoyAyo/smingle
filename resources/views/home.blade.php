@@ -9,9 +9,6 @@
 
                 <div class="card-body">
                 	@foreach($Notifications as $Notification)
-                		@php 
-                            
-                        @endphp
                         <div class="card" style="padding: 0.7rem;margin-bottom: 0.3rem;">
                             <p>
                                 @if($Notification->notification_type == 1)
