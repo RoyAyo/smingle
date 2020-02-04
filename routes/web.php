@@ -23,7 +23,7 @@ Route::get('/match', function(){
 	return view('match');
 })->name('findmatch');
 
-Route::('/help','HomeController@help');
+Route::get('/help','HomeController@help')->name('help');
 
 Auth::routes();
 

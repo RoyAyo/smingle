@@ -94,7 +94,7 @@
 	                    <a href="{{ route('events') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-schedule-64.png') }}">Events</a>
 	                </li>
 	                <li>
-	                    <a href="#"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">How To Use</a>
+	                    <a href="{{ route('help') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-help-100.png') }}">How To Use</a>
 	                </li>
 	                <li>
 	                    <a href="{{ route('settings') }}"><img class="sidebar-icon" src="{{ asset('images/icons/icons8-settings-100.png') }}">Settings</a>
