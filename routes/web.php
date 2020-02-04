@@ -67,6 +67,7 @@ Route::post('anonreply','AnonsController@reply')->name('anon.reply');
 //groupby events
 Route::get('events','EventsController@index')->name('events');
 Route::get('events/event/{id}','EventsController@event')->name('event.id');
+Route::get('events/event/edit/{id}','EventsController@event')->name('event.edit')->middleware('host');
 Route::post('events/event/attend/{id}','EventsController@attend')->name('event.attend');
 Route::get('events/shows','EventsController@show')->name('event.show');
 Route::get('events/parties','EventsController@party')->name('event.party');

@@ -16,8 +16,8 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('username')->unique();
-            $table->string('email')->unique();
+            $table->string('username')->collate('NOCASE')->unique();
+            $table->string('email')->collate('NOCASE')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('gender');
@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->text('about')->nullable();
             $table->integer('cluster')->default(0);
             $table->integer('sub')->default(1);
-            $table->string('twitter')->nullable();
-            $table->string('instagram')->nullable();
+            $table->string('twitter')->unique('NOCASE')->nullable();
+            $table->string('instagram')->collate('NOCASE')->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

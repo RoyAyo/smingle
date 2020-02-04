@@ -14,7 +14,11 @@ class EventsController extends Controller
     }
 
     public function index(){
-        return view('events.index');
+        $user_id = auth()->user()->id;
+
+        $hosted = Event::where('host_id',$user_id)->where('verified',1);
+
+        return view('events.index')->with('hosted',$hosted);
     }
 
     public function event($id){
@@ -121,6 +125,7 @@ class EventsController extends Controller
             'about' => $request->about,
             'public' => $request->private,
             'host_contact' => $request->host_contact,
+            'host_id' => auth()->user()->id,
             'category'=>1,
             'verified'=>0,
             'event_avatar'=> "images/uploads/event/".$upload_name,
@@ -148,6 +153,7 @@ class EventsController extends Controller
             'about' => $request->about,
             'public' => $request->private,
             'host_contact' => $request->host_contact,
+            'host_id' => auth()->user()->id,
             'category'=>2,
             'verified'=>0,
             'event_avatar'=> "images/uploads/event/".$upload_name,

@@ -21,13 +21,25 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-5">
-            <div class="card">
-                <div class="card-header">Hosted</div>
-                <div class="card-body">
+        @if($hosted->count() > 0)
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header">Hosted</div>
+                    <div class="card-body">
+                        @foreach($hosted->get() as $host)
+                            <div class="card" style="margin-bottom: 0.3rem;">
+                                <a href="{{ route('event.edit',['id' => $host->id]) }}" style="display: block;"> 
+                                    <div>
+                                        <h4 style="font-weight: bold;margin-bottom: 0px;"> {{ $host->event_name }}</h4>
+                                        <span style="float: right;position: relative;bottom: 13px;font-size: 40px;">&#8250</span>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>
 <div class="modal fade" id="addyourevent" role="dialog">

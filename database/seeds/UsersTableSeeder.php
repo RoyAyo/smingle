@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
             'name' => "Ayoola Roy",
         	'username' => "adminroy",
             'email' => "roylayindeay0@gmail.com",
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('roy72779673'),
             'gender' => 1,
             'DOB' => "1998-06-24",
             'about' => "I own this freaking site niggas,I am a goat",
