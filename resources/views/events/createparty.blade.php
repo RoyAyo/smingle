@@ -27,7 +27,7 @@
 					</div>
 					<div class="form-group">
 						<label for="event_date" class="col-form-label">Event Date</label>
-						<input type="date" name="event_date" id="event_date" class="form-control" value="{{old('event_date')}}">
+						<input type="date" name="event_date" id="event_date" class="form-control" value="{{old('event_date')}}" min="{{date('Y-m-d')}}">
 					</div>
 					<div class="form-group">
 						<label for="about" class="col-form-label">Brief Event Description</label>

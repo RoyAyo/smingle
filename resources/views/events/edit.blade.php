@@ -4,9 +4,9 @@
 
 	<div class="container-fluid">
 		<div class="card" >
-			<div class="card-header" style="font-weight: bold;font-size: 13pt;"><a>@{{ $event->event_name }}</a></div>
+			<div class="card-header" style="font-weight: bold;font-size: 13pt;"><a href="{{route('')}}">{{ '@'.$event->event_name }}</a></div>
 			<div class="card-body" style="padding: 0rem 1rem">
-				<form role="form" action="{{ route('event.update,['id' => $event->id]') }}" method="POST" enctype="multipart/form-data">
+				<form role="form" action="{{ route('event.update',['id' => $event->id]) }}" method="POST" enctype="multipart/form-data">
 					@csrf
 
 					<div class="form-group">
@@ -19,7 +19,7 @@
 					</div>
 					<div class="form-group">
 						<label for="host_contact" class="col-form-label">Host Contact</label>
-						<input type="text" name="host_contact" id="host_contact" class="form-control" value="{ $event->host_contact }}" placeholder="Contact For More Info...">
+						<input type="text" name="host_contact" id="host_contact" class="form-control" value="{{ $event->host_contact }}" placeholder="Contact For More Info...">
 					</div>
 					<div class="form-group">
 						<label for="venue" class="col-form-label">Venue</label>
@@ -27,7 +27,7 @@
 					</div>
 					<div class="form-group">
 						<label for="event_date" class="col-form-label">Event Date</label>
-						<input type="date" name="event_date" id="event_date" class="form-control" value="{{ $event->event_date }}">
+						<input type="date" name="event_date" id="event_date" class="form-control" value="{{ $event->event_date }}" min="{{date('Y-m-d')}}">
 					</div>
 					<div class="form-group">
 						<label for="about" class="col-form-label">Brief Event Description</label>

@@ -28,7 +28,7 @@ class AdminsController extends Controller
     public function verify(Request $request,$id){
     	$event = Event::find($id);
 
-    	$message = $event->event_name."Has Been Verified";
+    	$message = $event->event_name." Has Been Verified";
         
     	$event->verified = $request->verified;
 

@@ -109,7 +109,7 @@ class EventsController extends Controller
 
     public function storeparty(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image',
+            'event_avatar' => 'required|image|size:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -171,7 +171,20 @@ class EventsController extends Controller
         return view('events.edit')->with('event',$event);
     }
 
-    public function update(){
+    public function update(Request $request,$id){
+        $event = Event::find($id);
+
+        $event->event_name = $request->event_name; 
+        $event->host_name = $request->host_name; 
+        $event->host_contact = $request->host_contact; 
+        $event->venue = $request->venue; 
+        $event->date = $request->date; 
+        $event->about = $request->about;
+
+        $event->save();
+
+        Session::flash('edited_event','Your event is successfully updated');
         
+        return redirect()->route('events');
     }
 }

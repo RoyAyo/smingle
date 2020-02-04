@@ -26,4 +26,7 @@
 	@if(Session::has('changedp'))
 		toastr.info("{{Session::get('changedp')}}")
 	@endif
+	@if(Session::has('edited_event'))
+		toastr.success("{{Session::get('edited_event')}}")
+	@endif
 </script>
