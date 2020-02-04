@@ -28,9 +28,9 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form role="form" action="{{route('pp')}}" method="POST">
+                <form role="form" action="{{route('pp')}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="pics" id="dp" required/><br><br>
+                    <input type="file" name="pics" id="pics" required/><br><br>
                     <button type="submit" class="btn btn-outline-success">Change</button>
                 </form>
             </div>

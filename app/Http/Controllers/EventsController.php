@@ -87,13 +87,13 @@ class EventsController extends Controller
     }
 
     public function show(){
-        $events = Event::where('verified',1)->where('category',2)->where('public',1)->orderBy('users_going','desc')->paginate(6);
+        $events = Event::where('verified',1)->where('category',2)->orderBy('users_going','desc')->paginate(6);
 
         return view('events.events')->with('events',$events)
                                     ->with('e','Shows');
     }
     public function party(){
-        $events = Event::where('verified',1)->where('category',1)->where('public',1)->orderBy('users_going','desc')->paginate(6);
+        $events = Event::where('verified',1)->where('category',1)->orderBy('users_going','desc')->paginate(6);
 
         return view('events.events')->with('events',$events)
                                     ->with('e','Parties');
@@ -138,7 +138,7 @@ class EventsController extends Controller
 
     public function storeshow(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image',
+            'event_avatar' => 'required|image|size:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -190,7 +190,7 @@ class EventsController extends Controller
 
     public function updatedp(Request $request,$id){
         $this->validate($request,[
-            'avatar' => 'required|image',
+            'avatar' => 'required|image|size:20000',
         ]);
 
         $upload_name = time().$request->avatar->getClientOriginalName();

@@ -34,7 +34,8 @@ class UsersController extends Controller
             'pics' => 'required|image'
         ]);
 
-        $user_id = auth::user()->id;
+
+        $user_id = auth()->user()->id;
 
         $user = User::find($user_id);
 
