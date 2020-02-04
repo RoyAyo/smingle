@@ -20,7 +20,7 @@
         <hr>
         <h5> Users Going: <span style="font-weight: bold;">{{ $event->users_going }}</span> </h5>
         <hr>
-        <h5> Attending: <span style="font-weight: bold;">{{ $att }}</span> </h5>
+        <h5> Attending: <span style="font-weight: bold;">{{ $att == '0' ? 'NO' : 'YES' }}</span> </h5>
         <hr>
          @if($event->users_going > 1 and $att == 1)
             <span class="btn btn-outline-success btn-block btn-lg" style="width: 100%;"><a href="{{ route('event.filter',['id'=>$event->id]) }}" > Find Match For Event </a></span>
@@ -30,6 +30,32 @@
             @csrf
             <button class="btn btn-outline-primary btn-block btn-lg" style="width: 100%" type="submit"> {{ $att == 1 ? 'Unattend Event' :'Attend Event' }}</button>
         </form>
+        @if('host')
+            <hr>
+            <a class="btn btn-outline-danger btn-block btn-lg" style="width: 100%" type="submit" href="{{ route('event.edit',['id'=>$event->id]) }}"> Edit Event</a>
+            <hr>
+            <a data-target="#eventdp" data-toggle='modal' class="btn btn-outline-info btn-block btn-lg" style="width: 100%" type="submit"> Change Dp</a>
+            <hr>
+        @endif
     </div>
 </div>
+<div class="modal fade" id="eventdp" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Change Event Display</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="{{route('eventdp')}}" method="POST">
+                    @csrf
+                    <input type="file" name="pics" id="dp" required/><br><br>
+                    <button type="submit" class="btn btn-outline-success">Change</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection

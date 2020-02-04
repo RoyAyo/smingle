@@ -29,4 +29,7 @@
 	@if(Session::has('edited_event'))
 		toastr.success("{{Session::get('edited_event')}}")
 	@endif
+	@if(Session::has('edited_eventdp'))
+		toastr.success("{{Session::get('edited_eventdp')}}")
+	@endif
 </script>

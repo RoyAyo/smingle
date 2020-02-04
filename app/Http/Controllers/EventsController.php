@@ -178,12 +178,32 @@ class EventsController extends Controller
         $event->host_name = $request->host_name; 
         $event->host_contact = $request->host_contact; 
         $event->venue = $request->venue; 
-        $event->date = $request->date; 
+        $event->event_date = $request->event_date; 
         $event->about = $request->about;
 
         $event->save();
 
         Session::flash('edited_event','Your event is successfully updated');
+        
+        return redirect()->route('events');
+    }
+
+    public function updatedp(Request $request,$id){
+        $this->validate($request,[
+            'event_avatar' => 'required|image|max:20000',
+        ]);
+
+        $upload_name = time().$request->avatar->getClientOriginalName();
+
+        $request->avatar->move('images/uploads/event',$upload_name);
+
+        $event = Event::find($id);
+
+        $event->avatar = "images/uploads/event/".$upload_name;
+
+        $event->save();
+
+        Session::flash('edited_eventdp','Your display picture is updated');
         
         return redirect()->route('events');
     }
