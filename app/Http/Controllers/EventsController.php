@@ -163,4 +163,15 @@ class EventsController extends Controller
 
         return redirect()->route('events');
     }
+
+
+    public function edit($id){
+        $event = Event::find($id);
+
+        return view('events.edit')->with('event',$event);
+    }
+
+    public function update(){
+        
+    }
 }
