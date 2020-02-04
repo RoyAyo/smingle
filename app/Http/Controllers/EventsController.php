@@ -190,7 +190,7 @@ class EventsController extends Controller
 
     public function updatedp(Request $request,$id){
         $this->validate($request,[
-            'event_avatar' => 'required|image|max:20000',
+            'avatar' => 'required|image',
         ]);
 
         $upload_name = time().$request->avatar->getClientOriginalName();
@@ -199,11 +199,11 @@ class EventsController extends Controller
 
         $event = Event::find($id);
 
-        $event->avatar = "images/uploads/event/".$upload_name;
+        $event->event_avatar = "images/uploads/event/".$upload_name;
 
         $event->save();
 
-        Session::flash('edited_eventdp','Your display picture is updated');
+        Session::flash('edited_eventdp','Your display picture for '.$event->event_name .' is updated');
         
         return redirect()->route('events');
     }

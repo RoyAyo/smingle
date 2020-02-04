@@ -1,6 +1,13 @@
 @extends('layouts.myapp')
 
 @section('content')
+<div class="error">
+    @if ($errors->has('avatar'))
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $errors->first('avatar') }}</strong>
+        </span>
+    @endif
+</div>
 <div class="jumbo" style="background-image: url( {{ asset($event->event_avatar) }} );"></div>
 <div class="bio">
     <div>
@@ -20,7 +27,7 @@
         <hr>
         <h5> Users Going: <span style="font-weight: bold;">{{ $event->users_going }}</span> </h5>
         <hr>
-        <h5> Attending: <span style="font-weight: bold;">{{ $att == '0' ? 'NO' : 'YES' }}</span> </h5>
+        <h5> Attending: <span style="font-weight: bold;">{{ $att == '0' ? 'No' : 'Yes' }}</span> </h5>
         <hr>
          @if($event->users_going > 1 and $att == 1)
             <span class="btn btn-outline-success btn-block btn-lg" style="width: 100%;"><a href="{{ route('event.filter',['id'=>$event->id]) }}" > Find Match For Event </a></span>
@@ -48,9 +55,9 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
-                <form role="form" action="{{route('eventdp')}}" method="POST">
+                <form role="form" action="{{route('eventdp',['id'=>$event->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="pics" id="dp" required/><br><br>
+                    <input type="file" name="avatar" required/><br><br>
                     <button type="submit" class="btn btn-outline-success">Change</button>
                 </form>
             </div>
