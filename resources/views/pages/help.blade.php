@@ -23,7 +23,8 @@
 				<span style="font-size: 12pt;color: grey;">
 					This tells you how much you match with anybody else registered on the website.
 					Click on the match button on the left sidebar, then click on the compatibility match button, a popup to find a user shows up.
-					You can search for the person using his/her smingle username, twitter or instagram handle.
+					You can search for the person using his/her smingle username.
+					You don't know that, check his/her twitter or instagram handle.
 					Once the username is provided , we search for the user and tell you how compatible you are with the person.
 				</span>
 			</div>
