@@ -9,10 +9,10 @@
 						Settings
 					</div>
 					<div class="card-body">
-						<a href="{{ route('profile') }}" class="btn-outline-danger">Change Profile Settings</a><hr>
-						<a data-target="#dpModal" data-toggle="modal" class="btn-outline-danger">Change Display picture</a><hr>
-                        <a data-target="#IG" data-toggle="modal" class="btn-outline-danger">Change Instagram Handle</a><hr>
-                        <a data-target="#Twitter" data-toggle="modal" class="btn-outline-danger">Change Twitter Handle</a>
+						<a href="{{ route('profile') }}" class="settings-link">Change Profile Settings</a><hr>
+						<a data-target="#dpModal" data-toggle="modal" class="settings-link">Change Display picture</a><hr>
+                        <a data-target="#IG" data-toggle="modal" class="settings-link">Change Instagram Handle</a><hr>
+                        <a data-target="#Twitter" data-toggle="modal" class="settings-link">Change Twitter Handle</a>
                     </div>
                 </div>
             </div>

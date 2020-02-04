@@ -578,8 +578,7 @@
 
 	.card .card-body .settings-link{
 		font-size: 12pt;
-		color: black;
-		font-family: monospace;
+		color: blue;
 		transition: all 0.1s ease-in;
 		display: block;
 		cursor: pointer;
@@ -587,5 +586,6 @@
 
 	.card .card-body .settings-link:hover{
 		font-size: 12.3pt;
+		color: red;
 	}
 </style>

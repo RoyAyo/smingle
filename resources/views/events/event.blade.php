@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="error">
-    @if ($errors->has('avatar'))
+    @if($errors->has('avatar'))
         <span class="invalid-feedback" role="alert">
             <strong>{{ $errors->first('avatar') }}</strong>
         </span>
@@ -57,7 +57,7 @@
             <div class="modal-body">
                 <form role="form" action="{{route('eventdp',['id'=>$event->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
-                    <input type="file" name="avatar" required/><br><br>
+                    <input type="file" name="avatar" id="avatar" required/><br><br>
                     <button type="submit" class="btn btn-outline-success">Change</button>
                 </form>
             </div>
