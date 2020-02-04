@@ -23,6 +23,8 @@ Route::get('/match', function(){
 	return view('match');
 })->name('findmatch');
 
+Route::('/help','HomeController@help');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
