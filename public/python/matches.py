@@ -134,11 +134,11 @@ else:
 	else:
 		#you must pass the first critereria stage
 
-		df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
+		df_search['mse'] = df_search.drop(['u.cluster',"u.DOB"],axis=1).apply(mse,axis=1)
 
-		df_search['cluster'] = df['cluster'].apply(clus)
+		df_search['cluster'] = df['u.cluster'].apply(clus)
 
-		df_search['bday_match'] = df_search['DOB'].apply(bday_match)
+		df_search['bday_match'] = df_search['u.DOB'].apply(bday_match)
 
 		ml_error_rate = 0.02
 

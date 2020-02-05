@@ -46,6 +46,7 @@ class CompsController extends Controller
 
     	$check_id = json_encode($check_user->id);
 
+
         if ($user_id == $check_id) {
            return "You cannot check with Yourself, laslas 50%";
         }
