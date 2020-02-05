@@ -40,6 +40,7 @@
                 $('#matched-div').show();
 
             }).fail(() => {
+                $('#loader-div').hide();
                 toastr.error('Error Matching a user, try again');
             });
         });
@@ -120,6 +121,7 @@
                 $('#matched-div').show();
 
             }).fail(() => {
+                $('#loader-div').hide();
                 toastr.error('Error Matching a user, try again');
             });
         });
@@ -201,6 +203,7 @@
                 $('#matched-div').show();
 
             }).fail(() => {
+                $('#loader-div').hide();
                 toastr.error('Error Matching a user, try again');
             });
         });
