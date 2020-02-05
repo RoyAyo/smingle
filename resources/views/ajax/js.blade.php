@@ -39,6 +39,8 @@
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
 
@@ -104,6 +106,8 @@
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
     
@@ -148,7 +152,7 @@
                 const result = res;
 
                 if (typeof result == 'string') {
-                    alert(result);
+                    toastr.error(result);
                     $('#loader-div').hide();
                     return;
                 }
@@ -170,6 +174,8 @@
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
     
@@ -259,12 +265,15 @@
             const event_id = $('#eid').val();
 
             if(confirm('Are you sure you want to delete this event')){
-                $.post('../'+event_id,{
+                $.post('../../delete/'+event_id,{
+                    _token : token
                 },(name) => {
                     toastr.success(`${name} has been deleted`);
                     toastr.info(`${name} is no longer accessible to you or others`);
+                    <?php header('location:/')  ?>
+
                 }).fail(() => {
-                    toastr.error('Event Delete Unsuccessful');
+                    toastr.error('Event delete unsuccessful');
                 });
             }else{
                 toastr.error('Event not deleted');

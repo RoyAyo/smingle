@@ -198,7 +198,7 @@ class EventsController extends Controller
         return redirect()->route('events');
     }
 
-    public function delete($id){
+    public function delete(Request $request,$id){
         $event = Event::find($id);
         
         $event_name = $event->event_name;
