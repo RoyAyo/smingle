@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
+use App\Notification;
 use Session;
 
 class AdminsController extends Controller
@@ -33,6 +34,24 @@ class AdminsController extends Controller
     	$event->verified = $request->verified;
 
     	$event->save();
+
+        if ($request->verified == 1) {
+            Notification::create([
+                'user_id' => $event->host_id,
+                'notification_type' => 6,
+                'event' => $event->id,
+                'involved_id' => $event->host_id
+
+            ]);
+        }else{
+            Notification::create([
+                'user_id' => $event->host_id,
+                'notification_type' => 7,
+                'event' => $event->id,
+                'involved_id' => $event->host_id
+
+            ]);
+        }
 
     	Session::flash('eventVerified',$message);
 

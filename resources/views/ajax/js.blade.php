@@ -270,7 +270,8 @@
                 },(name) => {
                     toastr.success(`${name} has been deleted`);
                     toastr.info(`${name} is no longer accessible to you or others`);
-                    <?php header('location:/')  ?>
+
+                    window.location.replace('../');
 
                 }).fail(() => {
                     toastr.error('Event delete unsuccessful');

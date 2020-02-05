@@ -115,7 +115,7 @@ class EventsController extends Controller
 
     public function storeparty(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image|size:20000',
+            'event_avatar' => 'required|image|max:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -137,14 +137,14 @@ class EventsController extends Controller
             'event_avatar'=> "images/uploads/event/".$upload_name,
         ]);
 
-        Session::flash('partyStored','Your party has been saved and can now be found in the parties in event,tell users to join so they can be matched');
+        Session::flash('partyStored','Your party has been saved,wait for verification');
 
         return redirect()->route('events');
     }
 
     public function storeshow(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image|size:20000',
+            'event_avatar' => 'required|image|max:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -173,6 +173,11 @@ class EventsController extends Controller
 
     public function edit($id){
         $event = Event::find($id);
+
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
+
         $user_id = auth()->user()->id;
 
         if ($event->host_id == $user_id || $user_id == 1) {
@@ -183,6 +188,10 @@ class EventsController extends Controller
 
     public function update(Request $request,$id){
         $event = Event::find($id);
+
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
 
         $event->event_name = $request->event_name; 
         $event->host_name = $request->host_name; 
@@ -200,6 +209,10 @@ class EventsController extends Controller
 
     public function delete(Request $request,$id){
         $event = Event::find($id);
+
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
         
         $event_name = $event->event_name;
 
@@ -210,7 +223,7 @@ class EventsController extends Controller
 
     public function updatedp(Request $request,$id){
         $this->validate($request,[
-            'avatar' => 'required|image|size:20000',
+            'avatar' => 'required|image|max:20000',
         ]);
 
         $upload_name = time().$request->avatar->getClientOriginalName();
