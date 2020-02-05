@@ -53,7 +53,7 @@ class CompsController extends Controller
     	//$based_on = json_encode($request->based);
     	$based_on = "generals";
 
-    	$process = new Process('python ../public/python/comp.py '.$user_id.' '.$check_id. ' '.$based_on );
+    	$process = new Process('python3 ../public/python/comp.py '.$user_id.' '.$check_id. ' '.$based_on );
 		$process->run();
 
 		if (!$process->isSuccessful()) {

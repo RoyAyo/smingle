@@ -131,6 +131,7 @@
 	.sidebar-nav li {
 	    text-indent: 20px;
 	    line-height: 40px;
+            font-size:13.5px;	
 	}
 
 	.sidebar-nav li a {
@@ -577,7 +578,7 @@
 	}
 
 	.card .card-body .settings-link{
-		font-size: 12pt;
+		font-size: 13.5px;
 		color: blue;
 		transition: all 0.1s ease-in;
 		display: block;
@@ -585,7 +586,7 @@
 	}
 
 	.card .card-body .settings-link:hover{
-		font-size: 12.3pt;
+		font-size: 13.8px;
 		color: red;
 	}
 </style>

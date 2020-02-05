@@ -109,7 +109,7 @@ class EventsController extends Controller
 
     public function storeparty(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image|size:20000',
+            'event_avatar' => 'required|image|max:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -138,7 +138,7 @@ class EventsController extends Controller
 
     public function storeshow(Request $request){
         $this->validate($request,[
-            'event_avatar' => 'required|image|size:20000',
+            'event_avatar' => 'required|image|max:20000',
             'about' => 'required|min:20'
         ]);
 
@@ -190,7 +190,7 @@ class EventsController extends Controller
 
     public function updatedp(Request $request,$id){
         $this->validate($request,[
-            'avatar' => 'required|image|size:20000',
+            'avatar' => 'required|image|max:20000',
         ]);
 
         $upload_name = time().$request->avatar->getClientOriginalName();
