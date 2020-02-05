@@ -1,6 +1,5 @@
 <style>
 	/* Default properties for the website */
-	event-name
 	*{
 		box-sizing: border-box;
 	}
@@ -396,7 +395,7 @@
 	}
 	#matched-div{
 		position: fixed;
-		z-index: 9999999;
+		z-index: 9999;
 		width: 100vw;
 		height: 100vh;
 		top: 0;
