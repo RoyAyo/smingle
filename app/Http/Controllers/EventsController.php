@@ -22,6 +22,7 @@ class EventsController extends Controller
     }
 
     public function event($id){
+        $hosted = False;
         $user_id = auth()->user()->id;
         $event = Event::find($id);
         if (is_null($event)) {
@@ -35,6 +36,10 @@ class EventsController extends Controller
             $att = 0;
         }
 
+        if ($event->host_id == $user_id) {
+            $hosted = True;
+        }
+
 
         if ($event->category == 1) {
            $e = 'Party';
@@ -45,8 +50,9 @@ class EventsController extends Controller
         }
 
         return view('events.event')->with('event',$event)
-                                  ->with('att',$att)
-                                    ->with('e',$e);
+                                   ->with('att',$att)
+                                   ->with('e',$e)
+                                   ->with('hosted',$hosted);
     }
 
     public function attend(Request $request,$event_id){
@@ -167,8 +173,12 @@ class EventsController extends Controller
 
     public function edit($id){
         $event = Event::find($id);
+        $user_id = auth()->user()->id;
 
-        return view('events.edit')->with('event',$event);
+        if ($event->host_id == $user_id || $user_id == 1) {
+            return view('events.edit')->with('event',$event);
+        }
+        return redirect()->back();
     }
 
     public function update(Request $request,$id){

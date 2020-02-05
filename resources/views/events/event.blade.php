@@ -37,7 +37,7 @@
             @csrf
             <button class="btn btn-outline-primary btn-block btn-lg" style="width: 100%" type="submit"> {{ $att == 1 ? 'Unattend Event' :'Attend Event' }}</button>
         </form>
-        @if('host')
+        @if($hosted)
             <hr>
             <a class="btn btn-outline-danger btn-block btn-lg" style="width: 100%" type="submit" href="{{ route('event.edit',['id'=>$event->id]) }}"> Edit Event</a>
             <hr>
