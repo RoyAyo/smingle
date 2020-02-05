@@ -95,13 +95,13 @@
 @media(max-width: 400px){
   .lds-spinner {
       position: absolute;
-      left: 35%;
+      left: 32.5%;
     }
   }
 @media(max-width: 550px){
   .lds-spinner {
       position: absolute;
-      left: 40%;
+      left: 38%;
     }
   }
 </style>

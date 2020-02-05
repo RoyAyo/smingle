@@ -179,10 +179,23 @@
 
                 $('#matchedsmprofile').attr('href','../../../user/'+result.username);
 
-                $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
+                 if (result.twitter == null) {
+                    $('#matchedtwprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
+                }
+                if (result.instagram == null) {
+                    $('#matchedigprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
+                }
                 
-                $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
-
                 $('#agematch').html(result.age);
 
                 $('#matched-div').show();

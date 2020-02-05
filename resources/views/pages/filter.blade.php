@@ -1,7 +1,7 @@
 @extends('layouts.myapp')
 
 @section('content')
-<div class="card">
+<div class="card" style="padding: 0.4rem;">
     <div class="card-header" style="font-weight: bold;text-align: center;">Filter who should be matched With You</div>
 	<form action="{{ route('match.check') }}" method="POST" style="padding-top: 1rem;">
 		@csrf

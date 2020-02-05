@@ -4,20 +4,6 @@
 <div class="container">
 	<div class="card">
 		<div class="card" style="margin-bottom: 0.8rem;">
-			<div class="card-header" style="font-weight: bold;">Note</div>
-			<p>
-				<ul style="list-style-type:circle;color: grey">
-					<li>Please note that we use machine learning models to analyse your profile and the answers to your question on various life topics to make our predictions.</li> 
-					<li>We believe we are about 80% accurate with our answers.</li>
-					<li>We are not responsible for people that lie on their profile.</li> 
-					<li>We make predictions based on your profile and answers.</li>
-					<li>We want you to stay safe, if you are matched up with someone for an event, meet up with them at the venue.</li>
-					<li>Please note any threats sent anonymously can be traced back to you by our team, let's be civilized.</li>
-					<li>If you have any issues, please contact us at <strong id="mymail"><a href="mailto:smingle2019@gmail.com" target="_top">smingle2019@gmail.com</a></strong>, we will respond in due time.</li>
-				</ul>
-			</p>
-		</div>
-		<div class="card" style="margin-bottom: 0.8rem;">
 			<div class="card-header" style="font-weight: bold;">Compatibility Match</div>
 			<div class="card-body">
 				<span style="font-size: 12pt;color: grey;">
@@ -63,6 +49,20 @@
 				</span>
 			</div>
 			<div class="card-footer" style="font-weight: bold;"> P.S : Do not threaten anybody. </div>
+		</div>
+		<div class="card" style="margin-bottom: 0.8rem;">
+			<div class="card-header" style="font-weight: bold;">Note</div>
+			<p>
+				<ul style="list-style-type:circle;color: grey">
+					<li>Please note that we use machine learning models to analyse your profile and the answers to your question on various life topics to make our predictions.</li> 
+					<li>We believe we are about 80% accurate with our answers.</li>
+					<li>We are not responsible for people that lie on their profile.</li> 
+					<li>We make predictions based on your profile and answers.</li>
+					<li>We want you to stay safe, if you are matched up with someone for an event, meet up with them at the venue.</li>
+					<li>Please note any threats sent anonymously can be traced back to you by our team, let's be civilized.</li>
+					<li>If you have any issues, please contact us at <strong id="mymail"><a href="mailto:smingle2019@gmail.com" target="_top">smingle2019@gmail.com</a></strong>, we will respond in due time.</li>
+				</ul>
+			</p>
 		</div>
 	</div>
 </div>
