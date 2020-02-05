@@ -4,7 +4,10 @@
 
 	<div class="container-fluid">
 		<div class="card" >
-			<div class="card-header" style="font-weight: bold;font-size: 13pt;"><a href="{{route('event.id',['id' => $event->id])}}">{{ '@'.$event->event_name }}</a></div>
+			<div class="card-header" style="font-weight: bold;font-size: 13pt;">
+				<a href="{{route('event.id',['id' => $event->id])}}">{{ '@'.$event->event_name }}</a>
+				<button class="btn btn-danger" id="delevent" style="float: right;">Delete Event</button>
+			</div>
 			<div class="card-body" style="padding: 0rem 1rem">
 				<form role="form" action="{{ route('event.update',['id' => $event->id]) }}" method="POST" enctype="multipart/form-data">
 					@csrf

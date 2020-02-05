@@ -254,6 +254,15 @@
             });
 
         }
+
+        $('#delevent').on('click',() => {
+            if(confirm('Are you sure you want to delete this event')){
+                toastr.success('Event has been deleted');
+                toastr.info('Users no longer have access to the event');
+            }else{
+                toastr.error('Event not deleted');
+            }
+        })
     });
 
 </script>
