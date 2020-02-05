@@ -2,27 +2,27 @@
 
 @section('content')
 	<div style="padding:0.3rem 0.5rem;">
-		<p style="font-weight: bolder;font-family: serif;"> Please take your time to answer these,it helps us to get to know who you are.</p>
+		<p style="font-weight: bolder;font-family: serif;"> Please take your time to answer these, it helps us to get to know who you are.</p>
 
 		<form action="{{ route('general.store',['id' => $id]) }}" method="POST" style="padding-left: 0.4rem">
 			@csrf
 			<div class="q">
-				<p>Describe yourself in one word</p>
+				<p>I am the .... type ?</p>
 				<span>
 					<input type="radio" name="gen1" id="opt0" class="btnQ" value='1'>
-					<label for="opt0"><span>Loner/Depressed</span></label>
+					<label for="opt0"><span>F... everybody</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen1" id="opt1" class="btnQ" value='2'>
-					<label for="opt1"><span>Introvert</span></label>
+					<label for="opt1"><span>I don't really give a F.. </span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen1" id="opt2" class="btnQ" value='3'>
-					<label for="opt2"><span>Semi-Introvert</span></label>
+					<label for="opt2"><span>Hard guy, but I care</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen1" id="opt3" class="btnQ" value='4'>
-					<label for="opt3"><span>Extrovert</span></label>
+					<label for="opt3"><span>I care too much</span></label>
 				</span>
 			</div>
 			<div class="q">
@@ -121,26 +121,26 @@
 				</span>
 			</div>
 			<div class="q">
-				<p>Music?</p>
+				<p>Can you forgive a partner that cheated?</p>
 				<span>
 					<input type="radio" name="gen7" id="opt24" class="btnQ" value='1'>
-					<label for="opt24"><span>Old School</span></label>
+					<label for="opt24"><span> It happens to the best of us, so yes. </span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen7" id="opt25" class="btnQ" value='2'>
-					<label for="opt25"><span>Love songs</span></label>
+					<label for="opt25"><span>I'll cheat my own back, and we are good</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen7" id="opt26" class="btnQ" value='3'>
-					<label for="opt26"><span>Rap/Trap</span></label>
+					<label for="opt26"><span>Depends on the cheating condition.</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen7" id="opt27" class="btnQ" value='4'>
-					<label for="opt27"><span>Fast Paced Jams</span></label>
+					<label for="opt27"><span>I deserve more, so no.</span></label>
 				</span>
 			</div>
 			<div class="q">
-				<p>What would you pick as most important?</p>
+				<p>What would you pick as most important in the world?</p>
 				<span>
 					<input type="radio" name="gen8" id="opt28" class="btnQ" value='1'>
 					<label for="opt28"><span>Religion</span></label>
@@ -159,22 +159,22 @@
 				</span>
 			</div>
 			<div class="q">
-				<p>Travelling the world?</p>
+				<p>Pick One</p>
 				<span>
 					<input type="radio" name="gen9" id="opt32" class="btnQ" value='1'>
-					<label for="opt32"><span>I want to see every corner I possibly can</span></label>
+					<label for="opt32"><span>Naira Marley</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen9" id="opt33" class="btnQ" value='2'>
-					<label for="opt33"><span>I have a few places in mind</span></label>
+					<label for="opt33"><span>Wizkid</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen9" id="opt34" class="btnQ" value='3'>
-					<label for="opt34"><span>Not thought about it</span></label>
+					<label for="opt34"><span>Burna Boy</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen9" id="opt35" class="btnQ" value='4'>
-					<label for="opt35"><span>I am comfy in my small corner</span></label>
+					<label for="opt35"><span>Johnny Drille</span></label>
 				</span>
 			</div>
 			<div class="q">
@@ -197,22 +197,22 @@
 				</span>
 			</div>
 			<div class="q">
-				<p>Money I want?</p>
+				<p>I'ld rather</p>
 				<span>
 					<input type="radio" name="gen11" id="opt40" class="btnQ" value='1'>
-					<label for="opt40"><span>The one that fears devil</span></label>
+					<label for="opt40"><span>Go Clubbing</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen11" id="opt41" class="btnQ" value='2'>
-					<label for="opt41"><span>Plenty</span></label>
+					<label for="opt41"><span>Go out with friends</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen11" id="opt42" class="btnQ" value='3'>
-					<label for="opt42"><span>Adequate</span></label>
+					<label for="opt42"><span>Invite people over</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen11" id="opt43" class="btnQ" value='4'>
-					<label for="opt43"><span>Average</span></label>
+					<label for="opt43"><span>Have my privacy</span></label>
 				</span>
 			</div>
 			<div class="q">
@@ -235,14 +235,14 @@
 				</span>
 			</div>
 			<div class="q">
-				<p>What keeps a relationship happy?</p>
+				<p>What keeps a relationship going?</p>
 				<span>
 					<input type="radio" name="gen13" id="opt48" class="btnQ" value='1'>
 					<label for="opt48"><span>Money</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen13" id="opt49" class="btnQ" value='2'>
-					<label for="opt49"><span>Calling Everyday</span></label>
+					<label for="opt49"><span>Time together</span></label>
 				</span>
 				<span>
 					<input type="radio" name="gen13" id="opt50" class="btnQ" value='3'>
