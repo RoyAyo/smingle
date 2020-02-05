@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Event;
-use App\Notification;
+use App\Notifications;
 use Session;
 
 class AdminsController extends Controller
@@ -15,7 +15,7 @@ class AdminsController extends Controller
     }
 
     public function index(){
-    	$events = Event::paginate(5);
+    	$events = Event::orderBy('event_date','desc')->paginate(5);
 
         $total = Event::count();
 
@@ -29,14 +29,14 @@ class AdminsController extends Controller
     public function verify(Request $request,$id){
     	$event = Event::find($id);
 
-    	$message = $event->event_name." Has Been Verified";
         
     	$event->verified = $request->verified;
 
     	$event->save();
 
         if ($request->verified == 1) {
-            Notification::create([
+    	   $message = $event->event_name." Has Been Verified";
+            Notifications::create([
                 'user_id' => $event->host_id,
                 'notification_type' => 6,
                 'event' => $event->id,
@@ -44,7 +44,8 @@ class AdminsController extends Controller
 
             ]);
         }else{
-            Notification::create([
+            $message = $event->event_name." Has Been Unverified";
+            Notifications::create([
                 'user_id' => $event->host_id,
                 'notification_type' => 7,
                 'event' => $event->id,
