@@ -210,7 +210,6 @@
             $("#wrapper").toggleClass("toggled");
         });
         
-        
 
         //pusher for my messages
             Pusher.logToConsole = true;
