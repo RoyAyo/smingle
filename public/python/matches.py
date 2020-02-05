@@ -134,7 +134,7 @@ else:
 	else:
 		#you must pass the first critereria stage
 
-		df_search['mse'] = df_search.drop(['cluster',"DOB"],axis=1).apply(mse,axis=1)
+		df_search['mse'] = df_search.drop(['cluster','DOB'],axis=1).apply(mse,axis=1)
 
 		df_search['cluster'] = df['cluster'].apply(clus)
 
