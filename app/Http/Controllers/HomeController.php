@@ -34,12 +34,15 @@ class HomeController extends Controller
 
         foreach ($Notifications as $Notification) {
             $other_id = $Notification->user_id == $user_id? $Notification->involved_id : $Notification->user_id;
+
             if ($Notification->event != '0') {
                 $event = Event::find($Notification->event);
 
                 $Notification->event_name = $event->event_name;
                 $Notification->show = $event->show== '1'? 'Show' : 'Party';
-                $Notification->notification_type = $Notification->user_id == $user_id ? '4':'3';
+                if ($other_id != $user_id) {
+                    $Notification->notification_type = $Notification->user_id == $user_id ? '4':'3';
+                }
             }else{
                 $Notification->notification_type = $Notification->user_id == $user_id ? '2':'1';
             }

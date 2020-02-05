@@ -6,6 +6,9 @@
 		<div class="">
 			<div id="all-events">
 				Total unverified = <span style="font-weight: bold;color: red">{{ $unverified }}</span> out of <span style="font-weight: bold;color: red;">{{$total}}</span> events
+				<button> 
+					<a class="btn btn-lg btn-danger" href="">Delete Outdated Events</a>
+				</button>
 				@if($events->count() == 0)
 					<div>
 						<h3 style="font-weight: bold;">.....</h3>

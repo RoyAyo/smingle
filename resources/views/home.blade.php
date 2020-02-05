@@ -17,6 +17,10 @@
                                     <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a> was matched with you
                                 @elseif($Notification->notification_type == 4)
                                     <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a> was matched with you for the event <a href="{{ route('event.id',['id'=>$Notification->event]) }}">{{$Notification->event_name}}</a>
+                                @elseif($Notification->notification_type == 6)
+                                    <a href="{{ route('event.id',['id'=>$Notification->event]) }}">{{'@'.$Notification->event_name}}</a> has been verified, tell users to attend and find their matches
+                                @elseif($Notification->notification_type == 7)
+                                    <a href="{{ route('event.id',['id'=>$Notification->event]) }}">{{'@'.$Notification->event_name}}</a> has been unverified, contact us, if issus occur
                                 @else
                                     You were Matched with <a href="{{route('user',['id' => $Notification->other_name])}}">{{'@'.$Notification->other_name}}</a> for the event <a href="{{ route('event.id',['id'=>$Notification->event]) }}">{{$Notification->event_name}}</a>
                                 @endif
