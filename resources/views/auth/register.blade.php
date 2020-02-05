@@ -23,7 +23,7 @@
             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
-                <input id="username" placeholder="In lower case.." type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
+                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required>
 
                 @if ($errors->has('username'))
                     <span class="invalid-feedback" role="alert">
@@ -95,7 +95,7 @@
             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('DATE OF BIRTH') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
-                <input type="date" id="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" >
+                <input type="date" id="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required>
                 @if ($errors->has('dob'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('dob') }}</strong>
