@@ -1,7 +1,7 @@
 @extends('layouts.myapp')
 
 @section('content')
-
+<input type="hidden" id="eid" value="{{ $event->id }}">
 	<div class="container-fluid">
 		<div class="card" >
 			<div class="card-header" style="font-weight: bold;font-size: 13pt;">

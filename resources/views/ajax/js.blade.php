@@ -256,9 +256,16 @@
         }
 
         $('#delevent').on('click',() => {
+            const event_id = $('#eid').val();
+
             if(confirm('Are you sure you want to delete this event')){
-                toastr.success('Event has been deleted');
-                toastr.info('Users no longer have access to the event');
+                $.post('../'+event_id,{
+                },(name) => {
+                    toastr.success(`${name} has been deleted`);
+                    toastr.info(`${name} is no longer accessible to you or others`);
+                }).fail(() => {
+                    toastr.error('Event Delete Unsuccessful');
+                });
             }else{
                 toastr.error('Event not deleted');
             }

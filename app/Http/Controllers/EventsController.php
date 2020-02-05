@@ -198,6 +198,16 @@ class EventsController extends Controller
         return redirect()->route('events');
     }
 
+    public function delete($id){
+        $event = Event::find($id);
+        
+        $event_name = $event->event_name;
+
+        $event->delete();
+
+        return $event_name;
+    }
+
     public function updatedp(Request $request,$id){
         $this->validate($request,[
             'avatar' => 'required|image|size:20000',
