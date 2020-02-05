@@ -163,10 +163,10 @@
 					<button class="btn btn-outline-info" style="margin-bottom: 0.2rem;"><a id="matchedsmprofile" href="#" style="color: black;" target="_blank">Smingle Profile</a></button>
 				</div>
 				<div id="twm">
-					<button class="btn btn-outline-success" style="margin-bottom: 0.2rem;"><a id="matchedtwprofile" href="#" style="color: black;" target="_blank">Twitter Profile</a></button>
+					<button class="btn btn-outline-success" style="margin-bottom: 0.2rem;" id="twbtn"><a id="matchedtwprofile" href="#" style="color: black;" target="_blank">Twitter Profile</a></button>
 				</div>
 				<div id="igm">
-					<button class="btn btn-outline-danger" style="margin-bottom: 0.2rem;"><a id="matchedigprofile" href="#" style="color: black;" target="_blank">Instagram Profile</a></button>
+					<button class="btn btn-outline-danger" style="margin-bottom: 0.2rem;" id="igbtn"><a id="matchedigprofile" href="#" style="color: black;" target="_blank">Instagram Profile</a></button>
 				</div>
 			</div>
 		</div>

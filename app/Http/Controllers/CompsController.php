@@ -22,11 +22,11 @@ class CompsController extends Controller
         $with = $request->using;
 
         if ($with==3) {
-            $check_user = User::where('instagram',$request->username)->first();
+            $check_user = User::where('instagram',strtolower($request->username))->first();
         }elseif ($with==2) {
-            $check_user = User::where('twitter',$request->username)->first();
+            $check_user = User::where('twitter',strtolower($request->username))->first();
         }else{
-    	   $check_user = User::where('username',$request->username)->first();
+    	   $check_user = User::where('username',strtolower($request->username))->first();
         }
 
     	$user_id = json_encode(Auth::user()->id);
@@ -47,7 +47,7 @@ class CompsController extends Controller
     	$check_id = json_encode($check_user->id);
 
         if ($user_id == $check_id) {
-           return "You cannot check with yourself,las las 60%";
+           return "You cannot check with Yourself, laslas 50%";
         }
 
     	//$based_on = json_encode($request->based);

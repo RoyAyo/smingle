@@ -2,8 +2,9 @@
 
 @section('content')
 	<div class="container">
-		<div class="bg-white">
-			<div id="all-events">
+		<div class="bg-white card">
+			<div class="card-header" style="text-align: center;font-weight: bold;font-size: 20px;">Events</div>
+			<div id="all-events card-body" style="margin-top: 1rem;">
 				@if($events->count() == 0)
 					<div class="panel" style="height: calc(100vh - 58px)">
 						<p style="margin: auto auto;color: violet">There are currently No hosted events</p>	
@@ -12,14 +13,14 @@
 				@foreach($events as $event)
 					<div class="card" style="margin-bottom: 0.3rem;">
 						<a href="{{ route('event.id',['id' => $event->id]) }}" style="display: block;"> 
-						<div class="card-header" style="padding: 0.5rem;">
-							<h4 style="font-weight: bold;margin-bottom: 0px;"> {{ $event->event_name }}</h4>
+						<div class="card-header" style="padding: 0.3rem;background-color: #fff;">
+							<h5 style="font-weight: bold;margin-bottom: 0px;padding: 0rem 1rem;"> {{ $event->event_name }}</h5>
 						</div>
 						<div class="card-body">
 							<span style="float: right;position: relative;bottom: 13px;font-size: 40px;">&#8250</span>
 							<span>
-							<h6>Hosted By: {{$event->host_name}}</h6>
-							<h6> Date: {{$event->event_date}} </h6>
+							<h5>Hosted By: {{$event->host_name}}</h5>
+							<h5> Date: {{$event->event_date}} </h5>
 							</span>
 						</div>
 						</a>

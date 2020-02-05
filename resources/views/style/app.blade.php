@@ -370,24 +370,19 @@
 	}
 
 /* for the events page*/
-	.event-date{
-		color: rgba(200,200,200,0.8);
-	}
-
-	.event h4{
-		font-weight: bolder;
-		font-size: 14pt;
+	.event-name{
+		font-weight: bold;
 	}
 	.event-avatar img{
-		width: 300px;
-		height: 300px;
+		width: 150px;
+		height: 150px;
 		border-radius: 3px;
 		cursor: pointer;
 	}
 	.event-name a{
 		text-decoration: none;
 		color: grey;
-		transition: color .2s ease-in; 
+		transition: color .2s ease-in;
 	}
 	.event-name a:hover{
 		color: rgba(220,0,0,0.5);
@@ -401,7 +396,7 @@
 	}
 	#matched-div{
 		position: fixed;
-		z-index: 9999999;
+		z-index: 9999;
 		width: 100vw;
 		height: 100vh;
 		top: 0;

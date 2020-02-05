@@ -17,6 +17,7 @@
 		margin-bottom: 0.2rem;
 		background-color:#F6F6F6;
 		font-size:14pt;
+		text-align: center;
 		font-weight: bold;
 }
 input[type="radio"] + label{
@@ -57,16 +58,14 @@ input[type="radio"]:checked + label span{
 .q{
 	width: 100%;
 }
-.q legend{
-	font-size: 14pt;
-}
 input[type="radio"] + label{
 	width: 100%;
 	margin: 0 auto;
 }
 label span{
-	width: 80%;
+	width: 98.5%;
 	color: black;
+}
 }
 
 </style>

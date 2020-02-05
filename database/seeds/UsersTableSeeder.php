@@ -22,7 +22,7 @@ class UsersTableSeeder extends Seeder
             'cluster' => 1,
             'zodiac' => "Cancer",
             'sub' => 3,
-            'twitter'=>'RoyAyo',
+            'twitter'=>'Ay0_roy',
             'instagram'=>'ay0_roy',
             'avatar' => 'images/uploads/royxx.jpg'
         ]);

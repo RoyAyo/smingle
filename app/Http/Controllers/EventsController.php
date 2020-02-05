@@ -22,6 +22,7 @@ class EventsController extends Controller
     }
 
     public function event($id){
+        $hosted = False;
         $user_id = auth()->user()->id;
         $event = Event::find($id);
         if (is_null($event)) {
@@ -35,6 +36,10 @@ class EventsController extends Controller
             $att = 0;
         }
 
+        if ($event->host_id == $user_id) {
+            $hosted = True;
+        }
+
 
         if ($event->category == 1) {
            $e = 'Party';
@@ -45,8 +50,9 @@ class EventsController extends Controller
         }
 
         return view('events.event')->with('event',$event)
-                                  ->with('att',$att)
-                                    ->with('e',$e);
+                                   ->with('att',$att)
+                                   ->with('e',$e)
+                                   ->with('hosted',$hosted);
     }
 
     public function attend(Request $request,$event_id){
@@ -131,7 +137,7 @@ class EventsController extends Controller
             'event_avatar'=> "images/uploads/event/".$upload_name,
         ]);
 
-        Session::flash('partyStored','Your party has been saved and can now be found in the parties in event,tell users to join so they can be matched');
+        Session::flash('partyStored','Your party has been saved,wait for verification');
 
         return redirect()->route('events');
     }
@@ -168,11 +174,24 @@ class EventsController extends Controller
     public function edit($id){
         $event = Event::find($id);
 
-        return view('events.edit')->with('event',$event);
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
+
+        $user_id = auth()->user()->id;
+
+        if ($event->host_id == $user_id || $user_id == 1) {
+            return view('events.edit')->with('event',$event);
+        }
+        return redirect()->back();
     }
 
     public function update(Request $request,$id){
         $event = Event::find($id);
+
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
 
         $event->event_name = $request->event_name; 
         $event->host_name = $request->host_name; 
@@ -186,6 +205,20 @@ class EventsController extends Controller
         Session::flash('edited_event','Your event is successfully updated');
         
         return redirect()->route('events');
+    }
+
+    public function delete(Request $request,$id){
+        $event = Event::find($id);
+
+        if (is_null($event)) {
+            return redirect()->route('home');
+        }
+        
+        $event_name = $event->event_name;
+
+        $event->delete();
+
+        return $event_name;
     }
 
     public function updatedp(Request $request,$id){

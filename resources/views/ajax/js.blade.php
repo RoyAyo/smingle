@@ -39,6 +39,8 @@
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
 
@@ -95,15 +97,30 @@
                 $('#matchscore').html(result.score);
 
                 $('#matchedsmprofile').attr('href','user/'+result.username);
-
-                $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
-                
-                $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
+                                
+                if (result.twitter == null) {
+                    $('#matchedtwprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
+                }
+                if (result.instagram == null) {
+                    $('#matchedigprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
+                }
 
                 $('#agematch').html(res.age);
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
     
@@ -148,7 +165,7 @@
                 const result = res;
 
                 if (typeof result == 'string') {
-                    alert(result);
+                    toastr.error(result);
                     $('#loader-div').hide();
                     return;
                 }
@@ -162,14 +179,29 @@
 
                 $('#matchedsmprofile').attr('href','../../../user/'+result.username);
 
-                $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
+                 if (result.twitter == null) {
+                    $('#matchedtwprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
+                }
+                if (result.instagram == null) {
+                    $('#matchedigprofile').on('click',(e) => {
+                        toastr.error('Handle not provided');
+                        e.preventDefault();
+                    });
+                }else{
+                    $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
+                }
                 
-                $('#matchedigprofile').attr('href','https://www.instagram.com/'+result.instagram);
-
                 $('#agematch').html(result.age);
 
                 $('#matched-div').show();
 
+            }).fail(() => {
+                toastr.error('Error Matching a user, try again');
             });
         });
     
@@ -254,6 +286,26 @@
             });
 
         }
+
+        $('#delevent').on('click',() => {
+            const event_id = $('#eid').val();
+
+            if(confirm('Are you sure you want to delete this event')){
+                $.post('../../delete/'+event_id,{
+                    _token : token
+                },(name) => {
+                    toastr.success(`${name} has been deleted`);
+                    toastr.info(`${name} is no longer accessible to you or others`);
+
+                    window.location.replace('../');
+
+                }).fail(() => {
+                    toastr.error('Event delete unsuccessful');
+                });
+            }else{
+                toastr.error('Event not deleted');
+            }
+        })
     });
 
 </script>

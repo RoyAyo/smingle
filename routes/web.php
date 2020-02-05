@@ -74,6 +74,7 @@ Route::get('events/parties','EventsController@party')->name('event.party');
 Route::post('events/storeshow','EventsController@storeshow')->name('event.storeshow');
 Route::post('events/storeparty','EventsController@storeparty')->name('event.storeparty');
 Route::post('events/edit/{id}','EventsController@update')->name('event.update');
+Route::post('events/delete/{id}','EventsController@delete')->name('event.delete');
 Route::post('events/pics/{id}','EventsController@updatedp')->name('eventdp');
 Route::get('events/addshow','EventsController@createshow')->name('event.createshow');
 Route::get('events/addparty','EventsController@createparty')->name('event.createparty');

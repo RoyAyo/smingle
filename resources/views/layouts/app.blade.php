@@ -89,16 +89,21 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <script type="text/javascript">
-            $('#student').on('change',function() {
-                const s = $(this).val();
-                if (s == 1) {
-                    $('#studentship').fadeIn(200);
-                }else{
-                    $('#studentship').fadeOut(200);
-                }
-            });
-        </script>
     </div>
+    <script type="text/javascript">
+        $('#student').on('change',function() {
+            const s = $(this).val();
+            if (s == 1) {
+                $('#studentship').fadeIn(200);
+            }else{
+                $('#studentship').fadeOut(200);
+            }
+        });
+
+        $('#username').on('keyup',function(){
+            var i = $(this).val();
+           $(this).val(i.toLowerCase());
+        });
+    </script>
 </body>
 </html>

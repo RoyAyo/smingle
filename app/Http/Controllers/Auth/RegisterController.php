@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Foundation\Http\FormRequest;
 
 class RegisterController extends Controller
 {
@@ -54,8 +55,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'username' => ['required','unique:users'],
-            'twitter' => ['unique:users'],
-            'instagram' => ['unique:users'],
             'password' => ['required', 'string', 'min:6', 'confirmed'],
         ]);
     }
@@ -74,11 +73,11 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
-            'username' => $data['username'],
+            'username' => strtolower($data['username']),
             'password' => Hash::make($data['password']),
             'gender' => $data['gender'],
-            'instagram' => $data['instagram'],
-            'twitter' => $data['twitter'],
+            'instagram' => strtolower($data['instagram']),
+            'twitter' => strtolower($data['twitter']),
             'DOB' => $data['dob'],
             'zodiac' => $z,
         ]);
