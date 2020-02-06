@@ -76,14 +76,14 @@ if (dob1 == dob2):
 	zod = 0.175
 else:
 	if (month1 == month2) & (abs(int(day1) - int(day2)) < 4):
-		zod = 0.13
+		zod = 0.10
 	else:
 		if(z2 in zs):
 			i = zs.index(z2)
 			if i > 1:
 				zod = -0.05
 			else:
-				zod = 0.1
+				zod = 0.07
 		else:
 			zod = 0
 
