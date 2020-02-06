@@ -38,8 +38,8 @@ class HomeController extends Controller
             if ($Notification->event != '0') {
                 $event = Event::find($Notification->event);
 
-                if (is_null($event)) {
-                   
+                if (is_null($event)){
+
                 }else{
                     $Notification->event_name = $event->event_name;
                     $Notification->show = $event->show== '1'? 'Show' : 'Party';

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Event;
 use App\Attending;
+use App\Notifications;
 use Session;
 
 class EventsController extends Controller
@@ -217,6 +218,8 @@ class EventsController extends Controller
         $event_name = $event->event_name;
 
         $event->delete();
+        
+        Notifications::where('event',$id)->delete();
 
         return $event_name;
     }
