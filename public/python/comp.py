@@ -41,7 +41,7 @@ error = mse(df.loc[int(user_id1)].values,df.loc[int(user_id2)].values)
 
 tot_err = 75
 
-if (error > 65):
+if (error > 63):
 	if error >= 120:
 		corr = 0.02
 	elif error >= 100:

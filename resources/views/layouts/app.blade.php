@@ -11,7 +11,7 @@
         <meta name="userID" content="{{ auth()->user()->id }}">
     @endauth
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Smingle') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" ></script>
