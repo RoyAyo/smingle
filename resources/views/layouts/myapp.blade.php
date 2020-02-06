@@ -69,7 +69,7 @@
 			<div id="sidebar-wrapper">
 	            <ul class="sidebar-nav">
 	                <li class="sidebar-brand">
-	                    <span style="color: grey;">
+	                    <span style="color: grey;text-transform: capitalize;">
 	                    	@auth
 	                    		{{auth()->user()->name}}
 	                    	@endauth

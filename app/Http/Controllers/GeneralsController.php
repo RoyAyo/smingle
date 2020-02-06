@@ -21,22 +21,21 @@ class GeneralsController extends Controller
     }
 
     public function store(Request $request,$id){
-        $gen1 = $request->gen1;
-        $gen2 = $request->gen2;
-        $gen3 = $request->gen3;
-        $gen4 = $request->gen4;
-        $gen5 = $request->gen5;
-        $gen6 = $request->gen6;
-        $gen7 = $request->gen7;
-        $gen8 = $request->gen8;
-        $gen9 = $request->gen9;
-        $gen10 = $request->gen10;
-        $gen11= $request->gen11;
-        $gen12 = $request->gen12;
-        $gen13 = $request->gen13;
-        $gen14 = $request->gen14;
-    	$gen15 = $request->gen15;
-
+        $gen1 = isset($request->gen1) ? $request->gen1 : 1;
+        $gen2 = isset($request->gen2) ? $request->gen2 : 1;
+        $gen3 = isset($request->gen3) ? $request->gen3 : 1;
+        $gen4 = isset($request->gen4) ? $request->gen4 : 1;
+        $gen5 = isset($request->gen5) ? $request->gen5 : 1;
+        $gen6 = isset($request->gen6) ? $request->gen6 : 1;
+        $gen7 = isset($request->gen7) ? $request->gen7 : 1;
+        $gen8 = isset($request->gen8) ? $request->gen8 : 1;
+        $gen9 = isset($request->gen9) ? $request->gen9 : 1;
+        $gen10 = isset($request->gen10) ? $request->gen10 : 1;
+        $gen11 = isset($request->gen11) ? $request->gen11 : 1;
+        $gen12 = isset($request->gen12) ? $request->gen12 : 1;
+        $gen13 = isset($request->gen13) ? $request->gen13 : 1;
+        $gen14 = isset($request->gen14) ? $request->gen14 : 1;
+        $gen15 = isset($request->gen15) ? $request->gen15 : 1;
         
         $req = General::all()->where('user_id',$id)->first();
         if ($req) {
