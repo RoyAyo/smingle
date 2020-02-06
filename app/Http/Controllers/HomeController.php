@@ -38,10 +38,14 @@ class HomeController extends Controller
             if ($Notification->event != '0') {
                 $event = Event::find($Notification->event);
 
-                $Notification->event_name = $event->event_name;
-                $Notification->show = $event->show== '1'? 'Show' : 'Party';
-                if ($other_id != $user_id) {
-                    $Notification->notification_type = $Notification->user_id == $user_id ? '4':'3';
+                if (is_null($event)) {
+                   
+                }else{
+                    $Notification->event_name = $event->event_name;
+                    $Notification->show = $event->show== '1'? 'Show' : 'Party';
+                    if ($other_id != $user_id) {
+                        $Notification->notification_type = $Notification->user_id == $user_id ? '4':'3';
+                    }
                 }
             }else{
                 $Notification->notification_type = $Notification->user_id == $user_id ? '2':'1';
