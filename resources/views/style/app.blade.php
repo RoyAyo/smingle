@@ -411,7 +411,7 @@
 	.match-imgs .imdiv{
 		display: flex;
 		flex-direction: column;
-		padding: 0rem 4rem;
+		padding: 0rem 10rem;
 	}
 	.match-imgs .imdiv div{
 		margin-bottom: 0.25rem;
@@ -454,32 +454,32 @@
 			height: 250px;
 		}
 		.match-imgs img{
-			height: 150px;
-			width: 150px;
+			height: 160px;
+			width: 160px;
 			border-radius: 50%;
 		}
 		.match-imgs{
 			margin-bottom: 70px;
 		}
 		.match-imgs .imdiv{
-			padding: 0rem 2rem;
+			padding: 0rem 5rem;
 		}
 		#matchdivfooter{
 			padding: 0.5rem 1rem;
 		}
 	}
-	@media(max-width: 420px){
+	@media(max-width: 500px){
 		.match-imgs{
 			margin-top: 40px;
 			margin-bottom: 80px;
 		}
 		.match-imgs img{
-			height: 120px;
-			width: 120px;
+			height: 130px;
+			width: 130px;
 			border-radius: 50%;
 		}
 		.match-imgs .imdiv{
-			padding: 0rem 1rem;
+			padding: 0rem 3.5rem;
 		}
 	}	#closematchdiv{
 		position: relative;

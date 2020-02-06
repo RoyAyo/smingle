@@ -33,7 +33,7 @@ class CompsController extends Controller
 
 
     	if (is_null($check_user)) {
-    		return "Please Input A Valid User,Note it is case sensitive";
+    		return "Please input a valid username";
     	}
 
         //check if the user has filled the required field
