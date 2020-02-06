@@ -31,7 +31,7 @@ class UsersController extends Controller
 
     public function pics(Request $request){
         $this->validate($request,[
-            'pics' => 'required|image'
+            'pics' => 'required|image|max:20000'
         ]);
 
 
