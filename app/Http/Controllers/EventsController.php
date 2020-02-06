@@ -165,7 +165,7 @@ class EventsController extends Controller
             'event_avatar'=> "images/uploads/event/".$upload_name,
         ]);
 
-        Session::flash('showStored','Your party has been saved and can now be found in the shows in event,tell users to attend so they can be matched');
+        Session::flash('showStored','Your show has been saved, wait for verification');
 
         return redirect()->route('events');
     }
