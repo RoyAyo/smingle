@@ -18,7 +18,8 @@
 									<div class="texts">
 										<div style="max-width: 60%;overflow:hidden;height: 28px;">
 											<span style="text-overflow: ellipsis ellipsis;">{{ $message->message }}</span>
-</div> <div style="font-size: 10pt;min-width: 40%;text-align: right; ">
+									</div> 
+									<div style="font-size: 10pt;width: 40%;text-align: right; ">
 											{{ $message->created_at->diffForHumans() }}
 										</div>
 									</div>
