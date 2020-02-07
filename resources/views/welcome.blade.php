@@ -78,10 +78,12 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     SMINGLE
+                    @guest
+                        <h5 style="color: rgba(255,0,0,0.5);font-size: 16px;margin-top: 0px;font-family: sans-serif;font-weight: bold;">(Register or Login to find your match)</h5>
+                    @endguest
                 </div>
             </div>
         </div>
