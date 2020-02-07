@@ -80,6 +80,7 @@ class RegisterController extends Controller
             'twitter' => strtolower($data['twitter']),
             'DOB' => $data['dob'],
             'zodiac' => $z,
+            'cluster' => "1"
         ]);
 
         $profile = Profile::create([
