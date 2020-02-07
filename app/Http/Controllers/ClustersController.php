@@ -29,11 +29,15 @@ class ClustersController extends Controller
 
         $this->validate($request,[
             'cluster' => 'required',
-            'about' => 'required|max:400' 
+            'about' => 'required|max:200' 
         ]);
 
         if (is_null($user->avatar)) {
-            $user->avatar = "images/default.jpg";
+            if (auth()->user()->gender == 1) {
+                $user->avatar = "images/mdefault.jpg";
+            }else{   
+                $user->avatar = "images/fdefault.jpg";
+            }
         }
 
         $user->about = $request->about;
