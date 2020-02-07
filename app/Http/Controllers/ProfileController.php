@@ -67,7 +67,7 @@ class ProfileController extends Controller
     }
 
     protected function age_range(){
-        $age = Carbon::parse(auth()->user()->dob)->age;
+        $age = Carbon::parse(auth()->user()->DOB)->age;
 
         if ($age > 14 && $age < 18 ) {
             $age_range = 1;
