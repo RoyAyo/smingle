@@ -58,7 +58,7 @@
             <div class="col-md-6">
                 <select id="filter_event_religion" class="form-control{{ $errors->has('religion') ? ' is-invalid' : '' }}" name="religion" value="{{ old('religion') }}" >
                 	<option value="0"> Indifferent </option>
-                	<option value="1"> Christain </option>
+                	<option value="1"> Christian </option>
                 	<option value="2"> Muslim </option>
                 	<option value="3"> Traditional </option>
                 	<option value="4"> Others </option>
