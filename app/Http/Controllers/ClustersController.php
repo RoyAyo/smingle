@@ -34,7 +34,7 @@ class ClustersController extends Controller
 
         if (is_null($user->avatar)) {
             $user->avatar = "images/default.jpg";
-        } 
+        }
 
         $user->about = $request->about;
 
@@ -43,4 +43,5 @@ class ClustersController extends Controller
         $user->save();
 
         return redirect()->route('home');
+    }
 }

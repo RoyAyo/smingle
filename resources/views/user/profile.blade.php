@@ -28,7 +28,7 @@
     <div class="bio">
         <div class="content" style="font-size: 12pt;">
             <center>
-                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.3rem;word-break: keep-all;word-wrap: break-word;">{{ $user->about }}</p>
+                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.15rem;word-break: keep-all;word-wrap: break-word;">{{ $user->about }}</p>
             </center>
         </div>
         <div>

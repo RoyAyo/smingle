@@ -95,7 +95,7 @@
             <label for="gender" class="col-md-4 col-form-label text-md-right">{{ __('DATE OF BIRTH') }}<span style='color:red;'>*</span></label>
 
             <div class="col-md-6">
-                <input type="date" id="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" required>
+                <input type="date" id="dob" class="form-control{{ $errors->has('dob') ? ' is-invalid' : '' }}" name="dob" value="{{ old('dob') }}" max="2005-12-31" required>
                 @if ($errors->has('dob'))
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $errors->first('dob') }}</strong>
