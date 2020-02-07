@@ -13,12 +13,13 @@
 
             <div class="col-md-6">
                 <select id="filter_event_age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="1" autofocus>
-                	<option value="0"> Indifferent </option>
-                	<option value="1"> 15-18 </option>
-                	<option value="2"> 19-23 </option>
-                	<option value="3"> 24-29 </option>
-                	<option value="4"> 29-32 </option>
-                	<option value="5"> >32 </option>
+                    <option value="0"> Indifferent </option>
+                    <option value="1"> 15-17 </option>
+                    <option value="2"> 18-22 </option>
+                    <option value="3"> 23-27 </option>
+                    <option value="4"> 28-31 </option>
+                    <option value="5"> 32-40 </option>
+                    <option value="6"> >40 </option>
                 </select>
 
                 @if ($errors->has('age'))

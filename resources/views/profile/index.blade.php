@@ -7,27 +7,6 @@
     <p style="font-weight: bold;text-align: center;">Note that will people will search for you through these</p>
 	<form action="{{ route('profile.update',['id'=> $profile->id]) }}" method="POST">
 		@csrf
-
-        <div class="form-group row">
-            <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age Range') }}</label>
-
-            <div class="col-md-6">
-                <select id="age" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" autofocus>
-                	<option value="1" {{ $profile->age==1 ? 'selected':'' }}> 15-18 </option>
-                	<option value="2" {{ $profile->age==2 ? 'selected':'' }}> 19-23 </option>
-                	<option value="3" {{ $profile->age==3 ? 'selected':'' }}> 24-28 </option>
-                	<option value="4" {{ $profile->age==4 ? 'selected':'' }}> 29-32 </option>
-                    <option value="5" {{ $profile->age==5? 'selected':'' }}> 33-40 </option>
-                	<option value="6" {{ $profile->age==6? 'selected':'' }}> >40 </option>
-                </select>
-
-                @if ($errors->has('age'))
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $errors->first('age') }}</strong>
-                    </span>
-                @endif
-            </div>
-        </div>
         <div class="form-group row">
             <label for="country" class="col-md-4 col-form-label text-md-right">{{ __('Country') }}</label>
 

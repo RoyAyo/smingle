@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Profile;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -20,7 +21,7 @@ class ProfileController extends Controller
     public function update(Request $request,$id){
 
         $user = Profile::find($id);
-    	$age = $request->age;
+    	$age = $this->age_range();
         $country = $request->country;
     	$state = $request->state;
     	$r_status = $request->r_status;
@@ -63,5 +64,25 @@ class ProfileController extends Controller
         $user->save();
 
         return redirect()->route('cluster');
+    }
+
+    protected function age_range(){
+        $age = Carbon::parse(auth()->user()->dob)->age;
+
+        if ($age > 14 && $age < 18 ) {
+            $age_range = 1;
+        }elseif ($age > 17 && $age < 23) {
+            $age_range = 2;
+        }elseif ($age > 22 && $age < 28) {
+            $age_range = 3;
+        }elseif ($age > 27 && $age < 32) {
+            $age_range = 4;
+        }elseif ($age > 31 && $age < 40) {
+            $age_range = 5;
+        }else{
+            $age_range = 6;
+        }
+
+        return $age_range;
     }
 }
