@@ -19,6 +19,10 @@ class UsersController extends Controller
             return redirect()->route('home');
         }
 
+        if (is_null($user->profile()->first()->country)) {
+            return redirect()->route('profile');
+        }
+
     	if ($user->id == auth()->user()->id) {
     		$owner = 1;
     	}else{

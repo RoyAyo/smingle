@@ -11,7 +11,7 @@
         $lv = ['','100','200','300','400','500','Masters','Ph.D','Others','Secondary School'];
         $m_s = ['','Broke asf','Broke','Fair','Rich','Rich asf'];
     @endphp
-    <div class="jumbo" style="background-image: url( {{ asset($user->avatar) }} );"></div>
+    <div class="jumbo" style="background-image: url( {{ is_null('$user->avatar') ? asset('images/mdefault.jpg') : asset($user->avatar) }} );"></div>
     <div class="details">
         <h3 style="font-weight: bold;margin-bottom: 0.05rem;">{{ $user->name }}</h3>
         <h4 style="margin-bottom: 0.05rem;color: skyblue">{{'@'.$user->username }}</h4>
@@ -28,7 +28,7 @@
     <div class="bio">
         <div class="content" style="font-size: 12pt;">
             <center>
-                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.15rem;word-break: keep-all;word-wrap: break-word;">{{ $user->about }}</p>
+                <p style="font-size: 13pt;font-weight: bold;font-family: sans-serif;width: 55%;word-spacing: 0.15rem;word-break: keep-all;word-wrap: break-word;">{{ is_null($user->about) ? '...' : $user->about }}</p>
             </center>
         </div>
         <div>
