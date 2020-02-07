@@ -28,11 +28,13 @@ class ClustersController extends Controller
         $user = User::find($user_id);
 
         $this->validate($request,[
-                'cluster' => 'required',
-                'about' => 'required|min:15|max:400' 
-            ]);
+            'cluster' => 'required',
+            'about' => 'required|max:400' 
+        ]);
 
-        $user->avatar = "images/default.jpg"; 
+        if (is_null($user->avatar)) {
+            $user->avatar = "images/default.jpg";
+        } 
 
         $user->about = $request->about;
 
@@ -41,5 +43,4 @@ class ClustersController extends Controller
         $user->save();
 
         return redirect()->route('home');
-    }
 }

@@ -57,7 +57,7 @@
 
             <div class="col-md-6">
                 <select id="religion" class="form-control{{ $errors->has('religion') ? ' is-invalid' : '' }}" name="religion" value="{{ old('religion') }}" >
-                	<option value="1" {{ $profile->religion==1? 'selected':'' }}> Christain </option>
+                	<option value="1" {{ $profile->religion==1? 'selected':'' }}> Christian </option>
                 	<option value="2" {{ $profile->religion==2? 'selected':'' }}> Muslim </option>
                 	<option value="3" {{ $profile->religion==3? 'selected':'' }}> Traditional </option>
                 	<option value="4" {{ $profile->religion==4? 'selected':'' }}> Others </option>

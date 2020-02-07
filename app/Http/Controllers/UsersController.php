@@ -31,7 +31,7 @@ class UsersController extends Controller
 
     public function pics(Request $request){
         $this->validate($request,[
-            'pics' => 'required|image|max:20000'
+            'pics' => 'required|image'
         ]);
 
 
@@ -40,6 +40,8 @@ class UsersController extends Controller
         $user = User::find($user_id);
 
         $upload_name = time().$request->pics->getClientOriginalName();
+
+	    $upload_name = str_replace(' ','_',$upload_name);
 
         $request->pics->move('images/uploads',$upload_name);
 

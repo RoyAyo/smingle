@@ -3,21 +3,8 @@
 @section('content')
 	
 	<div style="padding-left:0.5rem; ">
-		<form action="{{ route('cluster.cluster') }}" method="POST" enctype="multipart/form-data">
+		<form action="{{ route('cluster.cluster') }}" method="POST">
 			@csrf
-				@if(is_null($user->avatar))
-					<div class="form-group row">
-			            <label for="pics" class="col-md-4 col-form-label text-md-right">{{ __('Display Picture') }}</label>
-			            <div class="col-md-6">
-			                <input type="file" name="pics" id="pics" class="form-control{{ $errors->has('pics') ? ' is-invalid' : '' }}" required >
-			                @if ($errors->has('pics'))
-			                    <span class="invalid-feedback" role="alert">
-			                        <strong>{{ $errors->first('pics') }}</strong>
-			                    </span>
-			                @endif
-			            </div>
-			        </div>
-			    @endif
 			    <div class="form-group row">
 		            <label for="cluster" class="col-md-4 col-form-label text-md-right">{{ __('Which best describes you?') }}</label>
 
