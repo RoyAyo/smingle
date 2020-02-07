@@ -27,8 +27,8 @@ class CreateUsersTable extends Migration
             $table->text('about')->nullable();
             $table->integer('cluster')->default(0);
             $table->integer('sub')->default(1);
-            $table->string('twitter')->unique()->nullable();
-            $table->string('instagram')->unique()->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('instagram')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

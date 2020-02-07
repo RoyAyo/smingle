@@ -45,7 +45,7 @@
                         	<a class="nav-auth" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
                     @else
-                            <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre class="nav-name">
+                            <a id="navbarDropdown" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre class="nav-name" style='font-size:12.2px;'>
                                 {{auth()->user()->name}} <span class="caret"></span>
                             </a>
 
@@ -68,9 +68,9 @@
 		<div id="wrapper">
 			<div id="sidebar-wrapper">
 	            <ul class="sidebar-nav">
-	                <li class="sidebar-brand">
-	                    <span style="color: grey;text-transform: capitalize;">
-	                    	@auth
+	                <li class="sidebar-brand"> <span style="color: 
+	                    grey;text-transform: capitalize;font-size:12px;">
+							@auth
 	                    		{{auth()->user()->name}}
 	                    	@endauth
 	                    </span>

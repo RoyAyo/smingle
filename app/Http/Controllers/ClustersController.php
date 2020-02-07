@@ -27,25 +27,12 @@ class ClustersController extends Controller
 
         $user = User::find($user_id);
 
-        if (is_null($user->avatar)) {
-            $this->validate($request,[
-                'pics' => 'required|image|max:20000',
-                'cluster' => 'required',
-                'about' => 'required|max:400' 
-            ]);               
-
-            $upload_name = time().$request->pics->getClientOriginalName();
-
-            $request->pics->move('images/uploads',$upload_name);
-
-            $user->avatar = "images/uploads/".$upload_name; 
-        }else{
-            $this->validate($request,[
+        $this->validate($request,[
                 'cluster' => 'required',
                 'about' => 'required|min:15|max:400' 
             ]);
-        }
 
+        $user->avatar = "images/default.jpg"; 
 
         $user->about = $request->about;
 

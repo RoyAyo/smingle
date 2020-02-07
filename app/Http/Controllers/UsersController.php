@@ -31,7 +31,7 @@ class UsersController extends Controller
 
     public function pics(Request $request){
         $this->validate($request,[
-            'pics' => 'required|image'
+            'pics' => 'required|image|max:20000'
         ]);
 
 
@@ -53,10 +53,6 @@ class UsersController extends Controller
    }
 
     public function inst(Request $request){
-        $this->validate($request,[
-            'inst'=>['unique:users']
-        ]);
-
         $new_handle = $request->instagram;
 
         $user_id = auth()->user()->id;
@@ -73,10 +69,6 @@ class UsersController extends Controller
     }
 
     public function twit(Request $request){
-        $this->validate($request,[
-            'twit'=>['unique:users']
-        ]);
-
         $new_handle = $request->twitter;
 
         $user_id = auth()->user()->id;

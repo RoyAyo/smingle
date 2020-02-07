@@ -21,7 +21,7 @@ class GeneralsController extends Controller
     }
 
     public function store(Request $request,$id){
-        $gen1 = isset($request->gen1) ? $request->gen1 : 1;
+       	$gen1 = isset($request->gen1) ? $request->gen1 : 1;
         $gen2 = isset($request->gen2) ? $request->gen2 : 1;
         $gen3 = isset($request->gen3) ? $request->gen3 : 1;
         $gen4 = isset($request->gen4) ? $request->gen4 : 1;
