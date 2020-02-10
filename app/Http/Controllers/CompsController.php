@@ -42,7 +42,11 @@ class CompsController extends Controller
 
         if ($check_filled == 0) {
             return "Tell ".$check_user->name." to fill the required field";
-         } 
+         }
+
+        $broke = $check_user->profile()->first()->m_status;
+
+        $gender = $check_user->gender;
 
     	$check_id = json_encode($check_user->id);
 
@@ -54,25 +58,33 @@ class CompsController extends Controller
     	//$based_on = json_encode($request->based);
     	$based_on = "generals";
 
-    	$process = new Process('python3 ../public/python/comp.py '.$user_id.' '.$check_id. ' '.$based_on );
+    	$process = new Process('python3 ../public/python/comp.py '.$user_id.' '.$check_id. ' '.$based_on.' '.$gender.' '.$broke );
 		$process->run();
 
 		if (!$process->isSuccessful()) {
 			return new ProcessFailedException($process);
 		}
 
-		$match = $process->getOutput();
+		$res = $process->getOutput();
 
 
-		$m = round(floatval($match) * 100,1);
+        $res = json_decode($res);
 
-		
-		$match_perc = strval($m). '%';
+        $m = $res->score;
 
-        $check_user->score = $match_perc; 
-        
+        $comment = $res->comment;
+
+	$m = round(floatval($m) * 100,1);
+
+	$match_perc = strval($m). '%';
+
+        $check_user->score = $match_perc;
+
+
         $check_user->age = Carbon::parse($check_user->DOB)->age;
-		
-		return $check_user;
+
+        $check_user->comment = $comment;
+
+	return $check_user;
     }
 }

@@ -10,8 +10,9 @@
         $j = ['','Back-End-Developer','Cloths/Perfumes/Hand-Bags Store','Designer(UI/UX)','Front-End-Developer','Help','Influencer/Promoter','Interior Decorator','Make Up Artist','Mobile-Developer','Photographer','Phone/Laptop Repairs','Phone/Laptop Sales','Shoe-Store','Shoe-Maker/Palm-Maker','Tailor'];
         $lv = ['','100','200','300','400','500','Masters','Ph.D','Others','Secondary School'];
         $m_s = ['','Broke asf','Broke','Fair','Rich','Rich asf'];
+	$default = "images/mdefault.jpg";
     @endphp
-    <div class="jumbo" style="background-image: url( {{ is_null('$user->avatar') ? asset('images/mdefault.jpg') : asset($user->avatar) }} );"></div>
+    <div class="jumbo" style="background-image: url( {{ !is_null($user->avatar) ? asset($user->avatar) : asset($default) }} );"></div>
     <div class="details">
         <h3 style="font-weight: bold;margin-bottom: 0.05rem;">{{ $user->name }}</h3>
         <h4 style="margin-bottom: 0.05rem;color: skyblue">{{'@'.$user->username }}</h4>

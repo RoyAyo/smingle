@@ -32,8 +32,8 @@
 			<div class="card-header" style="font-weight: bold;">Events</div>
 			<div class="card-body">
 				<span style="font-size: 12pt;color: grey">
-					Click on the Events link on the sidebar to your left, then click shows or Parties. Our Customer Care finds you top events you might want to attend. Please suggest events to us with the above<strong><a href="#mymail">mail</a></strong>  and we would add them.
-					Attend the event, if there are other users attending, you can fid yourself a good match for the event
+					Click on the Events link on the sidebar to your left, then click Shows or Parties. Our Customer Care finds you top events you might want to attend. Please suggest events to us with the above <strong><a href="#mymail">mail</a></strong>  and we would add them.
+					Attend the event, if there are other users attending, you can find yourself a good match for the event.
 					You can also host your events or shows, but this will be verified by our Team in less than 48hours tops.
 				</span>
 			</div>

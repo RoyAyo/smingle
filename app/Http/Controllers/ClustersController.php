@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 use App\User;
+use App\Filled;
 use App\Required;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
@@ -45,6 +47,10 @@ class ClustersController extends Controller
         $user->cluster = $request->cluster;
 
         $user->save();
+
+	if(Filled::find($user_id)->general=='0'){
+		Session::flash('about_info','Registration successful, please go to the about you on the left sidebar to complete registration');
+	}
 
         return redirect()->route('home');
     }

@@ -26,6 +26,10 @@ shape = sys.argv[17]
 job = sys.argv[18]
 model = sys.argv[19]
 
+country = country.replace('¬',' ')
+state = state.replace('¬',' ')
+school = school.replace('¬',' ')
+course = course.replace('¬',' ')
 
 conn = sqlite3.connect('../database/match.sqlite')
 
@@ -60,7 +64,7 @@ def create_query(gender,age,country,state,religion,height,r_status,m_status,stud
 			if (school != "0"):
 				query+= " and profiles.school Like '%" + school + "%'"
 			if(course != "0"):
-					query+= " and profiles.course = '" + course + "'"
+					query+= " and profiles.course Like '%" + course + "%'"
 			if(level != "0"):
 				query+= " and profiles.level = " + level
 	return query
@@ -73,9 +77,9 @@ def mse(a2):
 		if e == 1:
 			e *= 2
 		error += e
-	tot_err = 75
+	tot_err = 90
 
-	if (error > 63):
+	if (error > 75):
 		if error >= 120:
 			corr = 0.02
 		elif error >= 100:
@@ -90,11 +94,13 @@ def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
 		if cluster_diff == 1:
-			cluster_diff = 0.08
+			cluster_diff = 0.07
 		elif cluster_diff == 2:
-			cluster_diff = 0.16
+			cluster_diff = 0.13
 		elif cluster_diff == 3:
-			cluster_diff = 0.24
+			cluster_diff = 0.18
+		else:
+			cluster_diff = 0
 	return cluster_diff
 
 def bday_match(bd):
@@ -144,7 +150,7 @@ else:
 
 		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) + ml_error_rate  
 
-		df_top = df_search['match'].nlargest(20)
+		df_top = df_search['match'].nlargest(100)
 
 		r = random.randint(0,len(df_top)-1)
 

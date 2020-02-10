@@ -21,7 +21,7 @@
                     return;
                 }
                 $('.matched-title').html('!!!');
-                
+
                 $('#twm').hide();
                 $('#igm').hide();
 
@@ -37,6 +37,8 @@
 
                 $('#agematch').html(res.age);
 
+		$('#matchcomment').html(res.comment);
+
                 $('#matched-div').show();
 
             }).fail(() => {
@@ -49,7 +51,8 @@
             e.preventDefault();
             $('#loader-div').show(); 
             const age = $('#filter_age').val();
-            const location = $('#filter_location').val();
+            const country = $('#filter_country').val();
+            const state = $('#filter_state').val();
             const religion = $('#filter_religion').val();
             const height = $('#filter_height').val();
             const r_status = $('#filter_r_status').val();
@@ -67,7 +70,8 @@
             $.post("{{ route('match.check') }}",{
                '_token' : token,
                'age' : age,
-               'location' : location,
+               'country' : country,
+               'state' : state,
                'religion' : religion,
                'height' : height,
                'r_status' : r_status,
@@ -99,7 +103,7 @@
 
                 $('#matchedsmprofile').attr('href','user/'+result.username);
                                 
-                if (result.twitter == null) {
+                if (result.twitter == null  || result.twitter == '') {
                     $('#matchedtwprofile').on('click',(e) => {
                         toastr.error('Handle not provided');
                         e.preventDefault();
@@ -107,7 +111,7 @@
                 }else{
                     $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
                 }
-                if (result.instagram == null) {
+                if (result.instagram == null  || result.instagram == '') {
                     $('#matchedigprofile').on('click',(e) => {
                         toastr.error('Handle not provided');
                         e.preventDefault();
@@ -131,7 +135,8 @@
             $('#loader-div').show();  
             const filter_event_id = $('#filter_event_id').val();
             const age = $('#filter_event_age').val();
-            const location = $('#filter_event_location').val();
+            const country = $('#filter_country').val();
+            const state = $('#filter_state').val();
             const religion = $('#filter_event_religion').val();
             const height = $('#filter_event_height').val();
             const r_status = $('#filter_event_r_status').val();
@@ -149,7 +154,8 @@
             $.post("../"+filter_event_id,{
                '_token' : token,
                'age' : age,
-               'location' : location,
+               'country' : country,
+               'state' : state,
                'religion' : religion,
                'height' : height,
                'r_status' : r_status,
@@ -181,7 +187,7 @@
 
                 $('#matchedsmprofile').attr('href','../../../user/'+result.username);
 
-                 if (result.twitter == null) {
+                 if (result.twitter == null  || result.twitter == '') {
                     $('#matchedtwprofile').on('click',(e) => {
                         toastr.error('Handle not provided');
                         e.preventDefault();
@@ -189,7 +195,7 @@
                 }else{
                     $('#matchedtwprofile').attr('href','https://twitter.com/'+result.twitter);
                 }
-                if (result.instagram == null) {
+                if (result.instagram == null  || result.instagram == '') {
                     $('#matchedigprofile').on('click',(e) => {
                         toastr.error('Handle not provided');
                         e.preventDefault();

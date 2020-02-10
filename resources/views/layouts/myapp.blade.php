@@ -142,20 +142,21 @@
 							You
 						</div>
 					</div>
-					<!-- <div class="arrow">&#11012</div> -->
 					<div class="imdiv" >
 						<div>
 							<img id="immatch" src="">
 						</div>
 						<div class="namematch" style="" id="namematch">
-							
+
 						</div>
 						<div id="agematch">
-							
+
 						</div>
 					</div>
 				</div>
 				<div id="matchscore" class="text-default" style="font-weight: bold;">					
+				</div>
+				<div id="matchcomment" style="font-weight: bold;font-size:20px;color: rgba(10,10,10,0.6);margin-top: 0.5rem;text-align: center;padding: 1.2rem;">
 				</div>
 			</div>
 			<div class="card-footer" id="matchdivfooter">

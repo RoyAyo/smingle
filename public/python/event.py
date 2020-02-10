@@ -28,6 +28,10 @@ model = sys.argv[19]
 
 based_on = "generals"
 
+country = country.replace('¬',' ')
+state = state.replace('¬',' ')
+school = school.replace('¬',' ')
+course = course.replace('¬',' ')
 
 conn = sqlite3.connect('../database/match.sqlite')
 
@@ -62,7 +66,7 @@ def create_query(gender,age,country,state,religion,height,r_status,m_status,stud
 			if (school != "0"):
 				query+= " and profiles.school Like '%" + school + "%'"
 			if(course != "0"):
-					query+= " and profiles.course = '" + course + "'"
+					query+= " and profiles.course Like '%" + course + "%'"
 			if(level != "0"):
 				query+= " and profiles.level = " + level
 	return query
@@ -75,9 +79,9 @@ def mse(a2):
 		if e == 1:
 			e *= 2
 		error += e
-	tot_err = 75
+	tot_err = 90
 
-	if (error > 63):
+	if (error > 75):
 		if error >= 120:
 			corr = 0.02
 		elif error >= 100:
@@ -91,7 +95,14 @@ def mse(a2):
 def clus(c):
 	cluster_diff = abs(user_cluster - c)
 	if cluster_diff > 0:
-		cluster_diff = 0.04
+		if cluster_diff == 1:
+			cluster_diff = 0.07
+		elif cluster_diff == 2:
+			cluster_diff = 0.13
+		elif cluster_diff == 3:
+			cluster_diff = 0.18
+		else:
+			cluster_diff = 0
 	return cluster_diff
 
 def bday_match(bd):

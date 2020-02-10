@@ -22,12 +22,10 @@ class MatchesController extends Controller
     	$user_gender = Auth::user()->gender;
     	$filter = [];
 
-
-        $country = isset($request->country) ? $request->country : "0";
-    	$state = isset($request->state) ? $request->state : "0";
-    	$school = isset($request->school) ? $request->school : "0";
-    	$course = isset($request->course) ? $request->course : "0";
-
+        $country = isset($request->country) ? str_replace(' ', '¬',$request->country) : "0";
+    	$state = isset($request->state) ? str_replace(' ', '¬',$request->state) : "0";
+    	$school = isset($request->school) ?  str_replace(' ', '¬',$request->school) : "0";
+    	$course = isset($request->course) ? str_replace(' ', '¬',$request->course) : "0";
 
     	$gen = $user_gender;
     	$age = $request->age;
@@ -110,11 +108,10 @@ class MatchesController extends Controller
         $filter = [];
 
 
-        $country = isset($request->country) ? $request->country : "0";
-        $state = isset($request->state) ? $request->state : "0";
-        $school = isset($request->school) ? $request->school : "0";
-        $course = isset($request->course) ? $request->course : "0";
-
+        $country = isset($request->country) ? str_replace(' ', '¬',$request->country) : "0";
+    	$state = isset($request->state) ? str_replace(' ', '¬',$request->state) : "0";
+    	$school = isset($request->school) ?  str_replace(' ', '¬',$request->school) : "0";
+    	$course = isset($request->course) ? str_replace(' ', '¬',$request->course) : "0";
 
         $gen = $user_gender;
         $age = $request->age;

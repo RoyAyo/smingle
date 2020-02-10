@@ -80,7 +80,7 @@ class RegisterController extends Controller
             'twitter' => strtolower($data['twitter']),
             'DOB' => $data['dob'],
             'zodiac' => $z,
-            'cluster' => "1"
+            'cluster' => 1
         ]);
 
         $profile = Profile::create([
@@ -113,7 +113,7 @@ class RegisterController extends Controller
             $zodiac = "Taurus";
         }
         elseif(($month == 5 && $day >= 21)|| ($month == 6 && $day <= 20 )){
-            $zodiac = "Ariel";
+            $zodiac = "Gemini";
         }
         elseif(($month == 6 && $day >= 21)|| ($month == 7 && $day <= 22 )){
             $zodiac = "Cancer";

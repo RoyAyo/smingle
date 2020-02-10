@@ -4,7 +4,7 @@
 <div class="card" style="width: 80%;margin: 0 auto;">
     <div class="card-header" style="text-align: center;font-weight: bold;">Your Profile Settings</div>
     <div class="card-body">
-    <p style="font-weight: bold;text-align: center;">Note that will people will search for you through these</p>
+    <p style="font-weight: bold;text-align: center;">Note that people will search for you through these</p>
 	<form action="{{ route('profile.update',['id'=> $profile->id]) }}" method="POST">
 		@csrf
         <div class="form-group row">
@@ -268,10 +268,10 @@
                 <div class="col-md-6">
                     <select id="level" class="form-control{{ $errors->has('level') ? ' is-invalid' : '' }}" name="level" value="{{ old('level') }}" >
                         <option value="9" {{ $profile->level==1? 'selected':'' }}> Secondary School </option>
-                        <option value="1" {{ $profile->level==1? 'selected':'' }}> 100 </option>
-                        <option value="2" {{ $profile->level==2? 'selected':'' }}> 200 </option>
-                        <option value="3" {{ $profile->level==3? 'selected':'' }}> 300 </option>
-                        <option value="4" {{ $profile->level==4? 'selected':'' }}> 400 </option>
+                        <option value="1" {{ $profile->level==1? 'selected':'' }}> 100/ND1 </option>
+                        <option value="2" {{ $profile->level==2? 'selected':'' }}> 200/ND2 </option>
+                        <option value="3" {{ $profile->level==3? 'selected':'' }}> 300/HND1 </option>
+                        <option value="4" {{ $profile->level==4? 'selected':'' }}> 400/HND2 </option>
                         <option value="5" {{ $profile->level==5? 'selected':'' }}> 500 </option>
                         <option value="6" {{ $profile->level==6? 'selected':'' }}> Masters </option>
                         <option value="7" {{ $profile->level==7? 'selected':'' }}> Ph.D </option>

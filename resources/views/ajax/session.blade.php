@@ -32,4 +32,10 @@
 	@if(Session::has('edited_eventdp'))
 		toastr.success("{{Session::get('edited_eventdp')}}")
 	@endif
+	@if(Session::has('about_info'))
+		toastr.info("{{Session::get('about_info')}}")
+	@endif
+	@if(Session::has('cluster_error'))
+		toastr.error("{{Session::get('cluster_error')}}")
+	@endif
 </script>

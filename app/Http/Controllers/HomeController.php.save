@@ -7,7 +7,6 @@ use App\Events\MessageSent;
 use App\Notifications;
 use App\User;
 use App\Event;
-use Session;
 use Carbon\Carbon;
 
 class HomeController extends Controller
@@ -29,11 +28,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if (auth()->user()->cluster == '0') {
-            Session::flash('cluster_error','Registration Error!!,Please go and change profile settings, resubmit and answer the questions that follow');
-        }
+       if(auth()->user()->cluster == 0){
+		Session::flash('usererr','You should update your profile in settings. ')
+	}
 
-        $user_id = auth()->user()->id;
+	 $user_id = auth()->user()->id;
 
         $Notifications = Notifications::where('user_id',$user_id)->orwhere('involved_id',$user_id)->orderBy('created_at','desc')->paginate(8);
 
