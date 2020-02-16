@@ -150,7 +150,7 @@ else:
 
 		df_search['match'] = ((df_search['mse'] - df_search['cluster']) + df_search['bday_match']) + ml_error_rate  
 
-		df_top = df_search['match'].nlargest(100)
+		df_top = df_search['match'].nlargest(1)
 
 		r = random.randint(0,len(df_top)-1)
 
